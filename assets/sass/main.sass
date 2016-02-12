@@ -1,0 +1,58 @@
+@import "bourbon"
+@import "_normalize.sass"
+@import "_vars.sass"
+@import "_fonts.sass"
+
+@import "libs/sprite.sass"
+@import "libs/owl.carousel.sass"
+
+
+*::-webkit-input-placeholder
+	color: #424242
+	opacity: 1
+
+
+*:-moz-placeholder
+	color: #424242
+	opacity: 1
+
+*::-moz-placeholder
+	color: #424242
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #424242
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #424242
+
+body input:required:valid,
+body textarea:required:valid
+	color: #424242
+
+body
+	font-size: 17px
+	min-width: 1200px
+	position: relative
+	line-height: 1.3
+	font-family: "HelveticaNeueLight", $helvetica
+	font-weight: normal
+	overflow-x: hidden
+	color: #000
+	position: relative
+
+
+/* icon */
+.icon
+	display: inline-block
+/*.icon_project
+	+sprite($s-project)*/
+/* end icon */
+
+
+
+
+//ALWAYS END
+@import "_media.sass"
