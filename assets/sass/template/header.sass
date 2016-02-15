@@ -1,0 +1,80 @@
+/* BEGIN LANG */
+.lang
+	display: inline-block
+.lang__link
+	font-size: 12px
+	color: #808080
+	display: inline-block
+	background-color: #fff
+	text-decoration: none
+	width: 24px
+	height: 18px
+	padding: 2px 0 0
+	text-align: center
+	box-sizing: border-box
+	&.active
+		color: #fff
+		background-color: #87B94B
+/* END LANG */
+
+/* BEGIN HEADER-HEAD */
+.header-head
+	background-color: #f1f1f1
+	padding: 8px 0 10px
+	background-image: url('img/head_bg.png')
+	+clearfix
+.header-head__side
+	float: left
+	width: 50%
+.header-head__side_right
+	text-align: right
+.header-head__title
+	display: inline-block
+	font-size: 14px
+	margin-left: 37px
+	padding-top: 4px
+.header-head__report-link
+	font-size: 12px
+	text-decoration: none
+	color: #808080
+/* END HEADER-HEAD */
+
+/* BEGIN MAIN-MENU */
+.main-menu
+	list-style-type: none
+	margin: 0
+	padding: 7px 0 0
+	+clearfix
+.main-menu__item
+	display: inline-block
+	font-size: 16px
+	&:first-child
+		.main-menu__link
+			padding-left: 0
+	&:last-child
+		.main-menu__link
+			padding-right: 0
+.main-menu__link
+	padding: 12px 8px 0
+	display: inline-block
+	color: #666
+	text-decoration: none
+/* END MAIN-MENU */
+
+/* BEGIN HEAD-BODY */
+.header-body
+	padding: 13px 0 9px
+	+clearfix
+.header-body__logo
+	float: left
+	width: $width-header-body__logo *$p
+.header-body__main-menu
+	float: left
+	width: $width-header-body__main-menu *$p
+	margin-left: 25px/$width *$p
+/* END HEAD-BODY */
+
+/* BEGIN HEADER */
+header
+	border-bottom: 7px solid #87B94B
+/* END HEADER */

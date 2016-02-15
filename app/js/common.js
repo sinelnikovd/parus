@@ -5,7 +5,7 @@ $(document).ready(function() {
 	}
 
 
-	/*var carouselCustomer = $('.carousel-customer__items').owlCarousel({
+	var mainSec2 = $('.main-sec-2__slider').owlCarousel({
 		loop: true,
 		nav: false,
 		items: 1
@@ -15,7 +15,10 @@ $(document).ready(function() {
 	})
 	$('.carousel-customer__next').click(function() {
 		carouselCustomer.trigger('next.owl.carousel');
-	})*/
+	})
+
+
+	//$('.size-item').mouseover();
 
 
 });

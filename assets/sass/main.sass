@@ -32,24 +32,321 @@ body input:required:valid,
 body textarea:required:valid
 	color: #424242
 
+
+
 body
-	font-size: 17px
-	min-width: 1200px
+	font-size: 16px
+	min-width: $width-paading
 	position: relative
 	line-height: 1.3
-	font-family: "HelveticaNeueLight", $helvetica
+	font-family: "PFDinTextProLight", $helvetica
 	font-weight: normal
 	overflow-x: hidden
-	color: #000
+	color: #666
 	position: relative
 
+.container
+	width: $width
+	padding: 0 $padding
+	margin: 0 auto
 
-/* icon */
+/* BEGIN TEXT*/
+.green-text
+	color: #87B94B
+.regular-text
+	font-family: "PFDinTextProRegular", $helvetica
+	font-weight: normal
+.bold-text
+	font-family: "PFDinTextProBold", $helvetica
+	font-weight: normal
+.medium-text
+	font-family: "PFDinTextProMedium", $helvetica
+	font-weight: normal
+/* END TEXT*/
+
+
+/* BEGIN HR */
+.hr
+	width: 100%
+.hr_double
+	border-top: 1px solid #E6E6E6
+	border-bottom: 1px solid #E6E6E6
+	height: 5px
+	box-sizing: border-box
+/* END HR */
+
+/* BEGIN ICON */
 .icon
 	display: inline-block
 /*.icon_project
 	+sprite($s-project)*/
-/* end icon */
+/* END ICON */
+
+
+/* BEGIN BUTTON */
+.button
+	display: inline-block
+	text-decoration: none
+	padding: 12px 35px 0
+	height: 46px
+	box-sizing: border-box
+	text-align: center
+	border-radius: 1px
+.button_no_bg
+	border: 1px solid #B4D6D0
+	color: #fff
+.button_green
+	background-color: #87B94B
+	color: #fff
+	&:hover
+		background-color: #6C9141
+/* END BUTTON */
+
+
+
+@import "template/header.sass"
+
+
+/* BEGIN MAIN-SLIDER-NAV */
+.main-slider-nav
+	margin: 0
+	padding: 0
+	list-style-type: none
+	position: absolute
+	bottom: 0
+	left: 50%
+	+transform(translateX(-50%))
+	+clearfix
+.main-slider-nav__item
+	float: left
+	margin: 0 1px
+	background-color: rgba(108,145,65,.95)
+	padding: 12px 0 8px
+	width: 180px
+	text-align: center
+	cursor: pointer
+	font-size: 13px
+	color: #fff
+	&.active,&:hover
+		background-color: rgba(135,185,75,.95)
+/* END MAIN-SLIDER-NAV */
+
+
+/* BEGIN MAIN-SLIDER */
+.main-slider
+	position: relative
+.main-slider__item
+	display: none
+	background-image: url('img/main-slider.jpg')
+	background-size: cover
+	background-position: center center
+	padding: 120px 0 132px
+	&.active
+		display: block
+.main-slider__block
+	background-color: rgba(50, 147, 141, .76)
+	width: $width-main-slider__block *$p
+	margin: 0 auto
+	padding: 43px 70px/$width*100% 33px
+	box-sizing: border-box
+	text-align: center
+.main-slider__title
+	margin: 0
+	font-size: 32px
+	font-weight: normal
+	text-transform: uppercase
+	line-height: 1
+	color: #fff
+.main-slider__description
+	margin: 4px 0
+	font-size: 18px
+	line-height: 1.15
+	color: #fff
+.main-slider__button
+	margin-top: 17px
+/* END MAIN-SLIDER */
+
+
+
+/* BEGIN SIZE-ITEMS */
+.size-items
+	+clearfix
+.size-item
+	float: left
+	width: 25%
+	height: 230px
+	margin-top: 25px
+	box-sizing: border-box
+	padding: 20px 25px 0
+	overflow: hidden
+.size-item__link
+	display: block
+	text-decoration: none
+.size-item__image-round
+	background-image: url(img/size-item1.jpg)
+	background-position: center center
+	background-size: cover
+	width: 116px
+	height: 116px
+	border-radius: 50%
+	margin: 0 auto
+.size-item__hover
+	padding-top: 17px
+	&.active
+		background-color: #87B94B
+		.size-item__title
+			color: #fff
+		.size-item__description
+			display: none
+.size-item__title
+	margin: 0
+	font-size: 32px
+	font-weight: normal
+	color: #666
+	line-height: 1
+.size-item__description
+	margin: 3px 0 0
+	color: #87B94B
+/* END SIZE-ITEMS */
+
+/* BEGIN MAIN-SEC-1 */
+.main-sec-1
+	padding: 46px 0 46px
+	text-align: center
+.main-sec-1__title
+	margin: 0
+	font-size: 32px
+	font-weight: normal
+	color: #333
+.main-sec-1__description
+	margin: 10px 0 0
+	font-size: 18px
+	line-height: 1.15
+.main-sec-1__hr
+	width: 852px/$width *$p
+	margin: 23px auto 0
+/* END MAIN-SEC-1 */
+
+
+
+/* BEGIN MAIN-SEC-2 */
+.main-sec-2
+	background-color: #f5f5f5
+	border-top: 1px solid #E6E6E6
+	border-bottom: 1px solid #E6E6E6
+	box-sizing: border-box
+	padding: 60px 0 59px
+	+clearfix
+.main-sec-2__side
+	float: left
+	width: 50%
+	box-sizing: border-box
+	&:first-child
+		padding-right: 40px
+	&:last-child
+		padding-left: 40px
+		padding-right: 15px
+.main-sec-2__title
+	margin: 20px 0 10px
+	font-size: 26px
+	font-weight: normal
+	line-height: 1
+.main-sec-2__text
+	margin: 22px 0 0
+.main-sec-2__button
+	margin-top: 8px
+.main-sec-2__link
+	display: block
+	margin-top: 15px
+	color: #87B94B
+	text-decoration: none
+	font-size: 16px
+	&:hover
+		color: #6C9141
+/* END MAIN-SEC-2 */
+
+
+
+/* BEGIN MAIN-INFORM */
+.main-infor__title
+	margin: 0 0 27px
+	font-size: 22px
+	font-weight: normal
+	color: #fff
+	background-color: #87B94B
+	text-align: center
+	box-sizing: border-box
+	padding: 7px 0
+.main-infor__block
+	padding: 19px 0
+	border-bottom: 1px solid #E6E6E6
+	+clearfix
+	&:last-child
+		border-bottom: 0
+.main-infor__side
+	float: left
+.main-infor__side_left
+	width: 93px/$width-main-sec-3__side_left *$p
+.main-infor__side_right
+	width: 247px/$width-main-sec-3__side_left *$p
+.main-infor__time
+	font-size: 18px
+.main-infor__date
+	font-size: 20px
+	vertical-align: top
+.main-infor__value
+	font-size: 18px
+/* END MAIN-INFORM */
+
+
+/* BEGIN MAIN-NEWS */
+.main-news
+	padding-top: 3px
+.main-news__head
+	padding: 0 0 9px
+	+clearfix
+.main-news__head-side
+	float: left
+.main-news__head-side_left
+	width: 610px/$width-main-sec-3__side_right *$p
+.main-news__head-side_right
+	width: 120px/$width-main-sec-3__side_right *$p
+	text-align: right
+.main-news__title
+	margin: 0
+	font-weight: normal
+	font-size: 26px
+	padding-left: 5px
+	box-sizing: border-box
+/* END MAIN-NEWS */
+
+
+/* BEGIN NEWS-ARTICLE */
+.news-articles
+	+clearfix
+.news-article
+	float: left
+	width: 50%
+/* END NEWS-ARTICLE */
+
+/* BEGIN MAIN-SEC-3 */
+.main-sec-3
+	padding-top: 63px
+	+clearfix
+.main-sec-3__side
+	float: left
+.main-sec-3__side_left
+	width: $width-main-sec-3__side_left/$width *$p
+	margin-right: 50px/$width *$p
+.main-sec-3__side_right
+	width: $width-main-sec-3__side_right/$width *$p
+
+/* END MAIN-SEC-3 */
+
+
+
+
+
 
 
 
