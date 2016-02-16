@@ -4,40 +4,7 @@ block title
 	title Агропромышленный холдинг
 
 block content
-	// BEGIN HEADER 
-	header
-		.header-head
-			.container
-				.header-head__side
-					span.header-head__title Агропромышленный холдинг
-				.header-head__side.header-head__side_right
-					a(href="#").header-head__report-link
-						i.icon.icon_info
-						| Годовой отчет 2014г
-					.lang
-						a(href="#").lang__link.active рус
-						a(href="#").lang__link en
-		.header-body
-			.container
-				.logo.header-body__logo
-					a(href="/").logo__link
-						img(src="img/logo.png", alt="")
-				ul.main-menu.header-body__main-menu
-					li.main-menu__item
-						a(href="#").main-menu__link О компании
-					li.main-menu__item
-						a(href="#").main-menu__link Направление работы
-					li.main-menu__item
-						a(href="#").main-menu__link Корпоротивная ответственность
-					li.main-menu__item
-						a(href="#").main-menu__link Постовщивкам
-					li.main-menu__item
-						a(href="#").main-menu__link Инвесторам
-					li.main-menu__item
-						a(href="#").main-menu__link Карьера
-					li.main-menu__item
-						a(href="#").main-menu__link Контакты
-	// END HEADER 
+
 	// BEGIN MAIN-SLIDER 
 	.main-slider
 		.main-slider__item.active
@@ -46,24 +13,28 @@ block content
 					h2.main-slider__title Масштабное Растеневодство
 					p.main-slider__description Выращиваем пшеницу, ячмень, кукурузу, пдсолнечник и другие культуры.
 					a(href="#").button.button_no_bg.main-slider__button Узнать подробнее
+						i.icon.icon_next.button_icon
 		.main-slider__item
 			.container
 				.main-slider__block
 					h2.main-slider__title Масштабное Растеневодство
 					p.main-slider__description Выращиваем пшеницу, ячмень, кукурузу, пдсолнечник и другие культуры.
 					a(href="#").button.button_no_bg.main-slider__button Узнать подробнее
+						i.icon.icon_next.button_icon
 		.main-slider__item
 			.container
 				.main-slider__block
 					h2.main-slider__title Масштабное Растеневодство
 					p.main-slider__description Выращиваем пшеницу, ячмень, кукурузу, пдсолнечник и другие культуры.
 					a(href="#").button.button_no_bg.main-slider__button Узнать подробнее
+						i.icon.icon_next.button_icon
 		.main-slider__item
 			.container
 				.main-slider__block
 					h2.main-slider__title Масштабное Растеневодство
 					p.main-slider__description Выращиваем пшеницу, ячмень, кукурузу, пдсолнечник и другие культуры.
 					a(href="#").button.button_no_bg.main-slider__button Узнать подробнее
+						i.icon.icon_next.button_icon
 		ul.main-slider-nav
 			li.main-slider-nav__item.regular-text.active Растеневодство
 			li.main-slider-nav__item.regular-text Семениводство
@@ -71,6 +42,7 @@ block content
 			li.main-slider-nav__item.regular-text Элеватор
 	// END MAIN-SLIDER 
 
+	// BEGIN MAIN-SEC-1 
 	.main-sec-1
 		.container
 			h1.main-sec-1__title «Парус Агро Групп» - крупный российский агропромышленный холдинг,
@@ -83,6 +55,7 @@ block content
 						.size-item__hover
 							h3.size-item__title 80 000 гектар
 							p.size-item__description.medium-text Земельный фонд
+							.size-item__hr
 							p.size-item__text Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.
 				.size-item
 					a(href="#").size-item__link
@@ -90,13 +63,15 @@ block content
 						.size-item__hover
 							h3.size-item__title 7 500 голов
 							p.size-item__description.medium-text Животноводческий фонд
+							.size-item__hr
 							p.size-item__text Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.
 				.size-item
 					a(href="#").size-item__link
 						.size-item__image-round
-						.size-item__hover.active
+						.size-item__hover
 							h3.size-item__title 210 000 тонн
 							p.size-item__description.medium-text Земельный фонд
+							.size-item__hr
 							p.size-item__text Складской фонд «Парус Агро Групп» - это более 210000 тонн зерна, которые вмещают элеваторы  холдинга.
 				.size-item
 					a(href="#").size-item__link
@@ -104,11 +79,14 @@ block content
 						.size-item__hover
 							h3.size-item__title 2 000 человек
 							p.size-item__description.medium-text Работающий персонал
+							.size-item__hr
 							p.size-item__text Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.
+	// END MAIN-SEC-1 
 
+	// BEGIN MAIN-SEC-2 
 	.main-sec-2
 		.container
-			.main-sec-2__side
+			.main-sec-2__side.main-sec-2__side_left
 				.main-sec-2__slider
 					.main-sec-2__slide
 						img(src="img/sec-21.jpg", alt="")
@@ -118,18 +96,21 @@ block content
 						img(src="img/sec-21.jpg", alt="")
 				span.main-sec-2__nav.main-sec-2__nav_prev
 				span.main-sec-2__nav.main-sec-2__nav_next
-			.main-sec-2__side
+			.main-sec-2__side.main-sec-2__side_right
 				h3.main-sec-2__title «Парус Агро Групп» входит в десятку ведущих аграрных компаний Юга России
 				.hr.hr_double
 				p.main-sec-2__text Лидирующих позиций Группа достигла благодаря сочетанию нескольких факторов: <span class="green-text bold-text">удачному географическому расположению</span> земельных активов, <span class="green-text bold-text">благоприятному климату</span> и грамотно выбранной <span class="green-text bold-text">модели управления.</span>
 				a(href="#").button.button_green.main-sec-2__button О компании
+					i.icon.icon_next.button_icon
 				a(href="#").main-sec-2__link.regular-text
-					i.icon.icon_info
-					| Годовой отчет 2014г
+					i.icon.icon_info.main-sec-2__icon
+					span.main-sec-2__link-text Годовой отчет 2014г
 				a(href="#").main-sec-2__link.regular-text
-					i.icon.icon_presentation
-					| Презентация в формате PDF
+					i.icon.icon_doc.main-sec-2__icon
+					span.main-sec-2__link-text Презентация в формате PDF
+	// END MAIN-SEC-2 
 
+	// BEGIN MAIN-SEC-3 
 	.main-sec-3
 		.container
 			.main-sec-3__side.main-sec-3__side_left
@@ -167,143 +148,23 @@ block content
 							h2.main-news__title Новости холдинга
 						.main-news__head-side.main-news__head-side_right
 							a(href="#").main-news__link-all Все новости
+								i.icon.icon_next.main-news__link-icon
 					.hr.hr_double
 					.news-articles
 						.news-article
-							img(src="#", alt="").news-article__image
-							h3.news-article__title «Парус Агро Групп» вошел в ТОП-25 крупнейших сельхозгрупп России
-							span.news-article__date 28 октября 2015 
-							p.news-article__text Управляет  сельскохозяйственными  активами  в  Краснодарском  крае, Ставрополье  и  Адыгее ...  Земельный  фонд  -  80 000 гектар черноземной земли в наиболее благоприятных для земледелия районах России ...
+							a(href="#").news-article__link
+								img(src="img/news1.jpg", alt="").news-article__image
+								h3.news-article__title.medium-text «Парус Агро Групп» вошел в ТОП-25 крупнейших сельхозгрупп России
+								span.news-article__date 28 октября 2015 
+								p.news-article__text Управляет  сельскохозяйственными  активами  в  Краснодарском  крае, Ставрополье  и  Адыгее ...
 						.news-article
-							img(src="#", alt="").news-article__image
-							h3.news-article__title Завершен сбор урожая пшеницы в Ставропольском крае
-							span.news-article__date 21 октября 2015 
-							p.news-article__text Входит в финальную стадию сбор урожая пшеницы в Ставрополье. Объем зерновых ...
+							a(href="#").news-article__link
+								img(src="img/news2.jpg", alt="").news-article__image
+								h3.news-article__title.medium-text Завершен сбор урожая пшеницы в Ставропольском крае
+								span.news-article__date 21 октября 2015 
+								p.news-article__text Входит в финальную стадию сбор урожая пшеницы в Ставрополье. Объем зерновых ...
+	// END MAIN-SEC-3 
 
-	.vacancy-banner
-		.container
-			.vacancy-banner__side
-				h2.vacancy-banner__title Приглашаем к сотрудничеству
-				p.vacancy-banner__text Для предупреждения болезней и защиты культур от вредителей предприятия Группы реализуют системный план защитных мероприятий. Предусматривающий применение комбинированных схем различных препаратов ведущих мировых.
-			.vacancy-banner__side
-				a(href="#").button.button_green Партнерам
+	include ./template/vacancy-banner.jade
 
-	footer
-		.container
-			.footer-head
-				.logo.footer-head__logo
-					a(href="/").logo__link
-						img(src="img/logo-green.png", alt="")
-				.footer-head__phone
-					a(href="tel:+74942360249").footer-head__phone-link
-						i.icon.icon_phone
-						| +7 (4942) 360-249
-				.city.footer-head__city
-					span.city__name Кострома
-					select(name="city").select.select_no_bg.city_select
-						option(value="0") сменить
-						option(value="0") сменить
-						option(value="0") сменить
-						option(value="0") сменить
-				.footer-head__addres
-					i.icon.icon_addres
-					| ул.Князева, д.2
-				form(action="/").search.footer-head__search
-					input(type="text" placeholder="Поиск по сайту").input
-					button(type="submit")
-						i.icon.icon_search
-			.footer-body
-				.footer-block
-					h3.footer-block__title
-						a(href="#").footer-block__link-title Наша компания
-					ul.footer-block__list
-						li.footer-block__item
-							a(href="#").footer-block__link О компании
-						li.footer-block__item
-							a(href="#").footer-block__link Новости
-						li.footer-block__item
-							a(href="#").footer-block__link Преимущества
-						li.footer-block__item
-							a(href="#").footer-block__link Земельный фонд
-						li.footer-block__item
-							a(href="#").footer-block__link Холдинг в цифрах
-						li.footer-block__item
-							a(href="#").footer-block__link Корпоративное управление
-						li.footer-block__item
-							a(href="#").footer-block__link Руководство
-						li.footer-block__item
-							a(href="#").footer-block__link История
-				.footer-block
-					h3.footer-block__title
-						a(href="#").footer-block__link-title Направления работы
-					ul.footer-block__list
-						li.footer-block__item
-							a(href="#").footer-block__link Растениеводство
-						li.footer-block__item
-							a(href="#").footer-block__link Семеноводство
-						li.footer-block__item
-							a(href="#").footer-block__link Животноводство
-						li.footer-block__item
-							a(href="#").footer-block__link Элеватор
-						li.footer-block__item
-							a(href="#").footer-block__link Лаборатория
-						li.footer-block__item
-							a(href="#").footer-block__link Транспорт и логистика
-						li.footer-block__item
-							a(href="#").footer-block__link Персонал
-				.footer-block
-					h3.footer-block__title
-						a(href="#").footer-block__link-title Корпоративная ответственность
-					ul.footer-block__list
-						li.footer-block__item
-							a(href="#").footer-block__link Производственная безопасность
-						li.footer-block__item
-							a(href="#").footer-block__link Охрана окружающей среды
-						li.footer-block__item
-							a(href="#").footer-block__link Развитие персонала
-						li.footer-block__item
-							a(href="#").footer-block__link Сотрудничество с регионами
-						li.footer-block__item
-							a(href="#").footer-block__link Социальная политика
-						li.footer-block__item
-							a(href="#").footer-block__link Благотворительность
-						li.footer-block__item
-							a(href="#").footer-block__link Бизнес-этика
-				.footer-block
-					h3.footer-block__title
-						a(href="#").footer-block__link-title Поставщикам
-					ul.footer-block__list
-						li.footer-block__item
-							a(href="#").footer-block__link Подать заявку на участие
-						li.footer-block__item
-							a(href="#").footer-block__link Нормативные документы
-						li.footer-block__item
-							a(href="#").footer-block__link Планируемые закупки
-						li.footer-block__item
-							a(href="#").footer-block__link Текущие закупки
-				.footer-block
-					h3.footer-block__title
-						a(href="#").footer-block__link-title Инвесторам
-					ul.footer-block__list
-						li.footer-block__item
-							a(href="#").footer-block__link Отчетность ООО «Парус Агро Груп»
-						li.footer-block__item
-							a(href="#").footer-block__link Учредительные документы 
-				.footer-block
-					h3.footer-block__title
-						a(href="#").footer-block__link-title Карьера
-					ul.footer-block__list
-						li.footer-block__item
-							a(href="#").footer-block__link Вакансии
-						li.footer-block__item
-							a(href="#").footer-block__link Отправить резюме
-				.footer-block
-					h3.footer-block__title
-						a(href="#").footer-block__link-title Контакты
-
-
-			.footer-footer
-				.copyright
-					span.copyright__title © Parus Agro Group, 2015
-					span.copyright__description Все права защищены. Копирование информации с сайта  только по запросу.
 

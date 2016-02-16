@@ -1,0 +1,97 @@
+extends ./template/template.jade
+
+block title
+	title Агропромышленный холдинг
+
+block content
+	// BEGIN SLIDE-TOP
+	.slide-top
+	// END SLIDE-TOP
+
+	// BEGIN SUB-MENU
+	.container
+		ul.sub-menu
+			li.sub-menu__item
+				a(href="#").sub-menu__link Подать заявку на участие
+			li.sub-menu__item
+				a(href="#").sub-menu__link Нормативные документы
+			li.sub-menu__item
+				a(href="#").sub-menu__link.active Закупки
+		.hr.hr_double
+	// END SUB-MENU
+
+	// BEGIN CONTENT-SIDEBAR 
+	.content-sidebar
+		.container
+			// BEGIN SIDEBAR 
+			.sidebar
+				a(href="#").sidebar__title.active Все вакансии
+				ul.sidebar__menu
+					li.sidebar__item
+						a(href="#").sidebar__link ООО «Адыгейское»
+					li.sidebar__item
+						a(href="#").sidebar__link ООО «Егорлык»
+					li.sidebar__item
+						a(href="#").sidebar__link ООО «Романовское»
+					li.sidebar__item
+						a(href="#").sidebar__link ООО «Новатор»
+					li.sidebar__item
+						a(href="#").sidebar__link ОАО «Ленинский Путь»
+					li.sidebar__item
+						a(href="#").sidebar__link ООО «Кубань XXI век»
+					li.sidebar__item
+						a(href="#").sidebar__link ООО «АПК Кавказ»
+					li.sidebar__item
+						a(href="#").sidebar__link ООО «Северный»
+			// END SIDEBAR 
+			// BEGIN CONTENT 
+			.content
+				h1.content__title Вакансии
+				.filter
+					.filter__line
+						.filter__side.filter__side_left
+							label(for="") Введите ключевое слово
+						.filter__side.filter__side_right
+							input(type="text").input.input_width_100
+					.filter__line
+						.filter__side.filter__side_left
+							label(for="") Выберите вакансию
+						.filter__side.filter__side_right
+							select(name="").select.select_width_100
+								option(value="1") Все
+								option(value="1") Все
+								option(value="1") Все
+								option(value="1") Все
+					.filter__line
+						.filter__side.filter__side_left
+							label(for="") Выберите хозяйство
+						.filter__side.filter__side_right
+							select(name="").select.select_width_100
+								option(value="1") Все
+								option(value="1") Все
+								option(value="1") Все
+								option(value="1") Все
+					.filter__line
+						.filter__side.filter__side_left
+						.filter__side.filter__side_right
+							button(type="submit").button.button_green Искать
+								i.icon.icon_next.button__icon
+				.posts
+					h2.posts__title Вакансии ООО «Адыгейское»
+					.post
+						h3.post__title Агроном
+						span.post__date Прием заявок до 21.03.16 12.00
+						.post__text
+							p.post__paragraph Для предупреждения болезней и защиты культур от вредителей предприятия Группы реализуют системный план защитных мероприятий. Большинство земель холдинга – высокоплодородные черноземы. В сочетании с преимущественно благоприятным климатом это обеспечивает стабильно высокую урожайность культур. Земельные активы «Парус Агро Груп» расположены в трех климатических зонах –  высокие показатели урожайности, она в 2-3 раза 
+						span.post__all подробнее
+					.post
+						h3.post__title Доярка
+						span.post__date Прием заявок до 21.03.16 12.00
+						.post__text
+							p.post__paragraph Для предупреждения болезней и защиты культур от вредителей предприятия Группы реализуют системный план защитных мероприятий. Большинство земель холдинга – высокоплодородные черноземы. В сочетании с преимущественно благоприятным климатом это обеспечивает стабильно высокую урожайность культур. Земельные активы «Парус Агро Груп» расположены в трех климатических зонах –  высокие показатели урожайности, она в 2-3 раза 
+						span.post__all подробнее
+			// END CONTENT 
+
+
+
+	// END CONTENT-SIDEBAR 

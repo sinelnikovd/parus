@@ -22,8 +22,12 @@ html
 		link(rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png")
 		
 	body
-		block content
-			//- Здесь пишем код 
+		.page
+			include header.jade
+			block content
+				//- Здесь пишем код 
+		include footer.jade
+
 		.hidden
 			block popup
 

@@ -10,16 +10,27 @@ $(document).ready(function() {
 		nav: false,
 		items: 1
 	})
-	$('.carousel-customer__prev').click(function() {
-		carouselCustomer.trigger('prev.owl.carousel');
+	$('.main-sec-2__nav_prev').click(function() {
+		mainSec2.trigger('prev.owl.carousel');
 	})
-	$('.carousel-customer__next').click(function() {
-		carouselCustomer.trigger('next.owl.carousel');
+	$('.main-sec-2__nav_next').click(function() {
+		mainSec2.trigger('next.owl.carousel');
 	})
 
 
 	//$('.size-item').mouseover();
-
+	$('.size-item').hover(
+		function(){
+			//over
+			$(this).find('.size-item__hover').addClass('active')
+																			.animate({top:"0"},400);
+		},
+		function(){
+			//out
+			$(this).find('.size-item__hover').animate({top:"136"},400,function () {
+				$(this).removeClass('active');
+			});
+	});
 
 });
 

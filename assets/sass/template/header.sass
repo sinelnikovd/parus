@@ -1,6 +1,7 @@
 /* BEGIN LANG */
 .lang
 	display: inline-block
+	vertical-align: top
 .lang__link
 	font-size: 12px
 	color: #808080
@@ -14,13 +15,13 @@
 	box-sizing: border-box
 	&.active
 		color: #fff
-		background-color: #87B94B
+		background-color: $c-green-2
 /* END LANG */
 
 /* BEGIN HEADER-HEAD */
 .header-head
 	background-color: #f1f1f1
-	padding: 8px 0 10px
+	padding: 8px 0 5px
 	background-image: url('img/head_bg.png')
 	+clearfix
 .header-head__side
@@ -37,13 +38,51 @@
 	font-size: 12px
 	text-decoration: none
 	color: #808080
+	margin-right: 5px
+	vertical-align: top
+.header-head__info-icon
+	font-size: 21px
+	top: 1px
+	margin-right: 2px
+.header-head__report-text
+	vertical-align: top
+	line-height: 1
+	display: inline-block
+	padding-top: 7px
 /* END HEADER-HEAD */
+
+/* BEGIN MAIN-SUB-MENU */
+.main-sub-menu
+	display: none
+	position: absolute
+	top: 100%
+	left: -22px
+	min-width: 182px
+	list-style-type: none
+	margin: 0
+	padding: 0
+	border-top: 7px solid $c-green-2
+	background-color: $c-gray-3
+.main-sub-menu__item
+	border-bottom: 1px solid #d9d9d9
+	font-size: 14px
+	&:last-child
+		border-bottom: 0
+.main-sub-menu__link
+	text-decoration: none
+	color: $c-gray-6
+	padding: 8px 21px 4px
+	display: block
+	&:hover
+		background-color: #fff
+		color: $c-green-2
+/* END MAIN-SUB-MENU */
 
 /* BEGIN MAIN-MENU */
 .main-menu
 	list-style-type: none
 	margin: 0
-	padding: 7px 0 0
+	padding: 10px 0 0
 	+clearfix
 .main-menu__item
 	display: inline-block
@@ -51,19 +90,43 @@
 	&:first-child
 		.main-menu__link
 			padding-left: 0
+		&.active,
+		&:hover
+			.main-menu__link
+				&:before
+					left: 0
 	&:last-child
 		.main-menu__link
 			padding-right: 0
+	&.active,
+	&:hover
+		.main-menu__link
+			position: relative
+			color: $c-green-2
+			&:before
+				content: ''
+				position: absolute
+				top: 0
+				left: 6px
+				width: 20px
+				height: 2px
+				background-color: $c-green-2
+.main-menu__item_main-sub-menu
+	position: relative
+	&:hover
+		&>.main-sub-menu
+			display: block
 .main-menu__link
-	padding: 12px 8px 0
+	padding: 10px 8px 18px
 	display: inline-block
-	color: #666
+	color: $c-gray-6
 	text-decoration: none
+
 /* END MAIN-MENU */
 
 /* BEGIN HEAD-BODY */
 .header-body
-	padding: 13px 0 9px
+	padding: 13px 0 0
 	+clearfix
 .header-body__logo
 	float: left
@@ -76,5 +139,8 @@
 
 /* BEGIN HEADER */
 header
-	border-bottom: 7px solid #87B94B
+	position: relative
+	z-index: 2
+	box-shadow: 0 1px 15px rgba(0,0,0,.3)
+	border-bottom: 7px solid $c-green-2
 /* END HEADER */

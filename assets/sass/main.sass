@@ -8,21 +8,24 @@
 
 
 *::-webkit-input-placeholder
-	color: #424242
+	color: $c-gray-8
 	opacity: 1
 
 
 *:-moz-placeholder
-	color: #424242
+	color: $c-gray-8
 	opacity: 1
 
 *::-moz-placeholder
-	color: #424242
+	color: $c-gray-8
 	opacity: 1
 
 *:-ms-input-placeholder
-	color: #424242
+	color: $c-gray-8
 	opacity: 1
+
+*
+	outline: none
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
@@ -33,6 +36,8 @@ body textarea:required:valid
 	color: #424242
 
 
+html
+	height: 100%
 
 body
 	font-size: 16px
@@ -42,8 +47,13 @@ body
 	font-family: "PFDinTextProLight", $helvetica
 	font-weight: normal
 	overflow-x: hidden
-	color: #666
+	color: $c-gray-6
 	position: relative
+	height: 100%
+
+.page
+	position: relative
+	min-height: 100%
 
 .container
 	width: $width
@@ -52,7 +62,7 @@ body
 
 /* BEGIN TEXT*/
 .green-text
-	color: #87B94B
+	color: $c-green-2
 .regular-text
 	font-family: "PFDinTextProRegular", $helvetica
 	font-weight: normal
@@ -69,8 +79,8 @@ body
 .hr
 	width: 100%
 .hr_double
-	border-top: 1px solid #E6E6E6
-	border-bottom: 1px solid #E6E6E6
+	border-top: 1px solid $c-gray-3
+	border-bottom: 1px solid $c-gray-3
 	height: 5px
 	box-sizing: border-box
 /* END HR */
@@ -78,8 +88,24 @@ body
 /* BEGIN ICON */
 .icon
 	display: inline-block
-/*.icon_project
-	+sprite($s-project)*/
+	font-family: "Icon"
+	font-weight: normal
+	font-size: 12px
+	font-style: normal
+	position: relative
+	line-height: 1
+.icon_info:before
+	content: 'a'
+.icon_doc:before
+	content: 'b'
+.icon_next:before
+	content: 'c'
+.icon_search:before
+	content: 'd'
+.icon_phone:before
+	content: 'e'
+.icon_addres:before
+	content: 'f'
 /* END ICON */
 
 
@@ -87,20 +113,43 @@ body
 .button
 	display: inline-block
 	text-decoration: none
-	padding: 12px 35px 0
+	padding: 13px 23px 0
 	height: 46px
 	box-sizing: border-box
 	text-align: center
 	border-radius: 1px
+.button_icon
+	margin-left: 8px
+	vertical-align: middle
+	font-size: 14px
 .button_no_bg
 	border: 1px solid #B4D6D0
 	color: #fff
 .button_green
-	background-color: #87B94B
+	background-color: $c-green-2
 	color: #fff
 	&:hover
-		background-color: #6C9141
+		background-color: $c-green-3
 /* END BUTTON */
+
+
+/* BEGIN INPUT */
+.input
+	height: 41px
+	box-sizing: border-box
+	border: 1px solid $c-gray-3
+	border-radius: 1px
+	padding: 5px 11px 0
+	font-size: 14px
+	color: $c-gray-8
+	line-height: 1
+	@extend .regular-text
+.input_width_100
+	width: 100%
+/* END INPUT */
+
+
+
 
 
 
@@ -140,14 +189,15 @@ body
 	background-image: url('img/main-slider.jpg')
 	background-size: cover
 	background-position: center center
-	padding: 120px 0 132px
+	padding: 126px 0 132px
 	&.active
 		display: block
 .main-slider__block
+	background-image: url('img/slide_bg.png')
 	background-color: rgba(50, 147, 141, .76)
 	width: $width-main-slider__block *$p
 	margin: 0 auto
-	padding: 43px 70px/$width*100% 33px
+	padding: 38px 70px/$width*100% 33px
 	box-sizing: border-box
 	text-align: center
 .main-slider__title
@@ -164,6 +214,9 @@ body
 	color: #fff
 .main-slider__button
 	margin-top: 17px
+	&:hover
+		background-color: #fff
+		color: rgb(50, 147, 141)
 /* END MAIN-SLIDER */
 
 
@@ -177,8 +230,10 @@ body
 	height: 230px
 	margin-top: 25px
 	box-sizing: border-box
-	padding: 20px 25px 0
+	padding: 20px 20px 0
 	overflow: hidden
+	position: relative
+	text-align: center
 .size-item__link
 	display: block
 	text-decoration: none
@@ -191,22 +246,56 @@ body
 	border-radius: 50%
 	margin: 0 auto
 .size-item__hover
-	padding-top: 17px
+	padding: 17px 20px 2000em
+	box-sizing: border-box
+	position: absolute
+	top: 136px
+	left: 0
+	right: 0
 	&.active
-		background-color: #87B94B
+		background-color: $c-green-2
+		padding-top: 35px
 		.size-item__title
 			color: #fff
 		.size-item__description
 			display: none
+		.size-item__text
+			display: block
+		.size-item__hr
+			display: block
 .size-item__title
 	margin: 0
 	font-size: 32px
 	font-weight: normal
-	color: #666
+	color: $c-gray-6
 	line-height: 1
 .size-item__description
 	margin: 3px 0 0
-	color: #87B94B
+	color: $c-green-2
+.size-item__text
+	margin: 15px 0 0
+	display: none
+	color: #fff
+.size-item__hr
+	display: none
+	width: 100%
+	height: 1px
+	background-color: #fff
+	position: relative
+	margin: 10px 0 30px
+	&:after
+		position: absolute
+		content: ''
+		top: -1px
+		left: 50%
+		width: 10px
+		height: 10px
+		background-color: $c-green-2
+		+transform-origin(center center);
+		+transform(translateX(-50%) rotate(45deg) translateY(-50%))
+		border-right: 1px solid #fff
+		border-bottom: 1px solid #fff
+
 /* END SIZE-ITEMS */
 
 /* BEGIN MAIN-SEC-1 */
@@ -217,7 +306,7 @@ body
 	margin: 0
 	font-size: 32px
 	font-weight: normal
-	color: #333
+	color: $c-gray-8
 .main-sec-1__description
 	margin: 10px 0 0
 	font-size: 18px
@@ -231,9 +320,9 @@ body
 
 /* BEGIN MAIN-SEC-2 */
 .main-sec-2
-	background-color: #f5f5f5
-	border-top: 1px solid #E6E6E6
-	border-bottom: 1px solid #E6E6E6
+	background-color: $c-gray-1
+	border-top: 1px solid $c-gray-3
+	border-bottom: 1px solid $c-gray-3
 	box-sizing: border-box
 	padding: 60px 0 59px
 	+clearfix
@@ -241,11 +330,12 @@ body
 	float: left
 	width: 50%
 	box-sizing: border-box
-	&:first-child
-		padding-right: 40px
-	&:last-child
-		padding-left: 40px
-		padding-right: 15px
+	position: relative
+.main-sec-2__side_left
+	padding-right: 40px
+.main-sec-2__side_right
+	padding-left: 40px
+	padding-right: 15px
 .main-sec-2__title
 	margin: 20px 0 10px
 	font-size: 26px
@@ -257,12 +347,51 @@ body
 	margin-top: 8px
 .main-sec-2__link
 	display: block
-	margin-top: 15px
-	color: #87B94B
+	margin-top: 10px
+	color: $c-green-2
 	text-decoration: none
 	font-size: 16px
 	&:hover
-		color: #6C9141
+		color: $c-green-3
+.main-sec-2__icon
+	top: 0
+	font-size: 21px
+	vertical-align: middle
+.main-sec-2__link-text
+	display: inline-block
+	padding-top: 5px
+	margin-left: 5px
+	vertical-align: middle
+
+.main-sec-2__nav
+	position: absolute
+	top: 50%
+	+transform(translateY(-50%))
+	width: 30px
+	height: 30px
+	background-color: rgba(102,102,102,.5)
+	z-index: 3
+	cursor: pointer
+	&:hover
+		background-color: rgba(102,102,102,.8)
+	&:after
+		content: ''
+		position: absolute
+		width: 5px
+		height: 5px
+		top: 50%
+		left: 10px
+		+transform(rotate(45deg) translateY(-50%))
+.main-sec-2__nav_prev
+	left: 0
+	&:after
+		border-left: 1px solid #fff
+		border-bottom: 1px solid #fff
+.main-sec-2__nav_next
+	right: 40px
+	&:after
+		border-right: 1px solid #fff
+		border-top: 1px solid #fff
 /* END MAIN-SEC-2 */
 
 
@@ -273,13 +402,13 @@ body
 	font-size: 22px
 	font-weight: normal
 	color: #fff
-	background-color: #87B94B
+	background-color: $c-green-2
 	text-align: center
 	box-sizing: border-box
 	padding: 7px 0
 .main-infor__block
 	padding: 19px 0
-	border-bottom: 1px solid #E6E6E6
+	border-bottom: 1px solid $c-gray-3
 	+clearfix
 	&:last-child
 		border-bottom: 0
@@ -326,12 +455,36 @@ body
 	+clearfix
 .news-article
 	float: left
+	margin-top: 25px
 	width: 50%
+	&:first-child
+		padding-right: 13px/($width-main-sec-3__side_right/2) *$p
+		box-sizing: border-box
+	&:last-child
+		padding-left: 13px/($width-main-sec-3__side_right/2) *$p
+		box-sizing: border-box
+.news-article__link
+	display: block
+	text-decoration: none
+.news-article__title
+	margin: 18px 0 0
+	font-size: 16px
+	color: $c-gray-6
+.news-article__date
+	margin-top: 6px
+	font-size: 14px
+	color: $c-gray-5
+	display: block
+.news-article__text
+	margin: 11px 0 0
+	color: $c-gray-6
+.news-article__image
+	max-width: 100%
 /* END NEWS-ARTICLE */
 
 /* BEGIN MAIN-SEC-3 */
 .main-sec-3
-	padding-top: 63px
+	padding: 63px 0 51px
 	+clearfix
 .main-sec-3__side
 	float: left
@@ -340,14 +493,173 @@ body
 	margin-right: 50px/$width *$p
 .main-sec-3__side_right
 	width: $width-main-sec-3__side_right/$width *$p
-
+.main-news__link-all
+	display: inline-block
+	padding-top: 10px
+	box-sizing: border-box
+	color: $c-green-2
+	text-decoration: none
+	&:hover
+		color: $c-green-3
+.main-news__link-icon
+	font-size: 16px
+	vertical-align: middle
+	margin-left: 10px
+	top: -2px
+	line-height: 0
 /* END MAIN-SEC-3 */
 
 
 
 
+@import "./template/vacancy-banner.sass"
+@import "./template/footer.sass"
 
 
+/* BEGIN SLIDE-TOP */
+.slide-top
+	background-image: url('img/slide-top.jpg')
+	background-position: center center
+	background-size: cover
+	min-height: 236px
+/* END SLIDE-TOP */
+
+/* BEGIN SUB-MENU */
+.sub-menu
+	margin: 0
+	padding: 0
+	font-size: 0
+	text-align: center
+	padding: 27px 0 17px
+.sub-menu__item
+	@extend .regular-text
+	display: inline-block
+	font-size: 14px
+.sub-menu__link
+	display: block
+	text-decoration: none
+	color: $c-gray-6
+	padding: 10px 14px 0
+	&.active,
+	&:hover
+		position: relative
+		color: $c-green-2
+		&:after
+			content: ''
+			position: absolute
+			top: 0
+			left: 14px
+			width: 20px
+			height: 2px
+			background-color: $c-green-2
+/* END SUB-MENU */
+
+/* BEGIN SIDEBAR */
+.sidebar
+	float: left
+	width: 244px/$width *$p
+	margin-right: 48px/$width *$p
+.sidebar__title
+	display: block
+	border-top: 1px solid #DEDEDE
+	border-bottom: 1px solid #DEDEDE
+	padding: 10px 0 3px 10px
+	font-size: 20px
+	box-sizing: border-box
+	color: $c-gray-8
+	background-color: $c-gray-3
+	position: relative
+	text-decoration: none
+	&:after
+		content: ''
+		position: absolute
+		width: 7px
+		height: 7px
+		top: 15px
+		right: 15px
+		border-top: 1px solid $c-gray-6
+		border-left: 1px solid $c-gray-6
+		+transform(rotate(45deg))
+	&.active
+		color: $c-green-2
+		background-color: #fff
+		&:after
+			border-top: 0
+			border-left: 0
+			border-bottom: 1px solid $c-green-2
+			border-right: 1px solid $c-green-2
+.sidebar__menu
+	background-color: $c-gray-3
+	margin: 0
+	padding: 0
+	list-style-type: none
+.sidebar__item
+	border-bottom: 1px solid #DEDEDE
+.sidebar__link
+	display: block
+	padding: 15px 0 4px 25px
+	box-sizing: border-box
+	text-decoration: none
+	font-size: 16px
+	color: $c-gray-8
+	position: relative
+	&:after
+		content: ''
+		position: absolute
+		width: 7px
+		height: 7px
+		top: 17px
+		right: 18px
+		border-top: 1px solid $c-gray-6
+		border-right: 1px solid $c-gray-6
+		+transform(rotate(45deg))
+	&.active,
+	&:hover
+		color: $c-green-2
+		background-color: #fff
+		&:after
+			border-color: $c-green-2
+/* END SIDEBAR */
+
+
+/* BEGIN FILTER */
+.filter
+	background-color: $c-gray-2
+	margin-top: 10px
+	padding: 40px 30px
+	box-sizing: border-box
+.filter__line
+	+clearfix
+.filter__side
+	float: left
+.filter__side_left
+	width: 198px/($width-content - 60px) *$p
+.filter__side_right
+	width: 570px/($width-content - 60px) *$p
+/* END FILTER */
+
+/* BEGIN POSTS */
+.posts
+	margin-top: 20px
+
+/* END POSTS */
+
+/* BEGIN CONTENT */
+.content
+	float: left
+	width: $width-content/$width *$p
+.content__title
+	margin: 0
+	padding-left: 4px
+	font-size: 32px
+	font-weight: normal
+/* END CONTENT */
+
+/* BEGIN CONTENT-SIDEBAR */
+.content-sidebar
+	padding-top: 52px
+	+clearfix
+/* END CONTENT-SIDEBAR */
 
 
 
