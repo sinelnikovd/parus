@@ -1,7 +1,7 @@
 extends ./template/template.jade
 
 block title
-	title Вакансии
+	title Вакансии ООО «Адыгейское»
 
 block content
 	// BEGIN SLIDE-TOP
@@ -25,10 +25,10 @@ block content
 		.container
 			// BEGIN SIDEBAR 
 			.sidebar
-				a(href="#").sidebar__title.active Все вакансии
+				a(href="#").sidebar__title Все вакансии
 				ul.sidebar__menu
 					li.sidebar__item
-						a(href="#").sidebar__link ООО «Адыгейское»
+						a(href="#").sidebar__link.active ООО «Адыгейское»
 					li.sidebar__item
 						a(href="#").sidebar__link ООО «Егорлык»
 					li.sidebar__item
@@ -46,7 +46,7 @@ block content
 			// END SIDEBAR 
 			// BEGIN CONTENT 
 			.content
-				h1.content__title Вакансии
+				h1.content__title Вакансии ООО «Адыгейское»
 				.filter
 					.filter__line
 						.filter__side.filter__side_left
@@ -64,34 +64,10 @@ block content
 								option(value="1") Все
 					.filter__line
 						.filter__side.filter__side_left
-							label(for="").filter__label Выберите хозяйство
-						.filter__side.filter__side_right
-							select(name="").select.wide.select_input
-								option(value="1") Все
-								option(value="1") Все
-								option(value="1") Все
-								option(value="1") Все
-					.filter__line
-						.filter__side.filter__side_left
 						.filter__side.filter__side_right
 							button(type="submit").button.button_green Искать
 								i.icon.icon_next.button_icon
 				.posts
-					h2.posts__title Вакансии ООО «Адыгейское»
-					.post
-						h3.post__title Агроном
-						span.post__date Прием заявок до 21.03.16 12.00
-						.post__text
-							p.post__paragraph Для предупреждения болезней и защиты культур от вредителей предприятия Группы реализуют системный план защитных мероприятий. Большинство земель холдинга – высокоплодородные черноземы. В сочетании с преимущественно благоприятным климатом это обеспечивает стабильно высокую урожайность культур. Земельные активы «Парус Агро Груп» расположены в трех климатических зонах –  высокие показатели урожайности, она в 2-3 раза 
-						a(href="#").post__all подробнее
-					.post
-						h3.post__title Доярка
-						span.post__date Прием заявок до 21.03.16 12.00
-						.post__text
-							p.post__paragraph Для предупреждения болезней и защиты культур от вредителей предприятия Группы реализуют системный план защитных мероприятий. Большинство земель холдинга – высокоплодородные черноземы. В сочетании с преимущественно благоприятным климатом это обеспечивает стабильно высокую урожайность культур. Земельные активы «Парус Агро Груп» расположены в трех климатических зонах –  высокие показатели урожайности, она в 2-3 раза 
-						a(href="#").post__all подробнее
-				.posts
-					h2.posts__title Вакансии ООО «Егоролык»
 					.post
 						h3.post__title Агроном
 						span.post__date Прием заявок до 21.03.16 12.00
@@ -106,5 +82,5 @@ block content
 						a(href="#").post__all подробнее
 			// END CONTENT 
 	// END CONTENT-SIDEBAR 
-	- var isGray = true
+
 	include ./template/vacancy-banner.jade

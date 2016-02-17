@@ -5,23 +5,24 @@
 
 @import "libs/sprite.sass"
 @import "libs/owl.carousel.sass"
+@import "libs/nice-select.scss"
 
 
 *::-webkit-input-placeholder
-	color: $c-gray-8
+	color: $c-gray-5
 	opacity: 1
 
 
 *:-moz-placeholder
-	color: $c-gray-8
+	color: $c-gray-5
 	opacity: 1
 
 *::-moz-placeholder
-	color: $c-gray-8
+	color: $c-gray-5
 	opacity: 1
 
 *:-ms-input-placeholder
-	color: $c-gray-8
+	color: $c-gray-5
 	opacity: 1
 
 *
@@ -51,6 +52,9 @@ body
 	position: relative
 	height: 100%
 
+img
+	max-width: 100%
+
 .page
 	position: relative
 	min-height: 100%
@@ -60,7 +64,19 @@ body
 	padding: 0 $padding
 	margin: 0 auto
 
+/* BEGIN SECTION-GRAY */
+.section-gray
+	border-top: 1px solid $c-gray-3
+	border-bottom: 1px solid $c-gray-3
+	background-color: $c-gray-1
+/* END SECTION-GRAY */
+
+
 /* BEGIN TEXT*/
+.text
+	margin: 20px 0
+.center-text
+	text-align: center
 .green-text
 	color: $c-green-2
 .regular-text
@@ -85,6 +101,80 @@ body
 	box-sizing: border-box
 /* END HR */
 
+/* BEGIN H2 */
+.h2
+	font-weight: normal
+	margin: 0
+.h2_26
+	font-size: 26px
+/* END H2 */
+
+
+/* BEGIN TOP */
+.top
+	+clearfix
+.top__item
+	float: left
+	text-align: center
+	background-color: #f1f1f1
+	background-image: url('img/head_bg.png')
+.top__item_3
+	width: 293px/$width *$p
+	margin: 0 40px/$width *$p
+.top__title
+	margin: 0
+	background-color: $c-green-2
+	color: #fff
+	font-weight: normal
+	font-size: 22px
+	line-height: 1
+	padding: 10px 0 7px
+	box-sizing: border-box
+	position: relative
+	&:after
+		content: ''
+		position: absolute
+		width: 0
+		height: 0
+		top: 100%
+		left: 50%
+		+transform(translateX(-50%))
+		border-left: 10px solid transparent
+		border-right: 10px solid transparent
+		border-top: 8px solid $c-green-2
+.top_number
+	font-size: 28px
+.top__text
+	margin: 22px 0
+	padding: 0 20px
+	line-height: 21px
+	color: $c-green-3
+	box-sizing: border-box
+/* END TOP */
+
+
+
+
+/* BEGIN SIDE */
+.side
+	float: left
+	box-sizing: border-box
+.side_50
+	width: 50%
+.side_50_left
+	padding-right: 40px/$width *$p
+.side_50_right
+	padding-left: 40px/$width *$p
+.side_3070_left
+	padding-right: 25px/$width *$p
+	width: 365px/$width *$p
+.side_3070_right
+	padding-left: 25px/$width *$p
+	width: 755px/$width *$p
+/* END SIDE */
+
+
+
 /* BEGIN ICON */
 .icon
 	display: inline-block
@@ -106,6 +196,19 @@ body
 	content: 'e'
 .icon_addres:before
 	content: 'f'
+.icon_check:before
+	content: 'g'
+.icon_plant1:before
+	content: 'h'
+.icon_plant2:before
+	content: 'i'
+.icon_plant3:before
+	content: 'j'
+.icon_plant4:before
+	content: 'k'
+.icon_plant5:before
+	content: 'l'
+
 /* END ICON */
 
 
@@ -113,11 +216,14 @@ body
 .button
 	display: inline-block
 	text-decoration: none
-	padding: 13px 23px 0
+	padding: 0 23px 0
 	height: 46px
 	box-sizing: border-box
 	text-align: center
 	border-radius: 1px
+	border: none
+	line-height: 48px
+	cursor: pointer
 .button_icon
 	margin-left: 8px
 	vertical-align: middle
@@ -132,25 +238,98 @@ body
 		background-color: $c-green-3
 /* END BUTTON */
 
+/* BEGIN SELECT */
+.select_input
+	border-radius: 1px
+	border-color: $c-gray-4
+	height: 46px
+	padding-left: 13px
+	font-size: 14px
+	line-height: 49px
+	color: $c-gray-5
+	&.open,
+	&:active,
+	&:focus
+		border-color: $c-gray-4
+	&:after
+		right: 14px
+
+.select_no_bg
+	background: none
+	padding: 0 20px 0 0
+	color: $c-green-2
+	line-height: 1
+	height: auto
+	border: none
+	&:after
+		right: 9px
+		border-color: $c-green-2
+
+.nice-select
+	.list
+		border-radius: 0
+		margin-top: 1px
+		background-color: $c-gray-3
+	.option
+		border-bottom: 1px solid #DEDEDE
+		font-size: 14px
+		min-height: 30px
+		line-height: 30px
+		color: $c-gray-6
+		@extend .regular-text
+		&.focus,
+		&.selected.focus,
+		&:hover,
+		&.selected
+			background-color: #fff
+			color: $c-green-2
+			font-weight: normal
+
+/* END SELECT */
+
 
 /* BEGIN INPUT */
 .input
-	height: 41px
+	height: 46px
 	box-sizing: border-box
-	border: 1px solid $c-gray-3
+	border: 1px solid $c-gray-4
 	border-radius: 1px
-	padding: 5px 11px 0
+	padding: 0 11px
 	font-size: 14px
 	color: $c-gray-8
-	line-height: 1
+	line-height: 46px
+	vertical-align: middle
 	@extend .regular-text
 .input_width_100
 	width: 100%
+.input_search
+	padding-top: 0
+	height: 41px
+	line-height: 41px
 /* END INPUT */
 
 
 
 
+/* BEGIN SLIDES */
+.slides
+	display: inline-block
+	width: 24px
+	height: 24px
+	background-color: $c-green-2
+	vertical-align: middle
+	position: relative
+	&:after
+		content: ''
+		position: absolute
+		width: 5px
+		height: 5px
+		top: 8px
+		left: 9px
+		border-bottom: 1px solid #fff
+		border-right: 1px solid #fff
+		+transform(rotate(45deg))
+/* END SLIDES */
 
 
 @import "template/header.sass"
@@ -597,7 +776,7 @@ body
 	border-bottom: 1px solid #DEDEDE
 .sidebar__link
 	display: block
-	padding: 15px 0 4px 25px
+	padding: 10px 0 9px 25px
 	box-sizing: border-box
 	text-decoration: none
 	font-size: 16px
@@ -626,21 +805,65 @@ body
 .filter
 	background-color: $c-gray-2
 	margin-top: 10px
-	padding: 40px 30px
+	padding: 32px 30px
 	box-sizing: border-box
 .filter__line
+	margin-top: 14px
 	+clearfix
 .filter__side
 	float: left
 .filter__side_left
 	width: 198px/($width-content - 60px) *$p
+	padding: 16px 0 0 2px
+	box-sizing: border-box
 .filter__side_right
 	width: 570px/($width-content - 60px) *$p
 /* END FILTER */
 
 /* BEGIN POSTS */
 .posts
-	margin-top: 20px
+	margin: 40px 0 43px
+	&:last-child
+		.post
+			&:last-child
+				border-bottom: 0
+.posts__title
+	margin: 0
+	font-size: 26px
+	font-weight: normal
+.post
+	padding: 30px 0 20px
+	border-bottom: 1px solid $c-gray-3
+.post__title
+	margin: 0
+	font-size: 24px
+	font-weight: normal
+.post__date
+	display: block
+.post__text
+	margin-top: 23px
+.post__paragraph
+	margin: 15px 0 0
+.post__all
+	margin-top: 7px
+	display: inline-block
+	text-decoration: none
+	color: $c-green-2
+	position: relative
+	&:hover
+		color: $c-green-3
+		&:after
+			border-color: $c-green-3
+	&:after
+		content: ''
+		position: absolute
+		top: 3px
+		right: -17px
+		width: 7px
+		height: 7px
+		border-bottom: 1px solid $c-green-2
+		border-right: 1px solid $c-green-2
+		+transform(rotate(45deg))
 
 /* END POSTS */
 
@@ -650,7 +873,6 @@ body
 	width: $width-content/$width *$p
 .content__title
 	margin: 0
-	padding-left: 4px
 	font-size: 32px
 	font-weight: normal
 /* END CONTENT */
@@ -661,6 +883,282 @@ body
 	+clearfix
 /* END CONTENT-SIDEBAR */
 
+
+
+
+/* BEGIN REPORT */
+.report
+	margin: 35px 0 30px
+	+clearfix
+.report__year
+	float: left
+	width: 70px/$width-content *$p
+	padding-top: 15px
+.report__year-number
+	font-size: 24px
+.report__docs
+	float: left
+	width: 758px/$width-content *$p
+	font-size: 0
+.report__doc
+	display: inline-block
+	width: 24.6%
+	text-align: center
+	padding: 0 20px
+	margin-bottom: 15px
+	box-sizing: border-box
+.report__link
+	display: block
+	color: $c-green-2
+	text-decoration: none
+.report__icon
+	font-size: 56px
+.report__doc-text
+	font-size: 16px
+	margin: 5px 0 0
+/* END REPORT */
+
+
+
+/* BEGIN REPORTS */
+.reports
+	margin: 50px 0 30px
+	padding-bottom: 10px
+	border-bottom: 1px solid $c-gray-3
+	&:last-child
+		border-bottom: 0
+.reports__title
+	margin: 0
+	font-size: 26px
+	font-weight: normal
+	line-height: 1.2
+/* END REPORTS */
+
+
+
+
+
+/* BEGIN WORK-SEC-1*/
+.work-sec-1
+	padding: 27px 0 47px
+.work-sec-1__title
+	line-height: 1
+	text-align: center
+.work-sec-1__title-img
+	display: inline-block
+	background-image: url('img/plant.jpg')
+	background-repeat: no-repeat
+	background-position: center center
+	background-size: cover
+	border-radius: 50%
+	width: 75px
+	height: 75px
+	vertical-align: middle
+	margin-right: 10px
+.work-sec-1__title-text
+	margin: 0
+	font-size: 32px
+	font-weight: normal
+	display: inline-block
+	padding-top: 5px
+	color: $c-gray-8
+	vertical-align: middle
+	line-height: 1
+.work-sec-1__text
+	margin: 10px 0 0
+	font-size: 18px
+	padding: 0 18%
+	box-sizing: border-box
+	line-height: 1.165
+.work-sec-1__hr
+	margin: 24px auto 0
+	width: 852px/$width *$p
+.work-sec-1_top
+	margin-top: 32px
+/* END WORK-SEC-1*/
+
+
+/* BEGIN SLIDER-WORKS */
+.slider-works__item
+	padding: 20px 0
+	+clearfix
+.slider-works__title
+	padding-top: 5px
+	margin: 0
+	margin-left: -13px
+	font-size: 32px
+	font-weight: normal
+.slider-works__title-icon
+	font-size: 56px
+	vertical-align: middle
+.slider-works__title-text
+	display: inline-block
+	vertical-align: middle
+	padding-top: 17px
+.slider-works__description
+	margin: 5px 0 12px
+.slider-works__text
+	margin: 17px 0 10px
+.slider-works__link
+	display: block
+	margin: 0 0 14px
+	text-decoration: none
+	&:hover
+		color: $c-green-3
+		.slider-works__slides
+			background-color: $c-green-3
+.slider-works__slides
+	margin-right: 15px
+/* END SLIDER-WORKS */
+
+
+/* BEGIN WORK-SEC-2 */
+.work-sec-2
+	padding: 43px 0 33px
+.work-sec-2__title
+	position: relative
+	+clearfix
+.work-sec-2__hr
+	position: absolute
+	z-index: 0
+	top: 16px
+.work-sec-2__h2
+	float: left
+	position: relative
+	z-index: 2
+	background-color: $c-gray-1
+	padding-right: 10px
+	box-sizing: border-box
+.work-sec-2__nav
+	float: right
+	position: relative
+	z-index: 2
+	background-color: $c-gray-1
+	padding-top: 4px
+	+clearfix
+.work-sec-2__prev,
+.work-sec-2__next
+	float: left
+	display: block
+	height: 30px
+	width: 30px
+	margin: 0 8px
+	background-color: #DEDEDE
+	cursor: pointer
+.work-sec-2__next
+	margin-right: 0
+.work-sec-2__navbar
+	+clearfix
+.work-sec-2__navbar-item
+	float: left
+	text-align: center
+	width: 223px/$width *$p
+	background-color: $c-yellow-2
+	color: #fff
+	font-size: 18px
+	cursor: pointer
+	margin-right: 1px
+	padding: 5px 0 13px
+	box-sizing: border-box
+	&:last-child
+		margin-right: 0
+		width: 224px/$width *$p
+	&.active,
+	&:hover
+		background-color: $c-green-2
+.work-sec-2__navbar-icon
+	font-size: 40px
+	vertical-align: middle
+.work-sec-2__navbar-text
+	display: inline-block
+	padding-top: 10px
+	vertical-align: middle
+/* END WORK-SEC-2 */
+
+
+/* BEGIN WORK-SEC-3 */
+.work-sec-3
+	padding: 62px 0 57px
+	+clearfix
+.work-sec-3__h2
+	padding-top: 23px
+	margin-bottom: 9px
+/* END WORK-SEC-3 */
+
+/* BEGIN SLIDER-CULTURE */
+.slider-culture
+	margin-top: 6px
+.slider-culture__item
+	background-image: url('img/culture-slide1.jpg')
+	background-position: center center
+	background-size: cover
+	background-repeat: no-repeat
+	min-height: 168px
+	cursor: pointer
+	text-align: center
+	overflow: hidden
+	&:hover
+		.slider-culture__hover
+			+transform(translateY(0))
+.slider-culture__hover
+	height: 168px
+	+transform(translateY(100%))
+	+transition(all .5s ease-in-out)
+	background-color: $c-green-2
+	color: #fff
+	padding: 25px 15px 0
+	box-sizing: border-box
+.slider-culture__title
+	margin: 0
+	font-size: 20px
+	font-weight: normal
+	line-height: 1
+.slider-culture__text
+	margin: 10px 0 0
+	font-size: 14px
+
+.slider-culture__nav
+	text-align: right
+.slider-culture__prev,
+.slider-culture__next
+	width: 30px
+	height: 30px
+	display: inline-block
+	background-color: $c-gray-3
+.slider-culture__next
+	margin-left: 15px
+/* END SLIDER-CULTURE */
+
+
+/* BEGIN WORK-SEC-4 */
+.work-sec-4
+	padding: 46px 0 68px
+.work-sec-4__hr
+	margin: 10px auto 0
+	width: 455px/$width *$p
+.work-sec-4__description
+	margin: 17px 0 0
+	padding: 0 16%
+/* END WORK-SEC-4 */
+
+
+/* BEGIN WORK-SEC-5 */
+.work-sec-5
+	padding: 67px 0 59px
+	+clearfix
+.work-sec-5_h2
+	padding-top: 14px
+	margin-bottom: 6px
+/* END WORK-SEC-5 */
+
+
+/* BEGIN WORK-SEC-6 */
+.work-sec-6
+	padding: 63px 0 60px
+	+clearfix
+.work-sec-6__hr
+	margin-top: 9px
+/* END WORK-SEC-6 */
 
 
 //ALWAYS END

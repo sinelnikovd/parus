@@ -1,0 +1,202 @@
+extends ./template/template.jade
+
+block title
+	title Вся отчетность
+
+block content
+	// BEGIN SLIDE-TOP
+	.slide-top
+	// END SLIDE-TOP
+
+	// BEGIN SUB-MENU
+	.container
+		ul.sub-menu
+			li.sub-menu__item
+				a(href="#").sub-menu__link Подать заявку на участие
+			li.sub-menu__item
+				a(href="#").sub-menu__link Нормативные документы
+			li.sub-menu__item
+				a(href="#").sub-menu__link.active Закупки
+		.hr.hr_double
+	// END SUB-MENU
+
+	// BEGIN CONTENT-SIDEBAR 
+	.content-sidebar
+		.container
+			// BEGIN SIDEBAR 
+			.sidebar
+				a(href="#").sidebar__title.active Вся отчетность
+				ul.sidebar__menu
+					li.sidebar__item
+						a(href="#").sidebar__link ООО «Адыгейское»
+					li.sidebar__item
+						a(href="#").sidebar__link ООО «Егорлык»
+					li.sidebar__item
+						a(href="#").sidebar__link ООО «Романовское»
+					li.sidebar__item
+						a(href="#").sidebar__link ООО «Новатор»
+					li.sidebar__item
+						a(href="#").sidebar__link ОАО «Ленинский Путь»
+					li.sidebar__item
+						a(href="#").sidebar__link ООО «Кубань XXI век»
+					li.sidebar__item
+						a(href="#").sidebar__link ООО «АПК Кавказ»
+					li.sidebar__item
+						a(href="#").sidebar__link ООО «Северный»
+			// END SIDEBAR 
+			// BEGIN CONTENT 
+			.content
+				h1.content__title Отчетность
+				.filter
+					.filter__line
+						.filter__side.filter__side_left
+							label(for="").filter__label Введите ключевое слово
+						.filter__side.filter__side_right
+							input(type="text" placeholder="Например, пшеница").input.input_width_100
+					.filter__line
+						.filter__side.filter__side_left
+							label(for="").filter__label Выберите тип документа
+						.filter__side.filter__side_right
+							select(name="").select.wide.select_input
+								option(value="1") Все
+								option(value="1") Все
+								option(value="1") Все
+								option(value="1") Все
+					.filter__line
+						.filter__side.filter__side_left
+							label(for="").filter__label Выберите хозяйство
+						.filter__side.filter__side_right
+							select(name="").select.wide.select_input
+								option(value="1") Все
+								option(value="1") Все
+								option(value="1") Все
+								option(value="1") Все
+					.filter__line
+						.filter__side.filter__side_left
+							label(for="").filter__label Выберите год
+						.filter__side.filter__side_right
+							select(name="").select.wide.select_input
+								option(value="1") Все
+								option(value="1") Все
+								option(value="1") Все
+								option(value="1") Все
+					.filter__line
+						.filter__side.filter__side_left
+						.filter__side.filter__side_right
+							button(type="submit").button.button_green Искать
+								i.icon.icon_next.button_icon
+
+				.reports
+					h2.reports__title Отчетность ООО «Адыгейское»
+					.report
+						.report__year
+							span.report__year-number 2015
+						.report__docs
+							.report__doc
+								a(href="#").report__link
+									i.icon.icon_info.report__icon
+									p.report__doc-text Годовой отчет 2015 формат doc
+							.report__doc
+								a(href="#").report__link
+									i.icon.icon_info.report__icon
+									p.report__doc-text Годовой отчет 2015 формат doc
+							.report__doc
+								a(href="#").report__link
+									i.icon.icon_info.report__icon
+									p.report__doc-text Годовой отчет 2015 формат doc
+							.report__doc
+								a(href="#").report__link
+									i.icon.icon_info.report__icon
+									p.report__doc-text Годовой отчет 2015 формат doc
+							.report__doc
+								a(href="#").report__link
+									i.icon.icon_doc.report__icon
+									p.report__doc-text Годовой отчет 2015 формат doc
+							.report__doc
+								a(href="#").report__link
+									i.icon.icon_doc.report__icon
+									p.report__doc-text Годовой отчет 2015 формат doc
+					.report
+						.report__year
+							span.report__year-number 2014
+						.report__docs
+							.report__doc
+								a(href="#").report__link
+									i.icon.icon_info.report__icon
+									p.report__doc-text Годовой отчет 2014 формат doc
+							.report__doc
+								a(href="#").report__link
+									i.icon.icon_info.report__icon
+									p.report__doc-text Годовой отчет 2014 формат doc
+							.report__doc
+								a(href="#").report__link
+									i.icon.icon_info.report__icon
+									p.report__doc-text Годовой отчет 2014 формат doc
+							.report__doc
+								a(href="#").report__link
+									i.icon.icon_info.report__icon
+									p.report__doc-text Годовой отчет 2014 формат doc
+							.report__doc
+								a(href="#").report__link
+									i.icon.icon_doc.report__icon
+									p.report__doc-text Годовой отчет 2014 формат doc
+							.report__doc
+								a(href="#").report__link
+									i.icon.icon_doc.report__icon
+									p.report__doc-text Годовой отчет 2014 формат doc
+
+				.reports
+					h2.reports__title Отчетность ООО «Егорлык»
+					.report
+						.report__year
+							span.report__year-number 2015
+						.report__docs
+							.report__doc
+								a(href="#").report__link
+									i.icon.icon_info.report__icon
+									p.report__doc-text Годовой отчет 2015 формат doc
+							.report__doc
+								a(href="#").report__link
+									i.icon.icon_info.report__icon
+									p.report__doc-text Годовой отчет 2015 формат doc
+							.report__doc
+								a(href="#").report__link
+									i.icon.icon_info.report__icon
+									p.report__doc-text Годовой отчет 2015 формат doc
+							.report__doc
+								a(href="#").report__link
+									i.icon.icon_info.report__icon
+									p.report__doc-text Годовой отчет 2015 формат doc
+					.report
+						.report__year
+							span.report__year-number 2014
+						.report__docs
+							.report__doc
+								a(href="#").report__link
+									i.icon.icon_info.report__icon
+									p.report__doc-text Годовой отчет 2014 формат doc
+							.report__doc
+								a(href="#").report__link
+									i.icon.icon_info.report__icon
+									p.report__doc-text Годовой отчет 2014 формат doc
+							.report__doc
+								a(href="#").report__link
+									i.icon.icon_info.report__icon
+									p.report__doc-text Годовой отчет 2014 формат doc
+							.report__doc
+								a(href="#").report__link
+									i.icon.icon_info.report__icon
+									p.report__doc-text Годовой отчет 2014 формат doc
+							.report__doc
+								a(href="#").report__link
+									i.icon.icon_doc.report__icon
+									p.report__doc-text Годовой отчет 2014 формат doc
+							.report__doc
+								a(href="#").report__link
+									i.icon.icon_doc.report__icon
+									p.report__doc-text Годовой отчет 2014 формат doc
+
+			// END CONTENT 
+	// END CONTENT-SIDEBAR 
+	- var isGray = true
+	include ./template/vacancy-banner.jade

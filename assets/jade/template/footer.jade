@@ -11,16 +11,17 @@ footer
 					span.footer-head__phone-text +7 (4942) 360-249
 			.city.footer-head__city
 				span.city__name Кострома
-				select(name="city").select.select_no_bg.city_select
-					option(value="0") сменить
-					option(value="0") сменить
-					option(value="0") сменить
-					option(value="0") сменить
+				.city_select
+					select(name="city").select.select_no_bg
+						option(value="0") сменить
+						option(value="0") сменить
+						option(value="0") сменить
+						option(value="0") сменить
 			.footer-head__addres
 				i.icon.icon_addres.footer-head__icon-addres
 				span.footer-head__text-addres ул.Князева, д.2
 			form(action="/").search.footer-head__search
-				input(type="text" placeholder="Поиск по сайту").input.input_width_100
+				input(type="text" placeholder="Поиск по сайту").input.input_width_100.input_search
 				button(type="submit").search__button
 					i.icon.icon_search.search__icon
 	.footer-body
