@@ -30,34 +30,34 @@ block content
 
 
 	// BEGIN LEADERSHIP-SEC-1
-	.leadership-sec-1
+	.top-section
 		.container
 			.side.side_3070_left
 					img(src="img/leadership-top.jpg", alt="")
 			.side.side_3070_right
-				h1.leadership__title Руководство
+				h1.top-section__title Руководство
 				.hr.hr_double
-				p.leadership-sec-1__text Агропромышленный холдинг «Парус Агро Груп» был создан в 2009 году в Новокубанском районе Краснодарского края. Сегодня он входит в <span class="bold-text green-text">ТОП-10 крупнейших агрокомпаний Южного Федерального округа.</span> Группа управляет сельскохозяйственными активами в Краснодарском крае, Ставрополье и Адыгее.
-				//- TODO: Сделать один класс для таких ссылок
-				a(href="#").main-sec-2__link.regular-text
-					i.icon.icon_info.main-sec-2__icon
-					span.main-sec-2__link-text Годовой отчет 2014г
-				a(href="#").main-sec-2__link.regular-text
-					i.icon.icon_doc.main-sec-2__icon
-					span.main-sec-2__link-text Презентация в формате PDF
+				p.top-section__text Агропромышленный холдинг «Парус Агро Груп» был создан в 2009 году в Новокубанском районе Краснодарского края. Сегодня он входит в <span class="bold-text green-text">ТОП-10 крупнейших агрокомпаний Южного Федерального округа.</span> Группа управляет сельскохозяйственными активами в Краснодарском крае, Ставрополье и Адыгее.
+				a(href="#").link.regular-text
+					i.icon.icon_info.link__icon
+					span.link__text Годовой отчет 2014г
+				a(href="#").link.regular-text
+					i.icon.icon_doc.link__icon
+					span.link__text Презентация в формате PDF
 	// END LEADERSHIP-SEC-1
 
 	// BEGIN PERSONS 
 	.persons.section-gray
 		.container
-			.persons__head
-				h2.h2.h2_26.persons__h2 Руководящий состав <br>ООО «Адыгейское» Теучежский район
+			.head.head_center
+				h2.h2.h2_26.head_h2 Руководящий состав <br>ООО «Адыгейское» Теучежский район
 				.hr.hr_double
 			.persons__list
 				include ./template/persons-item.jade
 				include ./template/persons-item.jade
 				include ./template/persons-item.jade
 				include ./template/persons-item.jade
+				.person__description
 				include ./template/persons-item.jade
 				include ./template/persons-item.jade
 				include ./template/persons-item.jade

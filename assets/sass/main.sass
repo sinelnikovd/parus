@@ -476,6 +476,7 @@ img
 	padding: 0
 	list-style-type: none
 	position: absolute
+	z-index: 1
 	bottom: 0
 	left: 50%
 	+transform(translateX(-50%))
@@ -496,16 +497,13 @@ img
 
 
 /* BEGIN MAIN-SLIDER */
-.main-slider
+.main-slider-container
 	position: relative
 .main-slider__item
-	display: none
 	background-image: url('img/main-slider.jpg')
 	background-size: cover
 	background-position: center center
 	padding: 126px 0 132px
-	&.active
-		display: block
 .main-slider__block
 	background-image: url('img/slide_bg.png')
 	background-color: rgba(50, 147, 141, .76)
@@ -1362,41 +1360,46 @@ img
 /* END SECTION-3070 */
 
 
-/* BEGIN LEADERSHIP-SEC-1 */
-.leadership-sec-1
-	padding: 45px 0 51px
-	+clearfix
-.leadership__title
-	margin: 11px 0 3px
-	font-weight: normal
-	font-size: 32px
-	line-height: 1.2
-.leadership-sec-1__text
-	margin: 25px 0 0
-	line-height: 1.2
-/* END LEADERSHIP-SEC-1 */
 
 /* BEGIN PERSON-ITEM */
 .persons-item
-	float: left
-	margin-top: 20px
+	display: inline-block
+	margin: 20px 0 0
 	width: 25%
-	padding: 0 24px
+	padding: 13px
+	border: 2px solid transparent
 	box-sizing: border-box
+	font-size: 16px
+	cursor: pointer
+	text-align: left
+	&:hover,
+	&.active
+		border: 2px solid $c-green-2
+.persons-item__fio
+	margin: 25px 0 0
+	font-size: 20px
+	line-height: 1
+	color: $c-gray-8
+	border-bottom: 1px solid #DEDEDE
+	padding-bottom: 12px
+	box-sizing: border-box
+.persons-item__position
+	margin: 13px 0 0
+	font-size: 18px
+	line-height: 1.2
+.person__description
+	background-color: $c-gray-3
+	width: 100%
+	margin: 25px 0
+	height: 300px
+	display: none
 /* END PERSON-ITEM */
 
 /* BEGIN PERSONS */
 .persons
-	padding: 51px 0 40px
-.persons__head
-	text-align: center
-	width: 415px/$width *$p
-	margin: 0 auto
-.persons__h2
-	line-height: 27px
-	margin-bottom: 14px
+	padding: 30px 0 40px
 .persons__list
-	+clearfix
+	font-size: 0
 /* END PERSONS */
 
 

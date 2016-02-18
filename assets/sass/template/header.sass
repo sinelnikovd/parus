@@ -127,7 +127,17 @@
 /* BEGIN HEAD-BODY */
 .header-body
 	padding: 13px 0 0
+	border-bottom: 7px solid $c-green-2
 	+clearfix
+	&.fixed
+		width: 100%
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		z-index: 20
+		background-color: #fff
+		box-shadow: 0 1px 15px rgba(0,0,0,.3)
 .header-body__logo
 	float: left
 	width: $width-header-body__logo *$p
@@ -140,7 +150,6 @@
 /* BEGIN HEADER */
 header
 	position: relative
-	z-index: 2
+	z-index: 5
 	box-shadow: 0 1px 15px rgba(0,0,0,.3)
-	border-bottom: 7px solid $c-green-2
 /* END HEADER */
