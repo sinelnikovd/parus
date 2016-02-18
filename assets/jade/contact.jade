@@ -1,0 +1,67 @@
+extends ./template/template.jade
+
+block title
+	title Контакты
+
+block content
+	// BEGIN MAPS 
+	.maps#map
+	// END MAPS 
+
+	// BEGIN CONTACT 
+	.contact
+		.container
+			.side.side_3070_left
+				.head
+					h2.h2.h2_26.head_h2 Контактная информация
+					.hr.hr_double
+				dl.contact__list
+					dt.contact__key.green-text.bold-text Адрес:
+					dd.contact__value 127486, Москва, бульвар Бескудниковский, 57
+					dt.contact__key.green-text.bold-text Телефон:
+					dd.contact__value
+						a(href="tel:+7 965 255 55 66").contact__link +7 965 255 55 66
+						| , 
+						a(href="tel:+7 965 255 55 66").contact__link +7 902 205 55 77
+					dt.contact__key.green-text.bold-text E-mail:
+					dd.contact__value
+					a(href="mailto:info@parus.ru").contact__link info@parus.ru
+
+				h3.contact_h3 «Парус Агро Групп» в соцсетях:
+
+				ul.social
+					li.social__item
+						a(href="#").social__link
+							.social__bg
+							i.social-icon.social-icon_facebook.social__icon
+					li.social__item
+						a(href="#").social__link
+							.social__bg
+							i.social-icon.social-icon_twitter.social__icon
+					li.social__item
+						a(href="#").social__link
+							.social__bg
+							i.social-icon.social-icon_vimeo.social__icon
+			.side.side_3070_right
+				.head
+					h2.h2.h2_26.head_h2 Напишите нам, мы обязательно ответим!
+					.hr.hr_double
+				p.text Компания «Парус Агро Групп» придерживается принципа открытости информации. Мы с доверием относимся ко всем нашим потенециальным партнерам и с удовольствием ответим на все интересующие Вас  вопросы.
+				p.text Чтобы задать вопрос, заполните форму ниже. Для получения информации о условиях партнерской программы пожалуйста, передите на страницу Партнерам. Если Вы заинтересованы в работе в нашей компании, пожалуйста, перейдите на страницу Вакансии.
+
+				form(action="/").contact-form
+					.contact-form__line
+						.contact-form__control
+							input(type="text" placeholder="Ваше имя").input.input_width_100
+						.contact-form__control
+							input(type="text" placeholder="Ваш e-mail").input.input_width_100
+						.contact-form__control
+							input(type="text" placeholder="Ваш телефон").input.input_width_100.data-inputmask
+					.contact-form__line
+						textarea(rows="4" placeholder="Ваш вопрос").textarea
+					.contact-form__line
+						span Я не робот
+					.contact-form__line
+						button(type="submit").button.button_green Отправить
+							i.icon.icon_next.button_icon
+	// END CONTACT 

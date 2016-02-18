@@ -1,0 +1,189 @@
+extends ./template/template.jade
+
+block title
+	title О компании
+
+block content
+	// BEGIN SLIDE-TOP 
+	.slide-top(style="background-image: url('img/company.jpg')")
+	// END SLIDE-TOP 
+
+	// BEGIN SUB-MENU 
+	.container
+		ul.sub-menu
+			li.sub-menu__item
+				a(href="#").sub-menu__link.active О компании
+			li.sub-menu__item
+				a(href="#").sub-menu__link История
+			li.sub-menu__item
+				a(href="#").sub-menu__link Структура компании
+			li.sub-menu__item
+				a(href="#").sub-menu__link Руководство
+			li.sub-menu__item
+				a(href="#").sub-menu__link Персонал
+			li.sub-menu__item
+				a(href="#").sub-menu__link Земельный фонд
+			li.sub-menu__item
+				a(href="#").sub-menu__link Транспорт и логистика
+		.hr.hr_double
+	// END SUB-MENU 
+
+
+	// BEGIN TOP-SECTION
+	.top-section
+		.container
+			.side.side_3070_left
+					img(src="img/company-top.jpg", alt="")
+			.side.side_3070_right
+				h1.top-section__title О компании
+				.hr.hr_double
+				p.top-section__text Агропромышленный холдинг «Парус Агро Груп» был создан в 2009 году в Новокубанском районе Краснодарского края. Сегодня он входит в <span class="bold-text green-text">ТОП-10 крупнейших агрокомпаний Южного Федерального округа.</span> Группа управляет сельскохозяйственными активами в Краснодарском крае, Ставрополье и Адыгее.
+				a(href="#").link.regular-text
+					i.icon.icon_info.link__icon
+					span.link__text Годовой отчет 2014г
+				a(href="#").link.regular-text
+					i.icon.icon_doc.link__icon
+					span.link__text Презентация в формате PDF
+	// END TOP-SECTION
+
+	// BEGIN PARENT-TOP
+	.parent-top
+		.container
+			.hr.hr_double
+			.top
+				.top__item.top__item_5
+					h3.top__title
+						span.top_number 80 000
+						|  гектара
+					p.top__text Земельный фонд
+				.top__item.top__item_5
+					h3.top__title
+						span.top_number 210 000
+						|  тонн
+					p.top__text Складские мощности элеватора
+				.top__item.top__item_5
+					h3.top__title
+						span.top_number 7 500
+						|  голов
+					p.top__text Крупного рогатого скота
+				.top__item.top__item_5
+					h3.top__title
+						span.top_number 2 200
+						|  человек
+					p.top__text Постоянный штат компании
+				.top__item.top__item_5
+					h3.top__title
+						span.top_number 1 400
+						|  единиц
+					p.top__text Сельскохозяйственной техники
+	// END PARENT-TOP
+
+
+	// BEGIN SECTION-RADIAL
+	.section-radial.section-gray
+		.container
+			.head.head_center
+				h2.h2.h2_26.head_h2 Основные направления деятельности
+				.hr.hr_double
+			p.section-radial__description Агропромышленный холдинг «Парус Агро Групп» специализируется сразу в нескольких направлениях. Группа активно развивает как агро, так и животноводческое направление. 
+			.radial
+				.radial-item.radial-item_4
+					.radial-item__canvas-number
+						//-canvas.radial-item__canvas
+						img(src="img/canvas-radial4.png", alt="")
+						span.radial-item__number 40%
+					p.radial-item__title.green-text.bold-text Растениеводство
+				.radial-item.radial-item_4
+					.radial-item__canvas-number
+						//-canvas.radial-item__canvas
+						img(src="img/canvas-radial4.png", alt="")
+						span.radial-item__number 30%
+					p.radial-item__title.green-text.bold-text Животноводство
+				.radial-item.radial-item_4
+					.radial-item__canvas-number
+						//-canvas.radial-item__canvas
+						img(src="img/canvas-radial4.png", alt="")
+						span.radial-item__number 20%
+					p.radial-item__title.green-text.bold-text Семеноводство
+				.radial-item.radial-item_4
+					.radial-item__canvas-number
+						//-canvas.radial-item__canvas
+						img(src="img/canvas-radial4.png", alt="")
+						span.radial-item__number 10%
+					p.radial-item__title.green-text.bold-text Элеватор
+	// END SECTION-RADIAL
+
+	// BEGIN SECTION-DOUBLE
+	.section-double
+		.container
+			.side.side_50.side_50_left
+				.head
+					h2.h2.h2_26.head_h2 Основы успешного развития
+					.hr.hr_double
+				.accordion
+					.accordion__head.open
+						.accordion__slides
+							span.slides.slides_big.open
+						h3.accordion__title Благоприятные климатические условия и высокое плодородие почв
+					.accordion__body
+						p.accordion__text Одна из основ успешного развития холдинга – удачное географическое расположение земельных активов. Большая их часть приходится на Краснодарский край и Ставрополье – наиболее благоприятные для сельского хозяйства регионы России. Теплый климат и плодородные черноземные почвы в сумме дают стабильно
+						a(href="#").link.link_next далее
+					.accordion__head
+						.accordion__slides
+							span.slides.slides_big
+						h3.accordion__title Удачное географическое месторасположение
+					.accordion__body
+						p.accordion__text Одна из основ успешного развития холдинга – удачное географическое расположение земельных активов. Большая их часть приходится на Краснодарский край и Ставрополье – наиболее благоприятные для сельского хозяйства регионы России. Теплый климат и плодородные черноземные почвы в сумме дают стабильно
+						a(href="#").link.link_next далее
+					.accordion__head
+						.accordion__slides
+							span.slides.slides_big
+						h3.accordion__title Грамотно выбранная модель управления
+					.accordion__body
+						p.text Одна из основ успешного развития холдинга – удачное географическое расположение земельных активов. Большая их часть приходится на Краснодарский край и Ставрополье – наиболее благоприятные для сельского хозяйства регионы России. Теплый климат и плодородные черноземные почвы в сумме дают стабильно
+							a(href="#").link.link_next далее
+					.accordion__head
+						.accordion__slides
+							span.slides.slides_big
+						h3.accordion__title Контроль качества
+					.accordion__body
+						p.accordion__text Одна из основ успешного развития холдинга – удачное географическое расположение земельных активов. Большая их часть приходится на Краснодарский край и Ставрополье – наиболее благоприятные для сельского хозяйства регионы России. Теплый климат и плодородные черноземные почвы в сумме дают стабильно
+						a(href="#").link.link_next далее
+					.accordion__head
+						.accordion__slides
+							span.slides.slides_big
+						h3.accordion__title Современные высокопродуктивные технологии
+					.accordion__body
+						p.accordion__text Одна из основ успешного развития холдинга – удачное географическое расположение земельных активов. Большая их часть приходится на Краснодарский край и Ставрополье – наиболее благоприятные для сельского хозяйства регионы России. Теплый климат и плодородные черноземные почвы в сумме дают стабильно
+						a(href="#").link.link_next далее
+					.accordion__head
+						.accordion__slides
+							span.slides.slides_big
+						h3.accordion__title Компетентность и ответственность персонала
+					.accordion__body
+						p.accordion__text Одна из основ успешного развития холдинга – удачное географическое расположение земельных активов. Большая их часть приходится на Краснодарский край и Ставрополье – наиболее благоприятные для сельского хозяйства регионы России. Теплый климат и плодородные черноземные почвы в сумме дают стабильно
+						a(href="#").link.link_next далее
+			.side.side_50.side_50_right
+				img(src="img/company1.jpg", alt="")
+				.image-line
+					.image-line__left
+						img(src="img/company2.jpg", alt="")
+					.image-line__right
+						img(src="img/company3.jpg", alt="")
+	// END SECTION-DOUBLE
+
+	// BEGIN SECTION-3070
+	.section-3070.section-gray
+		.container
+			.side.side_3070_left
+				img(src="img/company4.jpg", alt="")
+			.side.side_3070_right
+				.head
+					h2.h2.h2_26.head_h2 Перспективы дальнейшего роста
+					.hr.hr_double
+				p.text Заняв прочное положение в десятке аграрных лидеров Юга России, холдинг «Парус Агро» продолжает развиваться. Одним из показателей поступательного развития является постоянное инвестирование средств в отдельные направления работы, управление и технику. Другой показатель – постоянно увеличение штата постоянных сотрудников Группы.
+				p.text.medium-text Целью холдинга является дальнейшее укрепление своих позиций и расширение своей ниши в мировом товарном сельскохозяйственном производстве. Для этого у «Парус Агро Групп» имеются все необходимые составляющие.
+				
+	// END SECTION-3070
+
+	include ./template/vacancy-banner.jade

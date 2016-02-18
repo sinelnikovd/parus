@@ -35,16 +35,25 @@ $(document).ready(function() {
 		nav: false,
 		items: 1,
 		autoHeight: true,
-		onChanged: function (event) {
-			console.log(event)
-		}
+		callbacks:true,
+
 	});
+
+	works.on( "changed.owl.carousel", function (event) {
+		//console.log()
+		$(".work-sec-2__navbar-item.active").removeClass('active');
+		$(".work-sec-2__navbar-item").eq(event.page.index).addClass('active');
+	})
 	$('.main-sec-2__nav_prev').click(function() {
-		mainSec2.trigger('prev.owl.carousel');
+		works.trigger('prev.owl.carousel');
 	})
 	$('.main-sec-2__nav_next').click(function() {
-		mainSec2.trigger('next.owl.carousel');
+		works.trigger('next.owl.carousel');
 	})
+
+	$('.work-sec-2__navbar-item').click(function () {
+		works.trigger('to.owl.carousel',[$(this).index(),500]);
+	});
 
 
 	//$('.size-item').mouseover();
@@ -63,6 +72,42 @@ $(document).ready(function() {
 
 
 	$('select').niceSelect();
+
+
+	$( ".accordion" ).accordion({collapsible:true,heightStyle:"content"});
+	$( ".accordion" ).accordion( "option", "icons", null );
+
+	$( ".accordion" ).on( "accordionbeforeactivate", function( event, ui ) {
+		ui.newHeader.addClass("open")
+		ui.newHeader.find(".slides").addClass("open")
+		ui.oldHeader.removeClass("open")
+		ui.oldHeader.find(".slides").removeClass("open")
+	});
+
+	ymaps.ready(initMap);
+	function initMap(){   
+		if($('div').is('#map')) {
+			var map = new ymaps.Map("map", {
+				center: [56.11601016, 37.57489343],
+				zoom: 12,
+				controls: ["smallMapDefaultSet"]
+			});
+
+			map.behaviors.disable(['scrollZoom']);
+
+			var Placemark = new ymaps.Placemark([56.11524292, 37.58553644], {
+				hintContent: '',
+				balloonContent: ''
+			}, {
+				iconLayout: 'default#image',
+				iconImageHref: 'img/map-marker.png',
+				iconImageSize: [29, 46],
+				iconImageOffset: [-15, -46]
+			});
+
+			map.geoObjects.add(Placemark);
+		}
+	}
 
 });
 

@@ -109,72 +109,6 @@ img
 	font-size: 26px
 /* END H2 */
 
-
-/* BEGIN TOP */
-.top
-	+clearfix
-.top__item
-	float: left
-	text-align: center
-	background-color: #f1f1f1
-	background-image: url('img/head_bg.png')
-.top__item_3
-	width: 293px/$width *$p
-	margin: 0 40px/$width *$p
-.top__title
-	margin: 0
-	background-color: $c-green-2
-	color: #fff
-	font-weight: normal
-	font-size: 22px
-	line-height: 1
-	padding: 10px 0 7px
-	box-sizing: border-box
-	position: relative
-	&:after
-		content: ''
-		position: absolute
-		width: 0
-		height: 0
-		top: 100%
-		left: 50%
-		+transform(translateX(-50%))
-		border-left: 10px solid transparent
-		border-right: 10px solid transparent
-		border-top: 8px solid $c-green-2
-.top_number
-	font-size: 28px
-.top__text
-	margin: 22px 0
-	padding: 0 20px
-	line-height: 21px
-	color: $c-green-3
-	box-sizing: border-box
-/* END TOP */
-
-
-
-
-/* BEGIN SIDE */
-.side
-	float: left
-	box-sizing: border-box
-.side_50
-	width: 50%
-.side_50_left
-	padding-right: 40px/$width *$p
-.side_50_right
-	padding-left: 40px/$width *$p
-.side_3070_left
-	padding-right: 25px/$width *$p
-	width: 365px/$width *$p
-.side_3070_right
-	padding-left: 25px/$width *$p
-	width: 755px/$width *$p
-/* END SIDE */
-
-
-
 /* BEGIN ICON */
 .icon
 	display: inline-block
@@ -208,8 +142,176 @@ img
 	content: 'k'
 .icon_plant5:before
 	content: 'l'
-
 /* END ICON */
+
+
+/* BEGIN SOCIAL-ICON */
+.social-icon
+	display: inline-block
+	font-family: "Social"
+	font-style: normal
+	font-weight: normal
+	font-variant: normal
+	line-height: 1
+	text-decoration: inherit
+	text-rendering: optimizeLegibility
+	text-transform: none
+	-moz-osx-font-smoothing: grayscale
+	-webkit-font-smoothing: antialiased
+	font-smoothing: antialiased
+.social-icon_facebook:before
+	content: '\f100'
+.social-icon_twitter:before
+	content: '\f101'
+.social-icon_vkontakte:before
+	content: '\f102'
+.social-icon_vimeo:before
+	content: '\f103'
+/* END SOCIAL-ICON */
+
+
+/* BEGIN LINK */
+.link
+	display: block
+	margin-top: 10px
+	color: $c-green-2
+	text-decoration: none
+	font-size: 16px
+	&:hover
+		color: $c-green-3
+.link__icon
+	top: 0
+	font-size: 21px
+	vertical-align: middle
+.link__text
+	display: inline-block
+	padding-top: 5px
+	margin-left: 5px
+	vertical-align: middle
+.link_next
+	margin-top: 7px
+	display: inline-block
+	text-decoration: none
+	color: $c-green-2
+	position: relative
+	&:hover
+		color: $c-green-3
+		&:after
+			border-color: $c-green-3
+	&:after
+		content: ''
+		position: absolute
+		top: 3px
+		right: -17px
+		width: 7px
+		height: 7px
+		border-bottom: 1px solid $c-green-2
+		border-right: 1px solid $c-green-2
+		+transform(rotate(45deg))
+/* END LINK */
+
+
+/* BEGIN TOP */
+.top
+	margin: 32px 0 39px
+	font-size: 0
+	+clearfix
+.top__item
+	float: left
+	text-align: center
+	background-color: #f1f1f1
+	background-image: url('img/head_bg.png')
+.top__item_3
+	width: 293px/$width *$p
+	margin: 0 40px/$width *$p
+.top__item_5
+	display: inline-block
+	width: 184px/$width *$p
+	margin: 0 25px/$width *$p
+	&:first-child
+		margin-left: 0
+	&:last-child
+		margin-right: 0
+.top__title
+	margin: 0
+	background-color: $c-green-2
+	color: #fff
+	font-weight: normal
+	font-size: 22px
+	line-height: 1
+	padding: 10px 0 7px
+	box-sizing: border-box
+	position: relative
+	&:after
+		content: ''
+		position: absolute
+		width: 0
+		height: 0
+		top: 100%
+		left: 50%
+		+transform(translateX(-50%))
+		border-left: 10px solid transparent
+		border-right: 10px solid transparent
+		border-top: 8px solid $c-green-2
+.top_number
+	font-size: 28px
+.top__text
+	font-size: 16px
+	margin: 22px 0
+	padding: 0 20px
+	line-height: 21px
+	color: $c-green-3
+	box-sizing: border-box
+/* END TOP */
+
+
+/* BEGIN TOP-SECTION */
+.top-section
+	padding: 45px 0 47px
+	+clearfix
+.top-section__title
+	margin: 10px 0 4px
+	font-size: 32px
+	font-weight: normal
+	line-height: 1.2
+.top-section__text
+	margin: 24px 0 0
+	font-size: 18px
+	line-height: 1.2
+/* END TOP-SECTION */
+
+
+
+
+/* BEGIN SIDE */
+.side
+	float: left
+	box-sizing: border-box
+.side_50
+	width: 50%
+.side_50_left
+	padding-right: 40px/$width *$p
+.side_50_right
+	padding-left: 40px/$width *$p
+.side_3070_left
+	padding-right: 25px/$width *$p
+	width: 365px/$width *$p
+.side_3070_right
+	padding-left: 25px/$width *$p
+	width: 755px/$width *$p
+/* END SIDE */
+
+
+/* BEGIN HEAD */
+.head_center
+	width: 415px/$width *$p
+	margin: 0 auto
+	text-align: center
+.head_h2
+	padding-top: 20px
+	margin-bottom: 7px
+/* END HEAD */
+
 
 
 /* BEGIN BUTTON */
@@ -309,6 +411,21 @@ img
 /* END INPUT */
 
 
+/* BEGIN TEXTAREA */
+.textarea
+	width: 100%
+	resize: none
+	box-sizing: border-box
+	border: 1px solid $c-gray-4
+	border-radius: 1px
+	padding: 0 11px
+	font-size: 14px
+	color: $c-gray-8
+	line-height: 46px
+	vertical-align: middle
+	@extend .regular-text
+/* END TEXTAREA */
+
 
 
 /* BEGIN SLIDES */
@@ -329,6 +446,24 @@ img
 		border-bottom: 1px solid #fff
 		border-right: 1px solid #fff
 		+transform(rotate(45deg))
+		+transition(all .3s ease-in-out)
+	&.open
+		background-color: $c-green-1
+		&:after
+			top: 10px
+			+transform(rotate(-135deg))
+
+.slides_big
+	width: 32px
+	height: 32px
+	&:after
+		width: 7px
+		height: 7px
+		left: 11px
+		top: 10px
+	&.open
+		&:after
+			top: 15px
 /* END SLIDES */
 
 
@@ -524,23 +659,7 @@ img
 	margin: 22px 0 0
 .main-sec-2__button
 	margin-top: 8px
-.main-sec-2__link
-	display: block
-	margin-top: 10px
-	color: $c-green-2
-	text-decoration: none
-	font-size: 16px
-	&:hover
-		color: $c-green-3
-.main-sec-2__icon
-	top: 0
-	font-size: 21px
-	vertical-align: middle
-.main-sec-2__link-text
-	display: inline-block
-	padding-top: 5px
-	margin-left: 5px
-	vertical-align: middle
+
 
 .main-sec-2__nav
 	position: absolute
@@ -940,7 +1059,7 @@ img
 
 /* BEGIN WORK-SEC-1*/
 .work-sec-1
-	padding: 27px 0 47px
+	padding: 27px 0 8px
 .work-sec-1__title
 	line-height: 1
 	text-align: center
@@ -973,8 +1092,6 @@ img
 .work-sec-1__hr
 	margin: 24px auto 0
 	width: 852px/$width *$p
-.work-sec-1_top
-	margin-top: 32px
 /* END WORK-SEC-1*/
 
 
@@ -1142,14 +1259,7 @@ img
 /* END WORK-SEC-4 */
 
 
-/* BEGIN WORK-SEC-5 */
-.work-sec-5
-	padding: 67px 0 59px
-	+clearfix
-.work-sec-5_h2
-	padding-top: 14px
-	margin-bottom: 6px
-/* END WORK-SEC-5 */
+
 
 
 /* BEGIN WORK-SEC-6 */
@@ -1160,6 +1270,215 @@ img
 	margin-top: 9px
 /* END WORK-SEC-6 */
 
+
+
+
+/* BEGIN RADIAL */
+.radial
+	margin: 40px 0 0
+	+clearfix
+.radial-item_4
+	float: left
+	width: 25%
+	padding: 0 57px/$width *$p
+	box-sizing: border-box
+.radial-item__canvas-number
+	position: relative
+.radial-item__number
+	position: absolute
+	font-size: 42px
+	z-index: 2
+	top: 55px
+	left: 50%
+	+transform(translateX(-50%))
+.radial-item__title
+	text-align: center
+	margin: 10px 0 0
+/* END RADIAL */
+
+
+/* BEGIN SECTION-RADIAL */
+.section-radial
+	padding: 26px 0 40px
+.section-radial__description
+	margin: 25px 0 0
+	padding: 0 16.5%
+	box-sizing: border-box
+/* END SECTION-RADIAL */
+
+/* BEGIN ACARDION */
+.accordion
+	padding-top: 18px
+.accordion__head
+	padding: 7px 0
+	border-bottom: 1px solid #DEDEDE
+	+clearfix
+	&.open
+		border-bottom: 0
+		padding: 7px 0 0
+.accordion__slides
+	float: left
+	width: 10%
+.accordion__title
+	float: left
+	width: 90%
+	margin: 3px 0 0
+	font-size: 20px
+	font-weight: normal
+.accordion__body
+	padding: 0 0 18px 10%
+	box-sizing: border-box
+	border-bottom: 1px solid #DEDEDE
+.accordion__text
+	margin: 10px 0 0
+/* END ACARDION */
+
+/* BEGIN SECTION-DOUBLE */
+.section-double
+	padding: 55px 0 51px
+	+clearfix
+/* END SECTION-DOUBLE */
+
+
+/* BEGIN IMAGE-LINE */
+.image-line
+	margin-top: 22px
+	+clearfix
+.image-line__left,
+.image-line__right
+	width: 50%
+	float: left
+	box-sizing: border-box
+.image-line__left
+	padding-right: 14px/($width/2 - 40) *$p
+.image-line__right
+	padding-left: 14px/($width/2 - 40) *$p
+/* END IMAGE-LINE */
+
+/* BEGIN SECTION-3070 */
+.section-3070
+	padding: 67px 0 59px
+	+clearfix
+/* END SECTION-3070 */
+
+
+/* BEGIN LEADERSHIP-SEC-1 */
+.leadership-sec-1
+	padding: 45px 0 51px
+	+clearfix
+.leadership__title
+	margin: 11px 0 3px
+	font-weight: normal
+	font-size: 32px
+	line-height: 1.2
+.leadership-sec-1__text
+	margin: 25px 0 0
+	line-height: 1.2
+/* END LEADERSHIP-SEC-1 */
+
+/* BEGIN PERSON-ITEM */
+.persons-item
+	float: left
+	margin-top: 20px
+	width: 25%
+	padding: 0 24px
+	box-sizing: border-box
+/* END PERSON-ITEM */
+
+/* BEGIN PERSONS */
+.persons
+	padding: 51px 0 40px
+.persons__head
+	text-align: center
+	width: 415px/$width *$p
+	margin: 0 auto
+.persons__h2
+	line-height: 27px
+	margin-bottom: 14px
+.persons__list
+	+clearfix
+/* END PERSONS */
+
+
+
+/* BEGIN MAPS */
+.maps
+	height: 395px
+/* END MAPS */
+
+
+/* BEGIN SOCIAL */
+.social
+	margin: 25px 0 0
+	padding: 0
+	list-style-type: none
+.social__item
+	display: inline-block
+	margin-right: 10px
+.social__link
+	text-decoration: none
+	color: $c-gray-3
+	&:hover
+		color: $c-gray-4
+.social__icon
+	position: relative
+	font-size: 36px
+	text-shadow: 0 1px 0 $c-gray-5
+	&:before
+		position: relative
+		z-index: 2
+	&:after
+		content: ''
+		position: absolute
+		z-index: 0
+		width: 80%
+		height: 80%
+		top: 5%
+		left: 5%
+		background-color: $c-gray-5
+
+/* END SOCIAL */
+
+
+/* BEGIN CONTACT-FORM */
+.contact-form
+	margin-top: 40px
+.contact-form__line
+	margin-top: 10px
+	+clearfix
+.contact-form__control
+	float: left
+	width: 33.333333%
+	padding: 0 5px
+	box-sizing: border-box
+	&:first-child
+		padding-left: 0
+	&:last-child
+		padding-right: 0
+/* END CONTACT-FORM */
+
+
+/* BEGIN CONTACT */
+.contact
+	padding: 52px 0 50px
+	+clearfix
+.contact__list
+	margin: 21px 0 0
+	padding: 0
+.contact__value
+	margin: 5px 0
+.contact__link
+	text-decoration: none
+	color: $c-gray-6
+	&:hover
+		color: $c-green-3
+.contact_h3
+	margin: 40px 0 0
+	font-size: 22px
+	font-weight: normal
+
+
+/* END CONTACT */
 
 //ALWAYS END
 @import "_media.sass"
