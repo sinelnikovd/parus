@@ -99,7 +99,7 @@ $(document).ready(function() {
 		ui.oldHeader.find(".slides").removeClass("open")
 	});
 
-	ymaps.ready(initMap);
+	/*ymaps.ready(initMap);
 	function initMap(){   
 		if($('div').is('#map')) {
 			var map = new ymaps.Map("map", {
@@ -122,7 +122,7 @@ $(document).ready(function() {
 
 			map.geoObjects.add(Placemark);
 		}
-	}
+	}*/
 
 
 /*	var mhtop = 0;
@@ -132,10 +132,88 @@ $(document).ready(function() {
 	});*/
 
 
-	var map = new google.maps.Map(document.getElementById('land-map'), {
-		center: {lat: 45.212021, lng: 36.839866},
-		scrollwheel: false,
-		zoom: 8
+	function initMap() {
+		var map = new google.maps.Map(document.getElementById('map'), {
+			center: {lat: 45.047543, lng: 38.983568},
+			scrollwheel: false,
+			zoom: 8
+		});
+
+		var infowindow = new google.maps.InfoWindow({
+			content: '<div class = "map__info">127486, Москва бульвар Бескудниковский, 57</div>',
+			pixelOffset: 0
+		});
+
+		var marker = new google.maps.Marker({
+			map: map,
+			position: {lat: 45.047543, lng: 38.983568},
+			title: 'Hello World!',
+			icon: { url: 'img/map-marker.png', size: new google.maps.Size(44, 72)}
+		});
+		marker.addListener('click', function() {
+			infowindow.open(map, marker);
+		});
+
+
+	}
+
+
+	if($('div').is('#map')) {
+		initMap();
+	}
+
+	/*function toggleBounce() {
+		/*if (marker.getAnimation() !== null) {
+			marker.setAnimation(null);
+		} else {
+			marker.setAnimation(google.maps.Animation.BOUNCE);
+		}
+	}*/
+
+	if($('div').is('#land-map')) {
+		var mapLand = new google.maps.Map(document.getElementById('land-map'), {
+			center: {lat: 45.212021, lng: 36.839866},
+			scrollwheel: false,
+			zoom: 8
+		});
+	}
+
+
+	function moveBlockLeader (indx, blockWidth) {
+		var ctxWidth = $('.persons__list').outerWidth(),
+				countBlockInLine = Math.floor(ctxWidth / blockWidth),
+				lineNumber = Math.floor(indx / countBlockInLine)+1,
+				position = countBlockInLine * lineNumber;
+
+		if(position > $('.persons-item').length) position = $('.persons-item').length
+		console.log(position)
+		$('.person-description').insertAfter($('.persons-item').eq(position-1));
+	}
+
+	function personDescriptionClose (ths) {
+		ths.removeClass('active');
+		ths.find('.link_next').removeClass('active');
+		$('.person-description').slideUp();
+	}
+
+	$('.persons-item').click(function () {
+		if($(this).hasClass('active')){
+			personDescriptionClose($(this));
+		}else{
+			$('.persons-item.active .link_next.active').removeClass('active');
+			$('.persons-item.active').removeClass('active');
+			$(this).addClass('active');
+			$(this).find('.link_next').addClass('active');
+			var el = $(this);
+			$('.person-description').slideUp(400,function () {
+				moveBlockLeader(el.index('.persons-item'),el.outerWidth());
+			});
+			$('.person-description').slideDown();
+		}
+	});
+
+	$('.person-description__close').click(function () {
+		personDescriptionClose($('.persons-item.active'));
 	});
 
 

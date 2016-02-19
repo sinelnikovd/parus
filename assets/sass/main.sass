@@ -99,6 +99,8 @@ img
 	border-bottom: 1px solid $c-gray-3
 	height: 5px
 	box-sizing: border-box
+.hr_ccc
+	border-color: $c-gray-4
 /* END HR */
 
 /* BEGIN H2 */
@@ -107,6 +109,8 @@ img
 	margin: 0
 .h2_26
 	font-size: 26px
+.h2_20
+	font-size: 20px
 /* END H2 */
 
 /* BEGIN ICON */
@@ -208,6 +212,11 @@ img
 		border-bottom: 1px solid $c-green-2
 		border-right: 1px solid $c-green-2
 		+transform(rotate(45deg))
+		+transition(all .5s ease-in-out)
+	&.active
+		&:after
+			top: 7px
+			+transform(rotate(-135deg))
 /* END LINK */
 
 
@@ -1404,13 +1413,37 @@ img
 	margin: 13px 0 0
 	font-size: 18px
 	line-height: 1.2
-.person__description
+/* END PERSON-ITEM */
+
+/* BEGIN PERSON-DESCRIPTION */
+.person-description
 	background-color: $c-gray-3
 	width: 100%
 	margin: 25px 0
-	height: 300px
 	display: none
-/* END PERSON-ITEM */
+	padding: 50px 48px
+	box-sizing: border-box
+	position: relative
+	+clearfix
+.person-description__text
+	font-size: 16px
+.person-description__h2
+	color: $c-gray-8
+.person-description__position
+	margin: 3px 0 10px
+	font-size: 18px
+.person-description__text
+	margin: 21px 0 0
+.person-description__close
+	position: absolute
+	display: inline-block
+	top: 10px
+	right: 10px
+	width: 10px
+	height: 10px
+	background-color: #666
+	cursor: pointer
+/* END PERSON-DESCRIPTION */
 
 /* BEGIN PERSONS */
 .persons
@@ -1424,6 +1457,9 @@ img
 /* BEGIN MAPS */
 .maps
 	height: 395px
+.map__info
+	background-color: $c-green-3
+
 /* END MAPS */
 
 
