@@ -125,8 +125,18 @@ $(document).ready(function() {
 	}
 
 
+/*	var mhtop = 0;
 
-	
+	$('.top__item').each(function () {
+		if($(this).outerHeight() > mhtop) mhtop = $(this).outerHeight();
+	});*/
+
+
+	var map = new google.maps.Map(document.getElementById('land-map'), {
+		center: {lat: 45.212021, lng: 36.839866},
+		scrollwheel: false,
+		zoom: 8
+	});
 
 
 
@@ -154,6 +164,11 @@ $(document).ready(function() {
 			$('.header-head').css('margin-bottom',0)
 		}
 	});
+
+
+
+
+
 
 });
 

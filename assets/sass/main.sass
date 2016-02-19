@@ -1275,23 +1275,39 @@ img
 .radial
 	margin: 40px 0 0
 	+clearfix
+.radial-item
+	box-sizing: border-box
 .radial-item_4
 	float: left
 	width: 25%
 	padding: 0 57px/$width *$p
-	box-sizing: border-box
+.radial-item_3
+	float: left
+	width: 33.3333333%
+	padding: 0 20px/$width *$p
 .radial-item__canvas-number
 	position: relative
+	text-align: center
 .radial-item__number
 	position: absolute
 	font-size: 42px
 	z-index: 2
-	top: 55px
-	left: 50%
-	+transform(translateX(-50%))
+	top: 60px
+	left: 0
+	right: 0
+	text-align: center
+	//+transform(translateX(-50%))
+.radial-item__number_small
+	top: 67px
+	font-size: 28px
+	color: $c-green-3
 .radial-item__title
 	text-align: center
 	margin: 10px 0 0
+.radial-item__text
+	margin: 10px 0 0
+	text-align: center
+
 /* END RADIAL */
 
 
@@ -1310,6 +1326,7 @@ img
 .accordion__head
 	padding: 7px 0
 	border-bottom: 1px solid #DEDEDE
+	cursor: pointer
 	+clearfix
 	&.open
 		border-bottom: 0
@@ -1482,6 +1499,122 @@ img
 
 
 /* END CONTACT */
+
+
+
+/* BEGIN LAND-MAPS */
+.land-maps
+	height: 605px
+	background-color: $c-green-2
+/* END LAND-MAPS */
+
+
+/* BEGIN TABLE */
+.table
+	margin-top: 36px
+	width: 100%
+.td
+	padding: 10px
+	box-sizing: border-box
+	text-align: center
+	border: 1px solid #fff
+.tr_gray
+	background-color: #f0f2ea
+.td_number,
+.td_th
+	text-align: left
+
+.td_th
+	font-weight: normal
+
+.thead-1
+	background-color: $c-gray-1
+.thead-2
+	background-color: $c-gray-3
+.tfoot,
+.tr_green
+	background-color: $c-green-1
+/* END TABLE */
+
+
+/* BEGIN DIAGRAM */
+.diagram
+	float: left
+	width: 50%
+	margin-top: 65px
+	padding: 0 90px/$width *$p
+	box-sizing: border-box
+.diagram__canvas
+	margin-top: 30px
+	position: relative
+	text-align: center
+.diagram__center-text
+	position: absolute
+	margin: 0
+	top: 57px
+	left: 50%
+	width: 80px
+	height: 90px
+	font-size: 12px
+	padding-top: 20px
+	+transform(translateX(-50%))
+	box-sizing: border-box
+.diagram__number
+	font-size: 14px
+	display: block
+	@extend .regular-text
+
+.diagram-maps
+	margin: 13px 0 0
+	padding: 0 40px/(($width/2)-180) *$p
+	list-style-type: none
+.diagram-maps__color
+	display: inline-block
+	width: 12px
+	height: 12px
+	margin-right: 15px
+.diagram-maps__color_yellow_1
+	background-color: $c-yellow-1
+.diagram-maps__color_yellow_2
+	background-color: $c-yellow-3
+.diagram-maps__color_yellow_3
+	background-color: $c-yellow-4
+/* END DIAGRAM */
+
+/* BEGIN DIAGRAMS */
+.diagrams
+	+clearfix
+
+/* END DIAGRAMS */
+
+
+/* BEGIN CHART-MAP */
+.chart-map
+	margin: 20px 0 0
+	padding: 0
+	list-style-type: none
+.chart-map__item
+	margin: 10px 0
+.chart-map__color
+	display: inline-block
+	width: 18px
+	height: 18px
+	margin-right: 15px
+	vertical-align: middle
+.chart-map__color_green_1
+	background-color: $c-green-2
+.chart-map__color_green_2
+	background-color: $c-green-3
+/* END CHART-MAP */
+
+/* BEGIN SECTION-TABEL */
+.section-tabel
+	padding: 22px 0 58px
+.section-tabel__description
+	margin: 13px 0 0
+	padding: 0 17%
+	text-align: center
+/* END SECTION-TABEL */
 
 //ALWAYS END
 @import "_media.sass"

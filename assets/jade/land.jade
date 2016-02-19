@@ -1,0 +1,351 @@
+extends ./template/template.jade
+
+block title
+	title Земельный фонд
+
+block content
+	// BEGIN SLIDE-TOP 
+	.slide-top
+	// END SLIDE-TOP 
+
+	// BEGIN SUB-MENU 
+	.container
+		ul.sub-menu
+			li.sub-menu__item
+				a(href="#").sub-menu__link О компании
+			li.sub-menu__item
+				a(href="#").sub-menu__link История
+			li.sub-menu__item
+				a(href="#").sub-menu__link Структура компании
+			li.sub-menu__item
+				a(href="#").sub-menu__link Руководство
+			li.sub-menu__item
+				a(href="#").sub-menu__link Персонал
+			li.sub-menu__item
+				a(href="#").sub-menu__link.active Земельный фонд
+			li.sub-menu__item
+				a(href="#").sub-menu__link Транспорт и логистика
+		.hr.hr_double
+	// END SUB-MENU 
+
+
+	// BEGIN LEADERSHIP-SEC-1
+	.top-section
+		.container
+			.side.side_3070_left
+					img(src="img/land-top.jpg", alt="")
+			.side.side_3070_right
+				h1.top-section__title Земельный фонд
+				.hr.hr_double
+				p.top-section__text Основной актив и главное достояние «Парус Агро Груп» – это обширный земельный фонд. Он включает земли, расположенные на территории трех субъектов федерации – <span class="bold-text green-text">Краснодарского и Ставропольского краев, Республики Адыгея.</span> Большая часть земель приходится на наиболее благоприятные для ведения сельского хозяйства районы.
+
+				a(href="#").link.regular-text
+					i.icon.icon_info.link__icon
+					span.link__text Годовой отчет 2014г
+				a(href="#").link.regular-text
+					i.icon.icon_doc.link__icon
+					span.link__text Презентация в формате PDF
+	// END LEADERSHIP-SEC-1
+
+
+	// BEGIN PARENT-TOP
+	.parent-top
+		.container
+			.hr.hr_double
+			.top
+				.top__item.top__item_3
+					h3.top__title
+						span.top_number 80 000
+						|  гектара
+					p.top__text Общая площадь земельного банка «Парус Агро Групп»
+				.top__item.top__item_3
+					h3.top__title
+						span.top_number ТОП-30
+					p.top__text Холдинг входит в ТОП-30 крупнейших операторов земельных банков России
+				.top__item.top__item_3
+					h3.top__title
+						span.top_number ТОП-5
+					p.top__text Группа входит в ТОП-5 крупнейших держателей пахотных земель в Кубани
+	// END PARENT-TOP
+
+	// BEGIN LAND-MAPS 
+	.land-maps#land-map
+
+	// END LAND-MAPS 
+
+	// BEGIN SECTION-DOUBLE
+	.section-double
+		.container
+			.side.side_50.side_50_left
+				.head
+					h2.h2.h2_26.head_h2 Преимущества земельных активов
+					.hr.hr_double
+				.accordion
+					.accordion__head.open
+						.accordion__slides
+							span.slides.slides_big.open
+						h3.accordion__title Благоприятные природные условия
+					.accordion__body
+						p.accordion__text Большинство земель холдинга – высокоплодородные черноземы. В сочетании с преимущественно благоприятным климатом это обеспечивает стабильно высокую урожайность культур. Земельные
+						a(href="#").link.link_next далее
+					.accordion__head
+						.accordion__slides
+							span.slides.slides_big
+						h3.accordion__title Удачное географическое месторасположение
+					.accordion__body
+						p.accordion__text Большинство земель холдинга – высокоплодородные черноземы. В сочетании с преимущественно благоприятным климатом это обеспечивает стабильно высокую урожайность культур. Земельные
+						a(href="#").link.link_next далее
+					.accordion__head
+						.accordion__slides
+							span.slides.slides_big
+						h3.accordion__title Многообразие видов
+					.accordion__body
+						p.text Большинство земель холдинга – высокоплодородные черноземы. В сочетании с преимущественно благоприятным климатом это обеспечивает стабильно высокую урожайность культур. Земельные
+							a(href="#").link.link_next далее
+			.side.side_50.side_50_right
+				img(src="img/land1.jpg", alt="")
+	// END SECTION-DOUBLE
+
+	// BEGIN SECTION-RADIAL
+	.section-radial.section-gray
+		.container
+			.head.head_center
+				h2.h2.h2_26.head_h2 Использование земельных активов «Парус Агро Груп» по отраслям
+				.hr.hr_double
+			.radial
+				.radial-item.radial-item_3
+					.radial-item__canvas-number
+						//-canvas.radial-item__canvas
+						img(src="img/canvas-radial3.png", alt="")
+						span.radial-item__number.radial-item__number_small 70 000Га
+					p.radial-item__title.green-text.bold-text Растениеводство
+					p.radial-item__text Выращивание пшеницы, ячменя, подсолнечника, кукурузы, сахарной свеклы - более 70000Га.
+				.radial-item.radial-item_3
+					.radial-item__canvas-number
+						//-canvas.radial-item__canvas
+						img(src="img/canvas-radial3.png", alt="")
+						span.radial-item__number.radial-item__number_small 4000Га
+					p.radial-item__title.green-text.bold-text Животноводство
+					p.radial-item__text Разведение крупного рогатого скота и свиней - более 4000Га.
+				.radial-item.radial-item_3
+					.radial-item__canvas-number
+						//-canvas.radial-item__canvas
+						img(src="img/canvas-radial3.png", alt="")
+						span.radial-item__number.radial-item__number_small 700Га
+					p.radial-item__title.green-text.bold-text Семеноводство
+					p.radial-item__text Выращивание и испытание оригинальных устойчивых сортов пшеницы, ячменя, кукурузы - более 700Га.
+	// END SECTION-RADIAL
+
+	// BEGIN SECTION-TABEL
+	.section-tabel
+		.container
+			.head.head_center
+				h2.h2.h2_26.head_h2 Структура землепользования
+				.hr.hr_double
+			p.section-tabel__description Структура по годам наглядно показываеет прирост землепользования по краям и областям. Заняв прочное положение в десятке аграрных лидеров Юга России, холдинг «Парус Агро» продолжает развиваться.
+			table.table
+				thead
+					tr.thead-1
+						td.td(colspan=2)
+						td.td(colspan=2) Всего площадь земель, Га
+						td.td(colspan=2) В собственности, Га
+						td.td(colspan=2) В аренде, Га
+					tr.thead-2
+						td.td(colspan=2)
+						td.td 2013 год
+						td.td 2014 год
+						td.td 2013 год
+						td.td 2014 год
+						td.td 2013 год
+						td.td 2014 год
+
+				tfoot.tfoot
+					tr
+						td.td
+						th.td.td_th.medium-text Всего земель в пользовании 
+						td.td.medium-text 74 326
+						td.td.medium-text 78 259
+						td.td.medium-text 74 326
+						td.td.medium-text 78 259
+						td.td.medium-text 74 326
+						td.td.medium-text 78 259
+
+				tbody
+					tr.tr.tr_green
+						td.td.td_number.bold-text 1.
+						th.td.td_th.medium-text Республика Адыгея
+						td.td.medium-text 2 739
+						td.td.medium-text 2 805
+						td.td.medium-text 2 739
+						td.td.medium-text 2 805
+						td.td.medium-text 2 739
+						td.td.medium-text 2 805
+
+					tr.tr.tr_gray
+						td.td.td_number 1.1
+						th.td.td_th Теучежский район ООО «Адыгейское»
+						td.td 2 739
+						td.td 3 120
+						td.td 2 739
+						td.td 3 120
+						td.td 2 739
+						td.td 3 120
+
+
+					tr.tr.tr_green
+						td.td.td_number.bold-text 2
+						th.td.td_th.medium-text Ставропольский край
+						td.td.medium-text 12 565
+						td.td.medium-text 14 505
+						td.td.medium-text 12 565
+						td.td.medium-text 14 505
+						td.td.medium-text 12 565
+						td.td.medium-text 14 505
+
+					tr.tr.tr_gray
+						td.td.td_number 2.1
+						th.td.td_th Изобильненский район ООО «Егорлык»
+						td.td 5 046
+						td.td 6 048
+						td.td 5 046
+						td.td 6 048
+						td.td 5 046
+						td.td 6 048
+
+					tr
+						td.td.td_number 2.2
+						th.td.td_th Шпаковский район ООО «Романовское»
+						td.td 7 523
+						td.td 7 902
+						td.td 7 523
+						td.td 7 902
+						td.td 7 523
+						td.td 7 902
+
+					tr.tr.tr_green
+						td.td.td_number.bold-text 3
+						th.td.td_th.medium-text Краснодарский край
+						td.td.medium-text 59 023
+						td.td.medium-text 60 018
+						td.td.medium-text 59 023
+						td.td.medium-text 60 018
+						td.td.medium-text 59 023
+						td.td.medium-text 60 018
+
+					tr.tr.tr_gray
+						td.td.td_number 3.1
+						th.td.td_th Новокубанский район ООО «Новатор»
+						td.td 25 623
+						td.td 25 623
+						td.td 25 623
+						td.td 25 623
+						td.td 25 623
+						td.td 25 623
+
+					tr
+						td.td.td_number 3.2
+						th.td.td_th Новокубанский район ОАО ОПХ ПЗ «Ленинский Путь»
+						td.td 45 675
+						td.td 45 675
+						td.td 45 675
+						td.td 45 675
+						td.td 45 675
+						td.td 45 675
+
+					tr.tr.tr_gray
+						td.td.td_number 3.3
+						th.td.td_th Отрадненский район ООО «Кубань XXI век»
+						td.td 0
+						td.td 10
+						td.td 0
+						td.td 10
+						td.td 0
+						td.td 10
+
+					tr
+						td.td.td_number 3.4
+						th.td.td_th Курганинский район ООО «АПК Кавказ»
+						td.td 456
+						td.td 1 106
+						td.td 456
+						td.td 1 106
+						td.td 456
+						td.td 1 106
+
+					tr.tr.tr_gray
+						td.td.td_number 3.5
+						th.td.td_th Курганинский район ООО «Северный»
+						td.td 1 106
+						td.td 2 106
+						td.td 1 106
+						td.td 2 106
+						td.td 1 106
+						td.td 2 106
+
+
+			.diagrams
+				.diagram
+					.head
+						h2.h2.h2_26.head_h2 Структура землепользования, 2014
+						.hr.hr_double
+					.diagram__canvas
+						//- canvas.diagram__diagram
+						img(src="img/diagram1.png", alt="")
+						p.diagram__center-text
+							span.diagram__number 89 303 Га
+							| общий земельный фонд
+					ul.diagram-maps
+						li.diagram-maps__item
+							span.diagram-maps__color.diagram-maps__color_yellow_1
+							| 82,6% = 73 788Га - Краснодарский край
+						li.diagram-maps__item
+							span.diagram-maps__color.diagram-maps__color_yellow_2
+							| 14,5% = 12 967Га - Ставропольский край
+						li.diagram-maps__item
+							span.diagram-maps__color.diagram-maps__color_yellow_3
+							| 2,8% = 2 548Га - Республика Адыгея
+
+				.diagram
+					.head
+						h2.h2.h2_26.head_h2 Структура землепользования, 2016
+						.hr.hr_double
+					.diagram__canvas
+						//- canvas.diagram__diagram
+						img(src="img/diagram1.png", alt="")
+						p.diagram__center-text
+							span.diagram__number 89 303 Га
+							| общий земельный фонд
+					ul.diagram-maps
+						li.diagram-maps__item
+							span.diagram-maps__color.diagram-maps__color_yellow_1
+							| 82,6% = 73 788Га - Краснодарский край
+						li.diagram-maps__item
+							span.diagram-maps__color.diagram-maps__color_yellow_2
+							| 14,5% = 12 967Га - Ставропольский край
+						li.diagram-maps__item
+							span.diagram-maps__color.diagram-maps__color_yellow_3
+							| 2,8% = 2 548Га - Республика Адыгея
+	// END SECTION-TABEL
+
+
+	// BEGIN WORK-SEC-6 
+	.work-sec-6.section-gray
+		.container
+			.side.side_3070_left
+				h2(style="white-space: nowrap").h2.h2_26 Динамика посевных площадей
+				.hr.hr_double.work-sec-6__hr
+				p.text Предусматривающий применение комбинированных схем различных препаратов ведущих мировых производителей: Syngenta, Bayer, BASF. Их инновационные средства защиты, полученные в результате передовых научных разработок, позволяют оптимизировать
+				ul.chart-map
+					li.chart-map__item
+						span.chart-map__color.chart-map__color_green_1
+						| - земля в аренде
+					li.chart-map__item
+						span.chart-map__color.chart-map__color_green_2
+						| - земля в собственности
+
+
+			.side.side_3070_right
+				img(src="img/graph1.png", alt="")
+	// END WORK-SEC-6 
+
+	include ./template/vacancy-banner.jade
