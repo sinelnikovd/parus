@@ -132,35 +132,8 @@ $(document).ready(function() {
 	});*/
 
 
-	function initMap() {
-		var map = new google.maps.Map(document.getElementById('map'), {
-			center: {lat: 45.047543, lng: 38.983568},
-			scrollwheel: false,
-			zoom: 8
-		});
-
-		var infowindow = new google.maps.InfoWindow({
-			content: '<div class = "map__info">127486, Москва бульвар Бескудниковский, 57</div>',
-			pixelOffset: 0
-		});
-
-		var marker = new google.maps.Marker({
-			map: map,
-			position: {lat: 45.047543, lng: 38.983568},
-			title: 'Hello World!',
-			icon: { url: 'img/map-marker.png', size: new google.maps.Size(44, 72)}
-		});
-		marker.addListener('click', function() {
-			infowindow.open(map, marker);
-		});
 
 
-	}
-
-
-	if($('div').is('#map')) {
-		initMap();
-	}
 
 	/*function toggleBounce() {
 		/*if (marker.getAnimation() !== null) {
