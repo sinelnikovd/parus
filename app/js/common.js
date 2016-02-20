@@ -143,13 +143,13 @@ $(document).ready(function() {
 		}
 	}*/
 
-	if($('div').is('#land-map')) {
+	/*if($('div').is('#land-map')) {
 		var mapLand = new google.maps.Map(document.getElementById('land-map'), {
 			center: {lat: 45.212021, lng: 36.839866},
 			scrollwheel: false,
 			zoom: 8
 		});
-	}
+	}*/
 
 
 	function moveBlockLeader (indx, blockWidth) {
