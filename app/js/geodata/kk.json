@@ -18,7 +18,10 @@
 			"NAME_LAT": "Krasnodarskij kraj",
 			"AREA": 75510.907953826303128,
 			"ADM3_ID": -1059500.0,
-			"ADM3_NAME": "Южный федеральный округ"
+			"ADM3_NAME": "Южный федеральный округ",
+			"contentInfoBubble": "Краснодарский край",
+			"positionInfoBubbleLat": 44.989221,
+			"positionInfoBubbleLng": 38.284991
 		},
 		"geometry": {
 			"type": "MultiPolygon",

@@ -1,98 +1,105 @@
+var map;
+var InfoBubbles = [];
+
 function initLandMap() {
-	var map = new google.maps.Map(document.getElementById('land-map'), {
+	map = new google.maps.Map(document.getElementById('land-map'), {
 		center: {lat: 45.047543, lng: 38.983568},
 		//center: {lat: -28, lng: 137},
 		scrollwheel: false,
 		zoom: 7
 	});
 
+
+
 	map.data.loadGeoJson('js/geodata/kk.json');
+	map.data.loadGeoJson('js/geodata/kk_dist.json');
 	map.data.loadGeoJson('js/geodata/ra.json');
+	map.data.loadGeoJson('js/geodata/ra_dist.json');
 	map.data.loadGeoJson('js/geodata/sk.json');
-	map.data.setStyle({
+	map.data.loadGeoJson('js/geodata/sk_dist.json');
+	map.data.setStyle(function (feature) {
+		var visible = feature.getProperty("isDistrikt") == true ? false : true;
+		if(visible){
+			var content = '<div class="infobubble__content" onclick=\'showDistrict('+feature.getProperty("ID")+')\'>'+feature.getProperty('contentInfoBubble')+'</div>',
+				opiton = new optionsInfoBubble(map, content, new google.maps.LatLng(feature.getProperty('positionInfoBubbleLat'), feature.getProperty('positionInfoBubbleLng'))),
+				featureInfoBubble = new InfoBubble(opiton.getOptions());
+			featureInfoBubble.open();
+		}else{
+			var content = '<div class="infobubble__content" >'+feature.getProperty('contentInfoBubble')+'</div>',
+				opiton = new optionsInfoBubble(map, content, new google.maps.LatLng(feature.getProperty('positionInfoBubbleLat'), feature.getProperty('positionInfoBubbleLng'))),
+				featureInfoBubble = new InfoBubble(opiton.getOptions());
+		}
+		InfoBubbles.push(featureInfoBubble);
+		//console.log(visible);
+		return {
 			fillColor: 'DarkGreen',
 			fillOpacity: 0.3,
 			strokeColor: 'OliveDrab',
-			strokeWeight: 2
+			strokeWeight: 2,
+			visible: visible
+		};
 	});
 
-
-	var kkInfoBubble =  new InfoBubble(optionsInfoBubble(map, "Краснодарский край", new google.maps.LatLng(44.989221, 38.284991)));
+	
+	
+	
+	/*var regionKrasnodarOpiton = new regionOptionsInfoBubble(map, "Краснодарский край", new google.maps.LatLng(44.989221, 38.284991));
+	var kkInfoBubble =  new InfoBubble(regionKrasnodarOpiton.getOptions());
 	kkInfoBubble.open();
-	var raInfoBubble =  new InfoBubble(optionsInfoBubble(map, "Республика Адыгея", new google.maps.LatLng(44.433934, 40.135837)));
+
+	var regionAdgeyaOpiton = new regionOptionsInfoBubble(map, "Республика Адыгея", new google.maps.LatLng(44.433934, 40.135837));
+	var raInfoBubble =  new InfoBubble(regionAdgeyaOpiton.getOptions());
 	raInfoBubble.open();
-	var skInfoBubble =  new InfoBubble(optionsInfoBubble(map, "Ставропольский край", new google.maps.LatLng(45.340825, 41.846772)));
-	skInfoBubble.open();
+
+	var regionStavropolOpiton = new regionOptionsInfoBubble(map, "Ставропольский край", new google.maps.LatLng(45.340825, 41.846772));
+	var skInfoBubble =  new InfoBubble(regionStavropolOpiton.getOptions());
+	skInfoBubble.open();*/
+
+
 
 	map.data.addListener('click', function(event) {
-		showDistrict(1);
-		map.data.setStyle({visible: false});
+		if(!event.feature.getProperty('isDistrikt')){
+			showDistrict(event.feature.getProperty('ID'));
+		}
+	//	map.data.setStyle({visible: false});
 		//map.data.overrideStyle(event.feature, {strokeWeight: 8, visible: true});
 		//console.log(event.feature.getProperty('letter'));
-		map.data.loadGeoJson('js/geodata/kk.json');
 	});
 
-/**
-	var infoBubble = new InfoBubble({
-		map: map,
-		content: '<div class="map__info">127486, Москва, бульвар Бескудниковский, 57</div>',
-		shadowStyle: 1,
-		padding: 10,
-		backgroundColor: '#6c9141',
-		borderRadius: 0,
-		borderWidth: 0,
-		borderColor: '#000',
-		disableAutoPan: true,
-		//hideCloseButton: true,
-		closeSrc: 'img/infoBubbleClose.png',
-		backgroundClassName: 'transparent',
-		arrowPosition: 50,
-		arrowSize: 0,
-		arrowStyle: 0
-	});
-
-
-/*
-	var marker = new google.maps.Marker({
-		map: map,
-		position: {lat: 45.047543, lng: 38.983568},
-		title: 'Hello World!',
-		icon: { url: 'img/map-marker.png', size: new google.maps.Size(44, 72)}
-	});
-
-	map.addListener('click', function() {
-		if(infoBubble.isOpen()){
-			infoBubble.close();
-		}
-	});
-
-	marker.addListener('click', function() {
-		infoBubble.open(map, marker);
-	});
-*/
 
 }
 
-function optionsInfoBubble(map, title, position) {
-	return {
+function optionsInfoBubble(map, content, position) {
+	this.options = {
 		map: map,
-		content: '<div class="map__info" onclick=\'showDistrict(1)\'>'+title+'</div>',
+		content: content,
 		position: position,
 		shadowStyle: 1,
-		padding: 10,
+		padding: 0,
 		backgroundColor: '#6c9141',
 		borderRadius: 0,
 		borderWidth: 0,
 		borderColor: '#000',
 		disableAutoPan: true,
 		hideCloseButton: true,
-		backgroundClassName: 'transparent',
+		backgroundClassName: 'infobubble',
 		arrowPosition: 50,
 		arrowSize: 10,
 		arrowStyle: 0
 	};
 }
+optionsInfoBubble.prototype.getOptions = function() {
+	return this.options;
+}
+
+
+
 
 function showDistrict(id) {
-	console.log('sdasds')
+	map.data.setStyle(function(feature) {
+		var visible = feature.getProperty("ADM4_ID") == id ? true : false;
+		return {
+			visible: visible
+		};
+	});
 }
