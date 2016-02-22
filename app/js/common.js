@@ -37,7 +37,28 @@ $(document).ready(function() {
 		loop: true,
 		margin: 20,
 		nav: false,
-		items: 5
+		items: 5,
+		responsive : {
+		// breakpoint from 0 up
+		0 : {
+			items: 1
+		},
+		320: {
+			items: 1
+		},
+		// breakpoint from 480 up
+		480 : {
+			items: 2
+		},
+		// breakpoint from 768 up
+		768 : {
+			items: 3
+		},
+		992 : {
+			items: 5
+		}
+
+}
 	})
 	$('.main-sec-2__nav_prev').click(function() {
 		mainSec2.trigger('prev.owl.carousel');
@@ -99,58 +120,6 @@ $(document).ready(function() {
 		ui.oldHeader.find(".slides").removeClass("open")
 	});
 
-	/*ymaps.ready(initMap);
-	function initMap(){   
-		if($('div').is('#map')) {
-			var map = new ymaps.Map("map", {
-				center: [56.11601016, 37.57489343],
-				zoom: 12,
-				controls: ["smallMapDefaultSet"]
-			});
-
-			map.behaviors.disable(['scrollZoom']);
-
-			var Placemark = new ymaps.Placemark([56.11524292, 37.58553644], {
-				hintContent: '',
-				balloonContent: ''
-			}, {
-				iconLayout: 'default#image',
-				iconImageHref: 'img/map-marker.png',
-				iconImageSize: [29, 46],
-				iconImageOffset: [-15, -46]
-			});
-
-			map.geoObjects.add(Placemark);
-		}
-	}*/
-
-
-/*	var mhtop = 0;
-
-	$('.top__item').each(function () {
-		if($(this).outerHeight() > mhtop) mhtop = $(this).outerHeight();
-	});*/
-
-
-
-
-
-	/*function toggleBounce() {
-		/*if (marker.getAnimation() !== null) {
-			marker.setAnimation(null);
-		} else {
-			marker.setAnimation(google.maps.Animation.BOUNCE);
-		}
-	}*/
-
-	/*if($('div').is('#land-map')) {
-		var mapLand = new google.maps.Map(document.getElementById('land-map'), {
-			center: {lat: 45.212021, lng: 36.839866},
-			scrollwheel: false,
-			zoom: 8
-		});
-	}*/
-
 
 	function moveBlockLeader (indx, blockWidth) {
 		var ctxWidth = $('.persons__list').outerWidth(),
@@ -199,10 +168,10 @@ $(document).ready(function() {
 			elt = $('.header-head').outerHeight(),
 			elh = el.outerHeight();
 
-		if($(window).scrollTop() >= el.offset().top){
-			$('.header-body').addClass('fixed');
-			$('.header-head').css('margin-bottom',elh)
-		}
+	if($(window).scrollTop() >= el.offset().top){
+		$('.header-body').addClass('fixed');
+		$('.header-head').css('margin-bottom',elh)
+	}
 
 	$(window).scroll(function(){
 		if($(window).scrollTop() >= el.offset().top){
@@ -217,14 +186,51 @@ $(document).ready(function() {
 	});
 
 
+	function hideMenuItem () {
+		var sizeMainMenu = $('.main-menu').width(),
+		sizeItems = 0;
+
+		$('.main-menu__item').each(function () {
+			sizeItems += $(this).outerWidth(true);
+		});
 
 
+		if(sizeItems>sizeMainMenu){
+			$('.main-menu .main-menu__item:last-child').appendTo($('.slill__list'));
+			hideMenuItem();
+		}
+
+		return true;
+
+		//console.log(sizeMainMenu +' -- '+ sizeItems)
+
+	/*	while(sizeItems>sizeMainMenu){
+			console.log(sizeItems + '--' + sizeMainMenu);
+			
+			if(!$('.main-menu').hasClass('hide-item')){
+				$('.main-menu').addClass('hide-item');
+				$('.still').show();
+			}
+		}*/
+
+	}
+
+
+	$(window).resize(function () {
+
+	hideMenuItem ();
+
+	el = $('.header-body'),
+	elt = $('.header-head').outerHeight(),
+	elh = el.outerHeight();
+
+	})
 
 
 });
 
 	//SVG Fallback
-if (!Modernizr.svg) {
+/*if (!Modernizr.svg) {
 	// wrap this in a closure to not expose any conflicts
 	(function() {
 		// grab all images. getElementsByTagName works with IE5.5 and up
@@ -237,4 +243,4 @@ if (!Modernizr.svg) {
 			}
 		}
 	})();
-}
+}*/

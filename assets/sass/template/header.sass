@@ -79,13 +79,22 @@
 /* END MAIN-SUB-MENU */
 
 /* BEGIN MAIN-MENU */
+.main-menu-container
+	box-sizing: border-box
+	+clearfix
 .main-menu
 	list-style-type: none
 	margin: 0
 	padding: 10px 0 0
+	width: 100%
+	//font-size: 0
 	+clearfix
+	&.hide-item
+		float: left
+		width: 90%
 .main-menu__item
-	display: inline-block
+	float: left
+	//display: inline-block
 	font-size: 16px
 	&:first-child
 		.main-menu__link
@@ -117,7 +126,7 @@
 		&>.main-sub-menu
 			display: block
 .main-menu__link
-	padding: 10px 8px 18px
+	padding: 10px 9px 18px
 	display: inline-block
 	color: $c-gray-6
 	text-decoration: none
@@ -140,11 +149,11 @@
 		box-shadow: 0 1px 15px rgba(0,0,0,.3)
 .header-body__logo
 	float: left
-	width: $width-header-body__logo *$p
+	width: $width-header-body__logo/$width *$p
 .header-body__main-menu
 	float: left
-	width: $width-header-body__main-menu *$p
-	margin-left: 25px/$width *$p
+	width: $width-header-body__main-menu/$width *$p
+	padding-left: 30px/$width *$p
 /* END HEAD-BODY */
 
 /* BEGIN HEADER */

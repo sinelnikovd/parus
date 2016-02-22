@@ -1,20 +1,222 @@
 /*==========  Desktop First Method  ==========*/
 
 /* Large Devices, Wide Screens */
-@media only screen and (max-width : 1200px)
-	/**/
+@media only screen and (max-width : 1150px)
+	.container
+		box-sizing: border-box
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-	/**/
+	/* BEGIN MAIN-SLIDER */
+	.main-slider__block
+		width: 50%
+	/* END MAIN-SLIDER */
+
+	/* BEGIN SIZE */
+	.size-item__title
+		font-size: 24px
+	.size-item__hr
+		margin-bottom: 15px
+	/* END SIZE */
+
+	/* BEGIN FOOTER */
+	.footer-head__phone
+		width: 235px/$width *$p
+	.footer-head__addres
+		width: 225px/$width *$p
+	/* END FOOTER */
+
+	/*BEGIN WORK*/
+	.work-sec-1__text
+		padding: 0 10%
+	.work-sec-2__navbar
+		display: none
+
+	.work-sec-4__description
+		padding: 0 10%
+
+	/*END WORK*/
+
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-	/**/
+	/* BEGIN SIDE */
+	.side_50
+		float: none
+		width: 100%
+		padding: 0
+	.side_3070_left,
+	.side_3070_right
+		float: none
+		width: 100%
+		padding: 0
+	/* END SIDE */
+
+	/* BEGIN HEADER */
+	.header-head__side
+		float: none
+		width: 100%
+		margin: 0
+		text-align: center
+	.header-head__title
+		margin: 0
+	.logo
+		width: 40%
+	.main-menu
+		display: none
+		width: 50%
+	/* END HEADER */
+
+	/* BEGIN MAIN-SLIDER */
+	.main-slider__block
+		width: 75%
+	/* END MAIN-SLIDER */
+
+	/* BEGIN SIZE */
+	.size-item
+		width: 50%
+	.size-item__title
+		font-size: 32px
+	/* END SIZE */
+
+	/* BEGIN MAIN-SEC-2 */
+	.main-sec-2__slide
+		img
+			width: 100%
+	.main-sec-2__nav_next
+		right: 0
+	/* END MAIN-SEC-2 */
+
+	/* BEGIN MAIN-NEWS */
+	.main-sec-3__side_right,
+	.main-sec-3__side_left
+		width: 100%
+		float: none
+	/* END MAIN-NEWS */
+
+
+	/* BEGIN VACANCY */
+	.vacancy-banner__side
+		width: 100%
+		float: none
+	.vacancy-banner__side_right
+		text-align: left
+	/* END VACANCY */
+
+	/* BEGIN FOOTER */
+	.footer-head__logo
+		width: 100%
+		text-align: center
+	.footer-head__phone
+		width: 33.3333%
+		text-align: center
+	.footer-head__city
+		width: 33.3333%
+	.footer-head__addres
+		width: 33.33333%
+	.footer-head__search
+		width: 50%
+		float: none
+		margin: 0 auto
+	.footer-head__clearfix
+		display: block
+
+	/* END FOOTER */
+
+	/* BEGIN COPYRIGHT */
+	.copyright__description
+		margin: 0
+		width: 100%
+	/* END COPYRIGHT */
+	
+	/* BEGIN TOP */
+	.top__item
+		float: none
+		width: 100%
+		margin: 0 0 20px
+		padding-bottom: 22px
+	/* END TOP */
+
+	/*BEGIN WORK*/
+	.work-sec-1__text
+		padding: 0 5%
+	.work-sec-2__navbar
+		display: none
+	.slider-works__title
+		margin: 0
+	.work-sec-4__description
+		padding: 0 5%
+	/*END WORK*/
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	/**/
+	/* BEGIN HEADER */
+	.logo,
+	.main-menu
+		width: 100%
+		float: none
+		text-align: center
+	.main-menu
+		display: none
+	/* END HEADER */
+
+	/* BEGIN MAIN-SLIDER */
+	.main-slider__item
+		padding-bottom: 160px
+
+	.main-slider__block
+		width: 100%
+	.main-slider-nav__item
+		width: 100%
+	/* END MAIN-SLIDER */
+
+	/* BEGIN SIZE */
+	.size-item
+		float: none
+		width: 100%
+	.size-item__title
+		font-size: 32px
+	/* END SIZE */
+
+	/* BEGIN MAIN-NEWS */
+	.news-article
+		width: 100%
+		float: none
+		&:first-child,
+		&:last-child
+			padding: 0
+	/* END MAIN-NEWS */
+
+	/* BEGIN FOOTER */
+	.footer-head__logo,
+	.footer-head__phone,
+	.footer-head__city,
+	.footer-head__addres,
+	.footer-head__search
+		width: 100%
+		float: none
+		text-align: center
+	.footer-head__clearfix
+		display: none
+	/* END FOOTER */
+
+	/*BEGIN WORK*/
+	.work-sec-1__text
+		padding: 0
+	.work-sec-4__description
+		padding: 0
+	/*END WORK*/
+
+
+	/* BEGIN CONTACT */
+	.contact-form__control
+		float: none
+		width: 100%
+		padding: 0
+		margin-top: 10px
+	/* END CONTACT */
+
+
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
