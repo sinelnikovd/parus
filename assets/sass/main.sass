@@ -235,9 +235,11 @@ img
 	width: 293px/$width *$p
 	margin: 0 40px/$width *$p
 .top__item_5
+	float: none
 	display: inline-block
 	width: 184px/$width *$p
 	margin: 0 25px/$width *$p
+	vertical-align: top
 	&:first-child
 		margin-left: 0
 	&:last-child
@@ -272,6 +274,8 @@ img
 	line-height: 21px
 	color: $c-green-3
 	box-sizing: border-box
+.top__text_item_5
+	padding: 0 10px
 /* END TOP */
 
 
@@ -901,7 +905,7 @@ img
 	border-bottom: 1px solid #DEDEDE
 .sidebar__link
 	display: block
-	padding: 10px 0 9px 25px
+	padding: 10px 25px 9px 25px
 	box-sizing: border-box
 	text-decoration: none
 	font-size: 16px
@@ -944,6 +948,8 @@ img
 	box-sizing: border-box
 .filter__side_right
 	width: 570px/($width-content - 60px) *$p
+.filter__label
+	padding-right: 10px
 /* END FILTER */
 
 /* BEGIN POSTS */
@@ -1136,6 +1142,47 @@ img
 /* END SLIDER-WORKS */
 
 
+/* BEGIN NAVIGATION-SLIDER */
+.navigation-slider
+	position: relative
+	z-index: 2
+	background-color: $c-gray-1
+	padding-top: 4px
+	+clearfix
+.navigation-slider__prev,
+.navigation-slider__next
+	float: left
+	display: block
+	height: 30px
+	width: 30px
+	margin: 0 8px
+	background-color: #DEDEDE
+	cursor: pointer
+	position: relative
+	&:after
+		content: ''
+		position: absolute
+		top: 11px
+		width: 7px
+		height: 7px
+		+transform(rotate(45deg))
+	&:hover
+		&:after
+			border-color: $c-gray-8
+.navigation-slider__next
+	margin-right: 0
+	&:after
+		left: 10px
+		border-top: 1px solid #fff
+		border-right: 1px solid #fff
+.navigation-slider__prev
+	&:after
+		left: 12px
+		border-bottom: 1px solid #fff
+		border-left: 1px solid #fff
+/* END NAVIGATION-SLIDER */
+
+
 /* BEGIN WORK-SEC-2 */
 .work-sec-2
 	padding: 43px 0 33px
@@ -1240,17 +1287,10 @@ img
 .slider-culture__text
 	margin: 10px 0 0
 	font-size: 14px
-
+.slider-culture__navigation
+	+clearfix
 .slider-culture__nav
-	text-align: right
-.slider-culture__prev,
-.slider-culture__next
-	width: 30px
-	height: 30px
-	display: inline-block
-	background-color: $c-gray-3
-.slider-culture__next
-	margin-left: 15px
+	float: right
 /* END SLIDER-CULTURE */
 
 
@@ -1398,6 +1438,7 @@ img
 	font-size: 16px
 	cursor: pointer
 	text-align: left
+	text-align: center
 	&:hover,
 	&.active
 		border: 2px solid $c-green-2
@@ -1409,10 +1450,16 @@ img
 	border-bottom: 1px solid #DEDEDE
 	padding-bottom: 12px
 	box-sizing: border-box
+	text-align: left
 .persons-item__position
 	margin: 13px 0 0
 	font-size: 18px
 	line-height: 1.2
+	text-align: left
+.persons-item__link
+	margin: 0
+	padding: 0
+	text-align: left
 /* END PERSON-ITEM */
 
 /* BEGIN PERSON-DESCRIPTION */
@@ -1441,8 +1488,9 @@ img
 	right: 10px
 	width: 10px
 	height: 10px
-	background-color: #666
 	cursor: pointer
+	color: #666
+	font-size: 16px
 /* END PERSON-DESCRIPTION */
 
 /* BEGIN PERSONS */

@@ -1,5 +1,6 @@
-.persons-item
+.persons-item(data-description = "person-description-"+ personDescriptionIdex)
 	img(src="img/person.jpg", alt="").persons-item__photo
 	p.persons-item__fio Максим Владимирович Полетаев
 	p.persons-item__position Первый заместитель Председателя Правления
-	a(href="#").link.link_next Подробнее
+	p.persons-item__link
+		a(href="javascript:;").link.link_next Подробнее

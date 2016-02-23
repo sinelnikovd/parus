@@ -37,6 +37,28 @@
 
 	/*END WORK*/
 
+	/* BEGIN SIDEBAR */
+	.sidebar
+		float: left
+		width: 282px/$width *$p
+		margin-right: 10px/$width *$p
+	/* END SIDEBAR */
+
+
+	/* BEGIN TOP */
+	.top
+		text-align: center
+	.top__item_5
+		width: 250px/$width *$p
+		margin: 10px 25px/$width *$p 0
+	/* END TOP */
+
+	/* BEGIN SECTION-RADIAL */
+	.radial-item__number
+		top: 50%
+		+transform(translateY(-45%))
+	/* END SECTION-RADIAL */
+
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
@@ -130,11 +152,18 @@
 	/* END COPYRIGHT */
 	
 	/* BEGIN TOP */
-	.top__item
+	.top__item_3
 		float: none
 		width: 100%
 		margin: 0 0 20px
 		padding-bottom: 22px
+	.top__item_5
+		width: 500px/$width *$p
+		margin: 10px 25px/$width *$p 0
+		&:first-child
+			margin-left: 25px/$width *$p
+		&:last-child
+			margin-right: 25px/$width *$p
 	/* END TOP */
 
 	/*BEGIN WORK*/
@@ -147,6 +176,68 @@
 	.work-sec-4__description
 		padding: 0 5%
 	/*END WORK*/
+
+	/* BEGIN FILTER */
+	.filter__side
+		float: none
+		width: 100%
+	/* END FILTER */
+
+	/* BEGIN SIDEBAR */
+	.sidebar,.content
+		float: none
+		width: 100%
+	.sidebar
+		margin-bottom: 20px
+	/* END SIDEBAR */
+
+
+	/* BEGIN REPORT */
+	.report__year,
+	.report__docs
+		float: none
+		width: 100%
+		text-align: left
+	.report__doc
+		width: 200px
+	/* END REPORT */
+	
+	/* BEGIN HEAD */
+	.head_center
+		width: 70%
+	/* END HEAD */
+
+	/* BEGIN SECTION-RADIAL */
+	.section-radial__description
+		padding: 0 10%
+	.radial-item__number
+		top: 50%
+		+transform(translateY(-50%))
+	.radial-item_4
+		width: 50%
+		margin-bottom: 20px
+	/* END SECTION-RADIAL */
+
+	/* BEGIN ACCORDION */
+	.accordion
+		margin-bottom: 20px
+	.accordion__slides
+		width: 15%
+	.accordion__title
+		width: 85%
+	/* END ACCORDION */
+
+	/* BEGIN IMAGE */
+	.image
+		width: 100%
+	/* END IMAGE */
+
+
+	/* BEGIN PERSON */
+	.persons-item
+		width: 33.33333%
+	/* END PERSON */
+
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
@@ -216,7 +307,49 @@
 		margin-top: 10px
 	/* END CONTACT */
 
+	/* BEGIN FILTER */
+	.filter
+		padding: 32px 15px
+	/* END FILTER */
 
+	/* BEGIN REPORT */
+	.report__doc
+		width: 49%
+	/* END REPORT */
+
+	/* BEGIN TOP */
+	.top__item_5
+		float: none
+		width: 100%
+		margin: 10px 0
+		&:first-child
+			margin: 10px 0
+		&:last-child
+			margin: 10px 0
+	/* END TOP */
+
+	/* BEGIN HEAD */
+	.head_center
+		width: 100%
+	/* END HEAD */
+
+	/* BEGIN SECTION-RADIAL */
+	.section-radial__description
+		padding: 0
+	.radial-item__number
+		top: 50%
+		+transform(translateY(-50%))
+	.radial-item_4
+		width: 100%
+		margin-bottom: 20px
+	/* END SECTION-RADIAL */
+
+	/* BEGIN PERSON */
+	.persons-item
+		width: 100%
+	.person-description
+		padding: 50px 30px
+	/* END PERSON */
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
