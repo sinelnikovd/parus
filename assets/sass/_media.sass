@@ -83,10 +83,10 @@
 	.header-head__title
 		margin: 0
 	.logo
-		width: 40%
-	.main-menu
-		display: none
-		width: 50%
+		width: 100%
+		text-align: center
+	.main-menu-container
+		width: 100%
 	/* END HEADER */
 
 	/* BEGIN MAIN-SLIDER */
@@ -225,6 +225,8 @@
 		width: 15%
 	.accordion__title
 		width: 85%
+	.accordion__body
+		padding-left: 15%
 	/* END ACCORDION */
 
 	/* BEGIN IMAGE */
@@ -238,17 +240,37 @@
 		width: 33.33333%
 	/* END PERSON */
 
+	/* BEGIN SECTION-TABEL */
+	.section-tabel__description
+		padding: 0 5%
+	/* END SECTION-TABEL */
+
+	/* BEGIN DIAGRAM */
+	.diagram
+		float: none
+		width: 100%
+		padding: 0
+
+	/* END DIAGRAM */
+
+	/* BEGIN TABEL */
+	.table
+		width: 800px
+	.table-container
+		width: 100%
+		overflow: scroll
+	/* END TABEL */
+
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
 	/* BEGIN HEADER */
 	.logo,
-	.main-menu
+	.main-menu-container
 		width: 100%
 		float: none
+	.logo
 		text-align: center
-	.main-menu
-		display: none
 	/* END HEADER */
 
 	/* BEGIN MAIN-SLIDER */
@@ -339,10 +361,16 @@
 	.radial-item__number
 		top: 50%
 		+transform(translateY(-50%))
-	.radial-item_4
+	.radial-item_4,
+	.radial-item_3
 		width: 100%
 		margin-bottom: 20px
 	/* END SECTION-RADIAL */
+
+	/* BEGIN SECTION-TABEL */
+	.section-tabel__description
+		padding: 0
+	/* END SECTION-TABEL */
 
 	/* BEGIN PERSON */
 	.persons-item
@@ -350,6 +378,17 @@
 	.person-description
 		padding: 50px 30px
 	/* END PERSON */
+
+	/* BEGIN DIAGRAM */
+	.diagram-maps
+		padding: 0
+	/* END DIAGRAM */
+
+
+	/* BEGIN GAMBURGER */
+	.gamburger
+		display: block
+	/* END GAMBURGER */
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)

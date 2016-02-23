@@ -1721,9 +1721,16 @@ img
 	display: table
 .infobubble__content
 	display: table-cell
+	max-width: 140px
 	height: 100%
-	padding: 10px
+	padding: 5px
 	box-sizing: border-box
+	color: #fff
+.infobubble__title
+	@extend .regular-text
+	text-align: center
+	font-size: 16px
+	line-height: 18px
 /* END INFOBUBBLE */
 
 
@@ -1731,10 +1738,77 @@ img
 .still
 	float: left
 	display: none
-	width: 10%
-.slill__list
+	width: 20px
+	padding-top: 10px
+	position: relative
+.still__list
 	display: none
+	position: absolute
+	top: 100%
+	right: -20px
+	margin: 0
+	padding: 0
+	list-style-type: none
+	background-color: #fff
+	border-top: 7px solid $c-green-2
+	min-width: 200px
+.still__button
+	padding: 10px 9px 18px
+	display: inline-block
+	text-decoration: none
+	color: $c-green-2
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left: 10px
+		width: 20px
+		height: 2px
+		background-color: $c-green-2
+	&:after
+		content: ''
+		position: absolute
+		top: 12px
+		right: -10px
+		width: 7px
+		height: 7px
+		border-bottom: 1px solid $c-green-2
+		border-right: 1px solid $c-green-2
+		+transform(rotate(45deg))
+	&:hover
+		.still__list
+			display: block
+.still__item
+	float: none
+	border-bottom: 1px solid #d9d9d9
+	background-color: $c-gray-3
+	cursor: pointer
+	.main-menu__link
+		width: 100%
+		padding: 8px 21px 4px
+		box-sizing: border-box
+		&:first-child
+			padding: 8px 21px 4px
+		&:before
+			display: none
+		&:hover
+			background-color: #fff
+			.main-sub-menu
+				display: block
+	.main-sub-menu
+		border-top-width: 2px
+		position: static
+		top: 0
+		left: 0
+		transform: none
 /* END STILL */
+
+
+/* BEGIN GAMBURGER */
+.gamburger
+	display: none
+/* END GAMBURGER */
 
 
 

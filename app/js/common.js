@@ -120,58 +120,8 @@ $(document).ready(function() {
 		ui.oldHeader.find(".slides").removeClass("open")
 	});
 
-/*
-	function moveBlockLeader (indx, blockWidth) {
-		var ctxWidth = $('.persons__list').outerWidth(),
-				countBlockInLine = Math.floor(ctxWidth / blockWidth),
-				lineNumber = Math.floor(indx / countBlockInLine)+1,
-				position = countBlockInLine * lineNumber;
 
-		if(position > $('.persons-item').length) position = $('.persons-item').length
-		console.log(position)
-		$('.person-description').insertAfter($('.persons-item').eq(position-1));
-	}
-
-	function personDescriptionClose (ths) {
-		ths.removeClass('active');
-		ths.find('.link_next').removeClass('active');
-		$('.person-description').slideUp();
-	}
-
-	$('.persons-item').click(function () {
-		if($(this).hasClass('active')){
-			personDescriptionClose($(this));
-		}else{
-			$('.persons-item.active .link_next.active').removeClass('active');
-			$('.persons-item.active').removeClass('active');
-			$(this).addClass('active');
-			$(this).find('.link_next').addClass('active');
-			var el = $(this);
-			$('.person-description').slideUp(400,function () {
-				moveBlockLeader(el.index('.persons-item'),el.outerWidth());
-			});
-			$('.person-description').slideDown();
-		}
-	});
-
-
-
-
-	$('.person-description__close').click(function () {
-		personDescriptionClose($('.persons-item.active'));
-	});
-*/
-
-
-
-/*	$('.persons-item').click(function () {
-		if($(this).hasClass('active')){
-			//personDescriptionClose($(this));
-		}else{
-			
-		}
-	});*/
-
+	/* BEGIN PERSON */
 
 	function initPerson () {
 		var ctxWidth = $('.persons__list').outerWidth(),
@@ -193,7 +143,6 @@ $(document).ready(function() {
 		$('.person-description').slideUp();
 	}
 
-
 	$('.persons-item').click(function () {
 		if($(this).hasClass('active')){
 			closePersonDescription();
@@ -210,6 +159,8 @@ $(document).ready(function() {
 	$('.person-description__close').click(function () {
 		closePersonDescription();
 	});
+
+	/* END PERSON */
 
 
 
@@ -237,15 +188,79 @@ $(document).ready(function() {
 	});
 
 
+	/* BEGIN HIDEMENU */
+	var showItemList  = [],
+			hideItemList = [];
+	$('.main-menu .main-menu__item').each(function() {
+		showItemList.push($(this).width());
+	});
+
+
+	function hideItem() {
+		var sizeList = $('.main-menu').outerWidth(true),
+				showItemListSum = 0,
+				hideItemListSum = 0;
+		for(var i=0; i<showItemList.length; i++) showItemListSum += showItemList[i];
+		
+		console.log(sizeList +' --- '+ showItemListSum)
+		
+		if(showItemListSum > sizeList){
+			$('.main-menu').addClass('hide-item');
+			$('.still').show();
+		}
+
+		sizeList = $('.main-menu').width();
+
+		while(showItemListSum > sizeList){
+			$('.main-menu .main-menu__item').last().addClass('still__item').appendTo($('.still__list'));
+			hideItemList.push(showItemList.pop());
+			showItemListSum = 0;
+			for(var i=0; i<showItemList.length; i++) showItemListSum += showItemList[i];
+		}
+		
+		showItemListSum += hideItemList[hideItemList.length - 1];
+
+		while(showItemListSum < sizeList){
+			$('.still__list .main-menu__item').last().removeClass('still__item').appendTo($('.main-menu'));
+			showItemList.push(hideItemList.pop());
+			showItemListSum = 0;
+			for(var i=0; i<showItemList.length; i++) showItemListSum += showItemList[i];
+			showItemListSum += hideItemList[hideItemList.length - 1];
+		}
+
+		$('.main-menu').removeClass('hide-item');
+		sizeListNoHide = $('.main-menu').width();
+		$('.main-menu').addClass('hide-item');
+
+		showItemListSum = 0;
+		for(var i=0; i<showItemList.length; i++) showItemListSum += showItemList[i];
+
+		for(var i=0; i<hideItemList.length; i++) hideItemListSum += hideItemList[i];
+
+		if((showItemListSum + hideItemListSum) < sizeListNoHide){
+			$('.still').hide();
+			$('.main-menu').removeClass('hide-item');
+		}
+
+	}
+
+	hideItem();
+	/* END HIDEMENU */
+
 
 
 	$(window).resize(function () {
 
 	initPerson();
 
+	hideItem();
+
 	el = $('.header-body'),
 	elt = $('.header-head').outerHeight(),
-	elh = el.outerHeight();
+	elh = el.outerHeight(true);
+
+
+
 
 	});
 

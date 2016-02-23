@@ -17,10 +17,11 @@ function initLandMap() {
 	map.data.loadGeoJson('js/geodata/ra_dist.json');
 	map.data.loadGeoJson('js/geodata/sk.json');
 	map.data.loadGeoJson('js/geodata/sk_dist.json');
+
 	map.data.setStyle(function (feature) {
 		var visible = feature.getProperty("isDistrikt") == true ? false : true;
 		if(visible){
-			var content = '<div class="infobubble__content" onclick=\'showDistrict('+feature.getProperty("ID")+')\'>'+feature.getProperty('contentInfoBubble')+'</div>',
+			var content = '<div class="infobubble__content" onclick=\'showDistrict('+feature.getProperty("ID")+')\'><h2 class="infobubble__title">'+feature.getProperty('contentInfoBubble')+'</div></div>',
 				opiton = new optionsInfoBubble(map, content, new google.maps.LatLng(feature.getProperty('positionInfoBubbleLat'), feature.getProperty('positionInfoBubbleLng'))),
 				featureInfoBubble = new InfoBubble(opiton.getOptions());
 			featureInfoBubble.open();
