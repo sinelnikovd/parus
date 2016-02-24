@@ -19,7 +19,7 @@
 			"AREA": 75510.907953826303128,
 			"ADM3_ID": -1059500.0,
 			"ADM3_NAME": "Южный федеральный округ",
-			"contentInfoBubble": "Краснодарский край",
+			"contentInfoBubble": "<h2 class='infobubble__title'>Краснодарский край</h2>",
 			"positionInfoBubbleLat": 44.989221,
 			"positionInfoBubbleLng": 38.284991
 		},

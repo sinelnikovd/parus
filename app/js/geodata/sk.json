@@ -22,7 +22,7 @@
 			"AREA": 66183.764893807892804,
 			"ADM3_ID": -389344.0,
 			"ADM3_NAME": "Северо-Кавказский федеральный округ",
-			"contentInfoBubble": "Ставропольский край",
+			"contentInfoBubble": "<h2 class='infobubble__title'>Ставропольский край</h2>",
 			"positionInfoBubbleLat": 45.340825,
 			"positionInfoBubbleLng": 41.846772
 		},

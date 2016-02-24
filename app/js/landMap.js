@@ -1,10 +1,9 @@
 var map;
-var InfoBubbles = [];
+var InfoBubbles = {};
 
 function initLandMap() {
 	map = new google.maps.Map(document.getElementById('land-map'), {
 		center: {lat: 45.047543, lng: 38.983568},
-		//center: {lat: -28, lng: 137},
 		scrollwheel: false,
 		zoom: 7
 	});
@@ -21,17 +20,17 @@ function initLandMap() {
 	map.data.setStyle(function (feature) {
 		var visible = feature.getProperty("isDistrikt") == true ? false : true;
 		if(visible){
-			var content = '<div class="infobubble__content" onclick=\'showDistrict('+feature.getProperty("ID")+')\'><h2 class="infobubble__title">'+feature.getProperty('contentInfoBubble')+'</div></div>',
-				opiton = new optionsInfoBubble(map, content, new google.maps.LatLng(feature.getProperty('positionInfoBubbleLat'), feature.getProperty('positionInfoBubbleLng'))),
-				featureInfoBubble = new InfoBubble(opiton.getOptions());
+			var content = '<div class="infobubble__content" onclick="showDistrict('+feature.getProperty("ID")+')">'+feature.getProperty('contentInfoBubble')+'</div>',
+				opiton = optionsInfoBubble(map, content, new google.maps.LatLng(feature.getProperty('positionInfoBubbleLat'), feature.getProperty('positionInfoBubbleLng'))),
+				featureInfoBubble = new InfoBubble(opiton);
 			featureInfoBubble.open();
 		}else{
-			var content = '<div class="infobubble__content" >'+feature.getProperty('contentInfoBubble')+'</div>',
-				opiton = new optionsInfoBubble(map, content, new google.maps.LatLng(feature.getProperty('positionInfoBubbleLat'), feature.getProperty('positionInfoBubbleLng'))),
-				featureInfoBubble = new InfoBubble(opiton.getOptions());
+			var content = '<div class="infobubble__content" onclick="showPopup('+feature.getProperty("ID")+')" >'+feature.getProperty('contentInfoBubble')+'</div>',
+				opiton = optionsInfoBubble(map, content, new google.maps.LatLng(feature.getProperty('positionInfoBubbleLat'), feature.getProperty('positionInfoBubbleLng'))),
+				featureInfoBubble = new InfoBubble(opiton);
 		}
-		InfoBubbles.push(featureInfoBubble);
-		//console.log(visible);
+		InfoBubbles[feature.getProperty('ID')]= featureInfoBubble;
+
 		return {
 			fillColor: 'DarkGreen',
 			fillOpacity: 0.3,
@@ -41,37 +40,42 @@ function initLandMap() {
 		};
 	});
 
-	
-	
-	
-	/*var regionKrasnodarOpiton = new regionOptionsInfoBubble(map, "Краснодарский край", new google.maps.LatLng(44.989221, 38.284991));
-	var kkInfoBubble =  new InfoBubble(regionKrasnodarOpiton.getOptions());
-	kkInfoBubble.open();
-
-	var regionAdgeyaOpiton = new regionOptionsInfoBubble(map, "Республика Адыгея", new google.maps.LatLng(44.433934, 40.135837));
-	var raInfoBubble =  new InfoBubble(regionAdgeyaOpiton.getOptions());
-	raInfoBubble.open();
-
-	var regionStavropolOpiton = new regionOptionsInfoBubble(map, "Ставропольский край", new google.maps.LatLng(45.340825, 41.846772));
-	var skInfoBubble =  new InfoBubble(regionStavropolOpiton.getOptions());
-	skInfoBubble.open();*/
-
 
 
 	map.data.addListener('click', function(event) {
 		if(!event.feature.getProperty('isDistrikt')){
 			showDistrict(event.feature.getProperty('ID'));
+		}else{
+			showPopup(event.feature.getProperty('ID'));
 		}
-	//	map.data.setStyle({visible: false});
-		//map.data.overrideStyle(event.feature, {strokeWeight: 8, visible: true});
-		//console.log(event.feature.getProperty('letter'));
+
 	});
 
 
 }
 
+
+function showRegion (id) {
+	for (var key in InfoBubbles) {
+		InfoBubbles[key].close()
+	}
+	map.data.setStyle(function(feature) {
+		var visible = feature.getProperty("ID") == id ? true : false;
+		if(visible) InfoBubbles[feature.getProperty("ID")].open();
+		map.setZoom(7);
+		map.setCenter({lat: 45.047543, lng: 38.983568});
+		return {
+			fillColor: 'DarkGreen',
+			fillOpacity: 0.3,
+			strokeColor: 'OliveDrab',
+			strokeWeight: 2,
+			visible: visible
+		};
+	});
+}
+
 function optionsInfoBubble(map, content, position) {
-	this.options = {
+	return {
 		map: map,
 		content: content,
 		position: position,
@@ -89,18 +93,58 @@ function optionsInfoBubble(map, content, position) {
 		arrowStyle: 0
 	};
 }
-optionsInfoBubble.prototype.getOptions = function() {
-	return this.options;
-}
-
 
 
 
 function showDistrict(id) {
+	for (var key in InfoBubbles) {
+		InfoBubbles[key].close()
+	}
+	$(".accordion-maps__head").each(function (indx) {
+		if($(this).data("id") == id) $(".accordion-maps").accordion( "option", "active", indx );
+	})
+	
 	map.data.setStyle(function(feature) {
 		var visible = feature.getProperty("ADM4_ID") == id ? true : false;
+		if(visible) InfoBubbles[feature.getProperty("ID")].open();
+		map.setZoom(8);
+		map.setCenter( {lat: 45.152837, lng: 39.845291});
 		return {
+			fillColor: 'DarkGreen',
+			fillOpacity: 0.3,
+			strokeColor: 'OliveDrab',
+			strokeWeight: 2,
 			visible: visible
 		};
 	});
+}
+
+
+function showPopup (id) {
+	$('.accordion-maps__item.active').removeClass('active');
+	$('.accordion-maps__item[data-id = "'+id+'.0"').addClass('active');
+	$('.popup-maps-right.active').removeClass('active');
+	$('.popup-maps-right[data-id = "'+id+'.0"]').addClass('active');
+}
+
+
+function showAllRegion () {
+	for (var key in InfoBubbles) {
+		InfoBubbles[key].close()
+	}
+
+	map.data.setStyle(function(feature) {
+		var visible = feature.getProperty("isDistrikt") == true ? false : true;
+		if(visible) InfoBubbles[feature.getProperty("ID")].open();
+		map.setZoom(7);
+		map.setCenter({lat: 45.047543, lng: 38.983568});
+		return {
+			fillColor: 'DarkGreen',
+			fillOpacity: 0.3,
+			strokeColor: 'OliveDrab',
+			strokeWeight: 2,
+			visible: visible
+		};
+	});
+
 }

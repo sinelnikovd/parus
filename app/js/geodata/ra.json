@@ -22,7 +22,7 @@
 			"AREA": 7837.732897883220176,
 			"ADM3_ID": -1059500.0,
 			"ADM3_NAME": "Южный федеральный округ",
-			"contentInfoBubble": "Республика Адыгея",
+			"contentInfoBubble": "<h2 class='infobubble__title'>Республика Адыгея</h2>",
 			"positionInfoBubbleLat": 44.433934,
 			"positionInfoBubbleLng": 40.135837
 		},

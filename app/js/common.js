@@ -121,6 +121,18 @@ $(document).ready(function() {
 	});
 
 
+
+	$( ".accordion-maps" ).accordion({collapsible:true,heightStyle:"content"});
+	$( ".accordion-maps" ).accordion( "option", "icons", null );
+
+	$( ".accordion-maps" ).on( "accordionbeforeactivate", function( event, ui ) {
+		ui.newHeader.addClass("open");
+		ui.newHeader.find(".slides").addClass("open").addClass("open_green");
+		ui.oldHeader.removeClass("open");
+		ui.oldHeader.find(".slides").removeClass("open").removeClass("open_green");
+	});
+
+
 	/* BEGIN PERSON */
 
 	function initPerson () {
@@ -170,6 +182,12 @@ $(document).ready(function() {
 			elt = $('.header-head').outerHeight(),
 			elh = el.outerHeight();
 
+	function headHeight() {
+		el = $('.header-body');
+		elt = $('.header-head').outerHeight();
+		elh = el.outerHeight();
+	}
+
 	if($(window).scrollTop() >= el.offset().top){
 		$('.header-body').addClass('fixed');
 		$('.header-head').css('margin-bottom',elh)
@@ -191,17 +209,16 @@ $(document).ready(function() {
 	/* BEGIN HIDEMENU */
 	var showItemList  = [],
 			hideItemList = [];
-	$('.main-menu .main-menu__item').each(function() {
+	$('.main-menu .main-menu__link').each(function(indx) {
 		showItemList.push($(this).width());
 	});
-
-
+		console.log(showItemList);
 	function hideItem() {
 		var sizeList = $('.main-menu').outerWidth(true),
 				showItemListSum = 0,
 				hideItemListSum = 0;
 		for(var i=0; i<showItemList.length; i++) showItemListSum += showItemList[i];
-		
+
 		console.log(sizeList +' --- '+ showItemListSum)
 		
 		if(showItemListSum > sizeList){
@@ -234,30 +251,87 @@ $(document).ready(function() {
 
 		showItemListSum = 0;
 		for(var i=0; i<showItemList.length; i++) showItemListSum += showItemList[i];
-
+		hideItemListSum = 0;
 		for(var i=0; i<hideItemList.length; i++) hideItemListSum += hideItemList[i];
 
 		if((showItemListSum + hideItemListSum) < sizeListNoHide){
 			$('.still').hide();
 			$('.main-menu').removeClass('hide-item');
+			for(var i=0; i<hideItemList.length; i++){
+				$('.still__list .main-menu__item').last().removeClass('still__item').appendTo($('.main-menu'));
+				showItemList.push(hideItemList.pop());
+			}
 		}
 
 	}
 
-	hideItem();
+	
+
+	function hideOrHamburger () {
+		if($('.hamburger').is(":visible")){
+			$('.still').hide();
+			$('.main-menu').addClass('main-menu_hamdurger').removeClass('hide-item').hide();
+			headHeight();
+			for(var i=0; i<hideItemList.length; i++){
+				$('.still__list .main-menu__item').last().removeClass('still__item').appendTo($('.main-menu'));
+				showItemList.push(hideItemList.pop());
+			}
+		}else{
+			$('.main-menu').removeClass('main-menu_hamdurger').show();
+			hideItem();
+		}
+	}
+
+	$('.hamburger').click(function () {
+		$(this).find('.hamburger__text').toggleClass('active');
+		$('.main-menu').slideToggle();
+	});
+
+	hideOrHamburger();
 	/* END HIDEMENU */
 
 
+
+	/* BEGIN POPUP-MAPS */
+	$('.accordion-maps__head, .accordion-maps__item').click(function () {
+		var id = $(this).data("id");
+		$('.popup-maps-right.active').removeClass('active');
+		$('.accordion-maps__item.active').removeClass('active');
+
+		if($(this).hasClass('accordion-maps__item')){
+			$(this).addClass('active');
+			$('.popup-maps-right[data-id = "'+id+'"]').addClass('active');
+		}
+
+		showRegion(id);
+
+		if($(this).hasClass('accordion-maps__head') && !$('.accordion-maps__head').hasClass('open')) showAllRegion();
+	});
+
+	/* END POPUP-MAPS */
+
+	$('.popup-maps-right__close').click(function () {
+		$(this).closest('.popup-maps-right').removeClass('active');
+	});
+
+
+	$('.radial-item__canvas').radialCanvas();
+
+	$('.popup-maps__slide').click(function () {
+		if(!$(this).hasClass('active')){
+			$(this).closest('.popup-maps').animate({'right': "50%"},200).addClass('active');
+		}else{
+			$(this).closest('.popup-maps').animate({'right': "100%"},200).removeClass('active');
+		}
+	});
 
 	$(window).resize(function () {
 
 	initPerson();
 
-	hideItem();
+	hideOrHamburger();
 
-	el = $('.header-body'),
-	elt = $('.header-head').outerHeight(),
-	elh = el.outerHeight(true);
+	headHeight();
 
 
 
