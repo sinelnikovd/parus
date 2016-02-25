@@ -5,6 +5,7 @@ function initLandMap() {
 	map = new google.maps.Map(document.getElementById('land-map'), {
 		center: {lat: 45.047543, lng: 38.983568},
 		scrollwheel: false,
+		draggable: false,
 		zoom: 7
 	});
 
