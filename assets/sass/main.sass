@@ -1610,6 +1610,11 @@ img
 	background-color: $c-green-1
 	padding: 35px
 	box-sizing: border-box
+	&.active
+		.popup-maps__slide
+			&:after
+				left: 15px
+				+transform(rotate(225deg))
 .popup-maps__h2
 	color: $c-gray-8
 	line-height: 1.2
@@ -1620,10 +1625,21 @@ img
 	display: none
 	position: absolute
 	top: 0
-	bottom: 0
-	right: -20px
-	width: 20px
-	background-color: #fff
+	right: -40px
+	width: 40px
+	height: 40px
+	background-color: $c-green-3
+	&:after
+		content: ''
+		position: absolute
+		top: 15px
+		left: 11px
+		width: 10px
+		height: 10px
+		border-top: 1px solid #fff
+		border-right: 1px solid #fff
+		+transform(rotate(45deg))
+		+transition(all .5s ease-in-out)
 
 /* END POPUP-MAPS */
 

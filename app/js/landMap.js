@@ -106,9 +106,11 @@ function showDistrict(id) {
 	
 	map.data.setStyle(function(feature) {
 		var visible = feature.getProperty("ADM4_ID") == id ? true : false;
-		if(visible) InfoBubbles[feature.getProperty("ID")].open();
-		map.setZoom(8);
-		map.setCenter( {lat: 45.152837, lng: 39.845291});
+		if(visible){
+			InfoBubbles[feature.getProperty("ID")].open();
+			map.setZoom(8);
+			map.setCenter( {lat: feature.getProperty('positionInfoBubbleLat'), lng: feature.getProperty('positionInfoBubbleLng')});
+		}
 		return {
 			fillColor: 'DarkGreen',
 			fillOpacity: 0.3,
@@ -132,7 +134,6 @@ function showAllRegion () {
 	for (var key in InfoBubbles) {
 		InfoBubbles[key].close()
 	}
-
 	map.data.setStyle(function(feature) {
 		var visible = feature.getProperty("isDistrikt") == true ? false : true;
 		if(visible) InfoBubbles[feature.getProperty("ID")].open();
