@@ -32,15 +32,12 @@
 		function animation () {
 			var i = 0,
 					interval = setInterval(function () {
-						draw();
+						draw({start: 0, end: i, color: "#000"});
 						if(i == 100) clearInterval(interval);
 						i++;
 					},20);
 		}
-		var drawings ={
-			0: {start: 0, end: i, color: "#000"}
-		};
-		animation(drawings);
+		animation();
 
 
 

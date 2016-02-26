@@ -82,11 +82,13 @@ img
 .green-text
 	color: $c-green-2
 .regular-text
-	font-family: "PFDinTextProRegular", $helvetica
+	//font-family: "PFDinTextProRegular", $helvetica
+	font-family: $helvetica
 	font-weight: normal
 .bold-text
-	font-family: "PFDinTextProBold", $helvetica
-	font-weight: normal
+	//font-family: "PFDinTextProBold", $helvetica
+	font-family: $helvetica
+	font-weight: bold
 .medium-text
 	font-family: "PFDinTextProMedium", $helvetica
 	font-weight: normal
@@ -284,20 +286,7 @@ img
 /* END TOP */
 
 
-/* BEGIN TOP-SECTION */
-.top-section
-	padding: 45px 0 47px
-	+clearfix
-.top-section__title
-	margin: 10px 0 4px
-	font-size: 32px
-	font-weight: normal
-	line-height: 1.2
-.top-section__text
-	margin: 24px 0 0
-	font-size: 18px
-	line-height: 1.2
-/* END TOP-SECTION */
+
 
 
 
@@ -320,6 +309,25 @@ img
 	width: 755px/$width *$p
 /* END SIDE */
 
+/* BEGIN TOP-SECTION */
+.top-section
+	padding: 45px 0 47px
+	+clearfix
+.top-section__title
+	margin: 10px 0 4px
+	font-size: 32px
+	font-weight: normal
+	line-height: 1.2
+.top-section__text
+	margin: 24px 0 0
+	font-size: 18px
+	line-height: 1.2
+.top-section__side_left
+	float: left
+.top-section__side_right
+	float: right
+
+/* END TOP-SECTION */
 
 /* BEGIN HEAD */
 .head_center
@@ -1971,7 +1979,7 @@ img
 	padding-top: 12px
 .hamburger__text-header
 	display: inline-block
-	padding: 8px 25px 10px 0
+	padding: 8px 25px 18px 0
 	position: relative
 	color: $c-green-2
 	cursor: pointer

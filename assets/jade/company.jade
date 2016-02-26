@@ -9,32 +9,31 @@ block content
 	// END SLIDE-TOP 
 
 	// BEGIN SUB-MENU 
-	.container
-		ul.sub-menu
-			li.sub-menu__item
-				a(href="#").sub-menu__link.active О компании
-			li.sub-menu__item
-				a(href="#").sub-menu__link История
-			li.sub-menu__item
-				a(href="#").sub-menu__link Структура компании
-			li.sub-menu__item
-				a(href="#").sub-menu__link Руководство
-			li.sub-menu__item
-				a(href="#").sub-menu__link Персонал
-			li.sub-menu__item
-				a(href="#").sub-menu__link Земельный фонд
-			li.sub-menu__item
-				a(href="#").sub-menu__link Транспорт и логистика
-		.hr.hr_double
+	.sub-menu-wrapper
+		.container
+			ul.sub-menu
+				li.sub-menu__item
+					a(href="#").sub-menu__link.active О компании
+				li.sub-menu__item
+					a(href="#").sub-menu__link История
+				li.sub-menu__item
+					a(href="#").sub-menu__link Структура компании
+				li.sub-menu__item
+					a(href="#").sub-menu__link Руководство
+				li.sub-menu__item
+					a(href="#").sub-menu__link Персонал
+				li.sub-menu__item
+					a(href="#").sub-menu__link Земельный фонд
+				li.sub-menu__item
+					a(href="#").sub-menu__link Транспорт и логистика
+			.hr.hr_double
 	// END SUB-MENU 
 
 
 	// BEGIN TOP-SECTION 
 	.top-section
 		.container
-			.side.side_3070_left
-					img(src="img/company-top.jpg", alt="")
-			.side.side_3070_right
+			.side.side_3070_right.top-section__side_right
 				h1.top-section__title О компании
 				.hr.hr_double
 				p.top-section__text Агропромышленный холдинг «Парус Агро Груп» был создан в 2009 году в Новокубанском районе Краснодарского края. Сегодня он входит в <span class="bold-text green-text">ТОП-10 крупнейших агрокомпаний Южного Федерального округа.</span> Группа управляет сельскохозяйственными активами в Краснодарском крае, Ставрополье и Адыгее.
@@ -44,6 +43,8 @@ block content
 				a(href="#").link.regular-text
 					i.icon.icon_doc.link__icon
 					span.link__text Презентация в формате PDF
+			.side.side_3070_left.top-section__side_left
+					img(src="img/company-top.jpg", alt="")
 	// END TOP-SECTION 
 
 	// BEGIN PARENT-TOP

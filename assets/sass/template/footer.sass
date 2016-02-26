@@ -37,6 +37,8 @@
 	float: left
 	width: 160px/$width *$p
 	padding-top: 2px
+.footer-head__logo-img
+	max-width: 160px
 .footer-head__phone
 	float: left
 	width: 195px/$width *$p
@@ -138,6 +140,8 @@
 
 
 /* BEGIN COPYRIGTH */
+.copyright
+	padding-top: 5px
 .copyright__title
 	font-size: 12px
 .copyright__description
@@ -146,12 +150,42 @@
 	margin-left: 18px
 /* END COPYRIGTH */
 
+/* BEGIN DEVELOPER */
+.developer
+	text-align: right
+.developer__link
+	display: inline-block
+	text-decoration: none
+	color: #fff
+	&:hover
+		.developer__image
+			background-position: 0 0
+.developer__image
+	display: inline-block
+	width: 99px
+	height: 32px
+	vertical-align: middle
+	background-image: url('img/yasno-logo.png')
+	background-repeat: no-repeat
+	background-position: -99px 0
+
+.developer__text
+	vertical-align: middle
+	font-size: 12px
+	text-decoration: none
+/* END DEVELOPER */
+
 /* BEGIN FOOTER-FOOTER */
 .footer-footer
 	background-color: $c-gray-7
 	color: #fff
-	padding: 18px 0 16px
+	padding: 18px 0 5px
 	box-sizing: border-box
+	+clearfix
+.footer-footer__left,
+.footer-footer__right
+	width: 50%
+	float: left
 /* END FOOTER-FOOTER */
 
 /* BEGIN FOOTER */
