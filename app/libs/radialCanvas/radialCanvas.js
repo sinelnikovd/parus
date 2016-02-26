@@ -2,6 +2,7 @@
 	$.fn.radialCanvas = function() {
 	
 	return this.each(function () {
+
 		var canvas = document.getElementById($(this).attr('id')),
 				ctx = canvas.getContext('2d'),
 				centerX = canvas.width/2, 
@@ -11,6 +12,39 @@
 				radius = (Math.min(canvas.width,canvas.height)/2)-lineWidth;
 
 
+		function draw (drawing) {
+			var offset = 1.5 * Math.PI,
+					start = (2 * Math.PI * drawing.start) / 100 + offset,
+					end = (2 * Math.PI * drawing.end) / 100 + offset;
+			ctx.clearRect(0,0,canvas.width,canvas.height);
+			ctx.lineWidth = lineWidth;
+			ctx.strokeStyle = drawing.color;
+			ctx.lineCap="round";
+
+
+
+			ctx.beginPath();
+			ctx.arc(centerX,centerY,radius,start,end);
+			ctx.stroke();
+			ctx.restore();
+		}
+
+		function animation () {
+			var i = 0,
+					interval = setInterval(function () {
+						draw();
+						if(i == 100) clearInterval(interval);
+						i++;
+					},20);
+		}
+		var drawings ={
+			0: {start: 0, end: i, color: "#000"}
+		};
+		animation(drawings);
+
+
+
+/*
 		function draw(startParametrs,drawing) {
 			ctx.clearRect(0,0,canvas.width,canvas.height);
 			ctx.lineWidth = lineWidth;
@@ -32,10 +66,10 @@
 					ctx.restore();
 					ctx.closePath();
 				//}
-			}*/
+			}
 		}
 		var j = 0;
-		function animateCanvas (startParametrs,drawing) {
+		function animateCanvas (startParametrs) {
 			var i = startParametrs.posStart;
 			var intervalAnimate = setInterval(function () {
 				var offset = 1.5 * Math.PI;
@@ -43,14 +77,6 @@
 				if(i <= startParametrs.size){
 					console.log(i)
 					draw(startParametrs,drawing);
-				}else{
-					var newParametrs = {
-						start: startParametrs['end'],
-						size: 100,
-						color: "#0f0",
-						posStart: i
-					};
-					animateCanvas(newParametrs,startParametrs);
 				}
 
 				if(i >= 100) clearInterval(intervalAnimate);
@@ -66,8 +92,8 @@
 			color: "#f00",
 			posStart: 0
 		};
-		animateCanvas(startParametrs, null);
-
+		animateCanvas(startParametrs);
+*/
 	});
 
 	};

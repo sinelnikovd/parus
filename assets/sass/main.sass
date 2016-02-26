@@ -783,6 +783,12 @@ img
 	&:last-child
 		padding-left: 13px/($width-main-sec-3__side_right/2) *$p
 		box-sizing: border-box
+.news-article__content
+	padding: 10px
+	box-sizing: border-box
+	border: 2px solid transparent
+	&:hover
+		border-color: $c-green-2
 .news-article__link
 	display: block
 	text-decoration: none
@@ -1282,10 +1288,10 @@ img
 	overflow: hidden
 	&:hover
 		.slider-culture__hover
-			+transform(translateY(0))
+			opacity: 1
 .slider-culture__hover
 	height: 168px
-	+transform(translateY(100%))
+	opacity: 0
 	+transition(all .5s ease-in-out)
 	background-color: $c-green-2
 	color: #fff

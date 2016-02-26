@@ -158,17 +158,21 @@ block content
 					.hr.hr_double
 					.news-articles
 						.news-article
-							a(href="#").news-article__link
-								img(src="img/news1.jpg", alt="").news-article__image
-								h3.news-article__title.medium-text «Парус Агро Групп» вошел в ТОП-25 крупнейших сельхозгрупп России
-								span.news-article__date 28 октября 2015 
-								p.news-article__text Управляет  сельскохозяйственными  активами  в  Краснодарском  крае, Ставрополье  и  Адыгее ...
+							.news-article__content
+								a(href="#").news-article__link
+									.news-article__image-line
+										img(src="img/news1.jpg", alt="").news-article__image
+									h3.news-article__title.medium-text «Парус Агро Групп» вошел в ТОП-25 крупнейших сельхозгрупп России
+									span.news-article__date 28 октября 2015 
+									p.news-article__text Управляет  сельскохозяйственными  активами  в  Краснодарском  крае, Ставрополье  и  Адыгее ...
 						.news-article
-							a(href="#").news-article__link
-								img(src="img/news2.jpg", alt="").news-article__image
-								h3.news-article__title.medium-text Завершен сбор урожая пшеницы в Ставропольском крае
-								span.news-article__date 21 октября 2015 
-								p.news-article__text Входит в финальную стадию сбор урожая пшеницы в Ставрополье. Объем зерновых ...
+							.news-article__content
+								a(href="#").news-article__link
+									.news-article__image-line
+										img(src="img/news2.jpg", alt="").news-article__image
+									h3.news-article__title.medium-text Завершен сбор урожая пшеницы в Ставропольском крае
+									span.news-article__date 21 октября 2015 
+									p.news-article__text Входит в финальную стадию сбор урожая пшеницы в Ставрополье. Объем зерновых ...
 	// END MAIN-SEC-3 
 	- var isGray = true
 	include ./template/vacancy-banner.jade
