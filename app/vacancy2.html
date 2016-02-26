@@ -30,7 +30,9 @@
           <div class="container">
             <div class="logo header-body__logo"><a href="/" class="logo__link"><img src="img/logo.png" alt=""></a></div>
             <div class="main-menu-container header-body__main-menu">
-              <div class="hamburger"><span class="hamburger__text">Меню</span></div>
+              <div class="hamburger">
+                <div class="hamburger__text-header">Меню<span class="hamburger__line hamburger__line-1"></span><span class="hamburger__line hamburger__line-2"></span><span class="hamburger__line hamburger__line-3"></span></div>
+              </div>
               <ul class="main-menu">
                 <li class="main-menu__item main-menu__item_main-sub-menu active"><a href="#" class="main-menu__link">О компании</a>
                   <ul class="main-sub-menu">
@@ -97,98 +99,100 @@
         </div>
       </header>
       <!-- END HEADER -->
-      <!-- BEGIN SLIDE-TOP-->
-      <div class="slide-top"></div>
-      <!-- END SLIDE-TOP-->
-      <!-- BEGIN SUB-MENU-->
-      <div class="container">
-        <ul class="sub-menu">
-          <li class="sub-menu__item"><a href="#" class="sub-menu__link">Подать заявку на участие</a></li>
-          <li class="sub-menu__item"><a href="#" class="sub-menu__link">Нормативные документы</a></li>
-          <li class="sub-menu__item"><a href="#" class="sub-menu__link active">Закупки</a></li>
-        </ul>
-        <div class="hr hr_double"></div>
-      </div>
-      <!-- END SUB-MENU-->
-      <!-- BEGIN CONTENT-SIDEBAR -->
-      <div class="content-sidebar">
+      <div class="wrapper">
+        <!-- BEGIN SLIDE-TOP-->
+        <div class="slide-top"></div>
+        <!-- END SLIDE-TOP-->
+        <!-- BEGIN SUB-MENU-->
         <div class="container">
-          <!-- BEGIN SIDEBAR -->
-          <div class="sidebar"><a href="#" class="sidebar__title">Все вакансии</a>
-            <ul class="sidebar__menu">
-              <li class="sidebar__item"><a href="#" class="sidebar__link active">ООО «Адыгейское»</a></li>
-              <li class="sidebar__item"><a href="#" class="sidebar__link">ООО «Егорлык»</a></li>
-              <li class="sidebar__item"><a href="#" class="sidebar__link">ООО «Романовское»</a></li>
-              <li class="sidebar__item"><a href="#" class="sidebar__link">ООО «Новатор»</a></li>
-              <li class="sidebar__item"><a href="#" class="sidebar__link">ОАО «Ленинский Путь»</a></li>
-              <li class="sidebar__item"><a href="#" class="sidebar__link">ООО «Кубань XXI век»</a></li>
-              <li class="sidebar__item"><a href="#" class="sidebar__link">ООО «АПК Кавказ»</a></li>
-              <li class="sidebar__item"><a href="#" class="sidebar__link">ООО «Северный»</a></li>
-            </ul>
-          </div>
-          <!-- END SIDEBAR -->
-          <!-- BEGIN CONTENT -->
-          <div class="content">
-            <h1 class="content__title">Вакансии ООО «Адыгейское»</h1>
-            <div class="filter">
-              <div class="filter__line">
-                <div class="filter__side filter__side_left">
-                  <label for="" class="filter__label">Введите ключевое слово</label>
+          <ul class="sub-menu">
+            <li class="sub-menu__item"><a href="#" class="sub-menu__link">Подать заявку на участие</a></li>
+            <li class="sub-menu__item"><a href="#" class="sub-menu__link">Нормативные документы</a></li>
+            <li class="sub-menu__item"><a href="#" class="sub-menu__link active">Закупки</a></li>
+          </ul>
+          <div class="hr hr_double"></div>
+        </div>
+        <!-- END SUB-MENU-->
+        <!-- BEGIN CONTENT-SIDEBAR -->
+        <div class="content-sidebar">
+          <div class="container">
+            <!-- BEGIN SIDEBAR -->
+            <div class="sidebar"><a href="#" class="sidebar__title">Все вакансии</a>
+              <ul class="sidebar__menu">
+                <li class="sidebar__item"><a href="#" class="sidebar__link active">ООО «Адыгейское»</a></li>
+                <li class="sidebar__item"><a href="#" class="sidebar__link">ООО «Егорлык»</a></li>
+                <li class="sidebar__item"><a href="#" class="sidebar__link">ООО «Романовское»</a></li>
+                <li class="sidebar__item"><a href="#" class="sidebar__link">ООО «Новатор»</a></li>
+                <li class="sidebar__item"><a href="#" class="sidebar__link">ОАО «Ленинский Путь»</a></li>
+                <li class="sidebar__item"><a href="#" class="sidebar__link">ООО «Кубань XXI век»</a></li>
+                <li class="sidebar__item"><a href="#" class="sidebar__link">ООО «АПК Кавказ»</a></li>
+                <li class="sidebar__item"><a href="#" class="sidebar__link">ООО «Северный»</a></li>
+              </ul>
+            </div>
+            <!-- END SIDEBAR -->
+            <!-- BEGIN CONTENT -->
+            <div class="content">
+              <h1 class="content__title">Вакансии ООО «Адыгейское»</h1>
+              <div class="filter">
+                <div class="filter__line">
+                  <div class="filter__side filter__side_left">
+                    <label for="" class="filter__label">Введите ключевое слово</label>
+                  </div>
+                  <div class="filter__side filter__side_right">
+                    <input type="text" placeholder="Например, пшеница" class="input input_width_100">
+                  </div>
                 </div>
-                <div class="filter__side filter__side_right">
-                  <input type="text" placeholder="Например, пшеница" class="input input_width_100">
+                <div class="filter__line">
+                  <div class="filter__side filter__side_left">
+                    <label for="" class="filter__label">Выберите вакансию</label>
+                  </div>
+                  <div class="filter__side filter__side_right">
+                    <select name="" class="select wide select_input">
+                      <option value="1">Все</option>
+                      <option value="1">Все</option>
+                      <option value="1">Все</option>
+                      <option value="1">Все</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="filter__line">
+                  <div class="filter__side filter__side_left"></div>
+                  <div class="filter__side filter__side_right">
+                    <button type="submit" class="button button_green">Искать<i class="icon icon_next button_icon"></i></button>
+                  </div>
                 </div>
               </div>
-              <div class="filter__line">
-                <div class="filter__side filter__side_left">
-                  <label for="" class="filter__label">Выберите вакансию</label>
+              <div class="posts">
+                <div class="post">
+                  <h3 class="post__title">Агроном</h3><span class="post__date">Прием заявок до 21.03.16 12.00</span>
+                  <div class="post__text">
+                    <p class="post__paragraph">Для предупреждения болезней и защиты культур от вредителей предприятия Группы реализуют системный план защитных мероприятий. Большинство земель холдинга – высокоплодородные черноземы. В сочетании с преимущественно благоприятным климатом это обеспечивает стабильно высокую урожайность культур. Земельные активы «Парус Агро Груп» расположены в трех климатических зонах –  высокие показатели урожайности, она в 2-3 раза </p>
+                  </div><a href="#" class="post__all">подробнее</a>
                 </div>
-                <div class="filter__side filter__side_right">
-                  <select name="" class="select wide select_input">
-                    <option value="1">Все</option>
-                    <option value="1">Все</option>
-                    <option value="1">Все</option>
-                    <option value="1">Все</option>
-                  </select>
-                </div>
-              </div>
-              <div class="filter__line">
-                <div class="filter__side filter__side_left"></div>
-                <div class="filter__side filter__side_right">
-                  <button type="submit" class="button button_green">Искать<i class="icon icon_next button_icon"></i></button>
+                <div class="post">
+                  <h3 class="post__title">Доярка</h3><span class="post__date">Прием заявок до 21.03.16 12.00</span>
+                  <div class="post__text">
+                    <p class="post__paragraph">Для предупреждения болезней и защиты культур от вредителей предприятия Группы реализуют системный план защитных мероприятий. Большинство земель холдинга – высокоплодородные черноземы. В сочетании с преимущественно благоприятным климатом это обеспечивает стабильно высокую урожайность культур. Земельные активы «Парус Агро Груп» расположены в трех климатических зонах –  высокие показатели урожайности, она в 2-3 раза </p>
+                  </div><a href="#" class="post__all">подробнее</a>
                 </div>
               </div>
             </div>
-            <div class="posts">
-              <div class="post">
-                <h3 class="post__title">Агроном</h3><span class="post__date">Прием заявок до 21.03.16 12.00</span>
-                <div class="post__text">
-                  <p class="post__paragraph">Для предупреждения болезней и защиты культур от вредителей предприятия Группы реализуют системный план защитных мероприятий. Большинство земель холдинга – высокоплодородные черноземы. В сочетании с преимущественно благоприятным климатом это обеспечивает стабильно высокую урожайность культур. Земельные активы «Парус Агро Груп» расположены в трех климатических зонах –  высокие показатели урожайности, она в 2-3 раза </p>
-                </div><a href="#" class="post__all">подробнее</a>
-              </div>
-              <div class="post">
-                <h3 class="post__title">Доярка</h3><span class="post__date">Прием заявок до 21.03.16 12.00</span>
-                <div class="post__text">
-                  <p class="post__paragraph">Для предупреждения болезней и защиты культур от вредителей предприятия Группы реализуют системный план защитных мероприятий. Большинство земель холдинга – высокоплодородные черноземы. В сочетании с преимущественно благоприятным климатом это обеспечивает стабильно высокую урожайность культур. Земельные активы «Парус Агро Груп» расположены в трех климатических зонах –  высокие показатели урожайности, она в 2-3 раза </p>
-                </div><a href="#" class="post__all">подробнее</a>
-              </div>
+            <!-- END CONTENT -->
+          </div>
+        </div>
+        <!-- END CONTENT-SIDEBAR -->
+        <!-- BEGIN VACANCY-BANNER -->
+        <div class="vacancy-banner">
+          <div class="container">
+            <div class="vacancy-banner__side vacancy-banner__side_left">
+              <h2 class="vacancy-banner__title">Приглашаем к сотрудничеству</h2>
+              <p class="vacancy-banner__text">Для предупреждения болезней и защиты культур от вредителей предприятия Группы реализуют системный план защитных мероприятий. Предусматривающий применение комбинированных схем различных препаратов ведущих мировых.</p>
             </div>
+            <div class="vacancy-banner__side vacancy-banner__side_right"><a href="#" class="button button_green">Партнерам<i class="icon icon_next button_icon"></i></a></div>
           </div>
-          <!-- END CONTENT -->
         </div>
+        <!-- END VACANCY-BANNER -->
       </div>
-      <!-- END CONTENT-SIDEBAR -->
-      <!-- BEGIN VACANCY-BANNER -->
-      <div class="vacancy-banner">
-        <div class="container">
-          <div class="vacancy-banner__side vacancy-banner__side_left">
-            <h2 class="vacancy-banner__title">Приглашаем к сотрудничеству</h2>
-            <p class="vacancy-banner__text">Для предупреждения болезней и защиты культур от вредителей предприятия Группы реализуют системный план защитных мероприятий. Предусматривающий применение комбинированных схем различных препаратов ведущих мировых.</p>
-          </div>
-          <div class="vacancy-banner__side vacancy-banner__side_right"><a href="#" class="button button_green">Партнерам<i class="icon icon_next button_icon"></i></a></div>
-        </div>
-      </div>
-      <!-- END VACANCY-BANNER -->
     </div>
     <!-- BEGIN FOOTER -->
     <footer>

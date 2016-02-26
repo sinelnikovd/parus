@@ -58,6 +58,7 @@ img
 .page
 	position: relative
 	min-height: 100%
+	overflow: hidden
 
 .container
 	max-width: $width-padding
@@ -1935,6 +1936,7 @@ img
 	border-bottom: 1px solid #d9d9d9
 	background-color: $c-gray-3
 	cursor: pointer
+	position: relative
 	.main-menu__link
 		width: 100%
 		padding: 8px 21px 4px
@@ -1949,17 +1951,44 @@ img
 				display: block
 	.main-sub-menu
 		border-top-width: 2px
-		position: static
+		left: auto
 		top: 0
-		left: 0
-		transform: none
+		right: 100%
+		//transform: none
 /* END STILL */
 
 
 /* BEGIN HAMBURGER */
 .hamburger
 	display: none
-	text-align: center
+	text-align: right
+	padding-top: 12px
+.hamburger__text-header
+	display: inline-block
+	padding: 8px 25px 10px 0
+	position: relative
+	color: $c-green-2
+	cursor: pointer
+	&.active
+		.hamburger__line-1
+			width: 10px
+			+transform(rotate(45deg) translateX(5px) translateX(-2px))
+		.hamburger__line-3
+			width: 10px
+			+transform(rotate(-45deg) translateX(5px) translateX(-2px))
+.hamburger__line
+	width: 15px
+	height: 2px
+	background-color: $c-green-2
+	position: absolute
+	right: 0
+	+transition(all .5s ease-in-out)
+.hamburger__line-1
+	top: 11px
+.hamburger__line-2
+	top: 16px
+.hamburger__line-3
+	top: 21px
 .hamburger__text
 	display: inline-block
 	padding: 8px 25px 10px 0
@@ -1982,13 +2011,37 @@ img
 			top: 15px
 			+transform(rotate(-135deg))
 .main-menu_hamdurger
-	display: none
-	width: 100%
+	border-top: 7px solid $c-green-2
+	position: absolute
+	width: 300px
+	background-color: #fff
+	left: 100%
+	+transform(translateX(0))
+	+transition(all .5s ease-in-out)
+	&.active-animation
+		+transform(translateX(-300px))
 	.main-menu__item
 		float: none
 		text-align: center
+		.main-menu__link
+			padding: 10px 0 18px
 		.main-sub-menu
 			position: static
+.wrapper
+	overflow: hidden
+	+transition(all .5s ease-in-out)
+	&.active-animation
+		+transform(translateX(-300px))
+		position: relative
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			background-color: rgba(0,0,0,.3)
+			z-index: 20
 /* END HAMBURGER */
 
 

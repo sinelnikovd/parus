@@ -30,7 +30,9 @@
           <div class="container">
             <div class="logo header-body__logo"><a href="/" class="logo__link"><img src="img/logo.png" alt=""></a></div>
             <div class="main-menu-container header-body__main-menu">
-              <div class="hamburger"><span class="hamburger__text">Меню</span></div>
+              <div class="hamburger">
+                <div class="hamburger__text-header">Меню<span class="hamburger__line hamburger__line-1"></span><span class="hamburger__line hamburger__line-2"></span><span class="hamburger__line hamburger__line-3"></span></div>
+              </div>
               <ul class="main-menu">
                 <li class="main-menu__item main-menu__item_main-sub-menu active"><a href="#" class="main-menu__link">О компании</a>
                   <ul class="main-sub-menu">
@@ -97,66 +99,68 @@
         </div>
       </header>
       <!-- END HEADER -->
-      <!-- BEGIN MAPS -->
-      <div id="map" class="maps"></div>
-      <script src="libs/infobubble/infobubble.min.js"></script>
-      <script src="js/contactMap.js"></script>
-      <script src="https://maps.googleapis.com/maps/api/js?callback=initContactMap"></script>
-      <!-- END MAPS -->
-      <!-- BEGIN CONTACT -->
-      <div class="contact">
-        <div class="container">
-          <div class="side side_3070_left">
-            <div class="head">
-              <h2 class="h2 h2_26 head_h2">Контактная информация</h2>
-              <div class="hr hr_double"></div>
+      <div class="wrapper">
+        <!-- BEGIN MAPS -->
+        <div id="map" class="maps"></div>
+        <script src="libs/infobubble/infobubble.min.js"></script>
+        <script src="js/contactMap.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?callback=initContactMap"></script>
+        <!-- END MAPS -->
+        <!-- BEGIN CONTACT -->
+        <div class="contact">
+          <div class="container">
+            <div class="side side_3070_left">
+              <div class="head">
+                <h2 class="h2 h2_26 head_h2">Контактная информация</h2>
+                <div class="hr hr_double"></div>
+              </div>
+              <dl class="contact__list">
+                <dt class="contact__key green-text bold-text">Адрес:</dt>
+                <dd class="contact__value">127486, Москва, бульвар Бескудниковский, 57</dd>
+                <dt class="contact__key green-text bold-text">Телефон:</dt>
+                <dd class="contact__value"><a href="tel:+7 965 255 55 66" class="contact__link">+7 965 255 55 66</a>, <a href="tel:+7 965 255 55 66" class="contact__link">+7 902 205 55 77</a></dd>
+                <dt class="contact__key green-text bold-text">E-mail:</dt>
+                <dd class="contact__value"></dd><a href="mailto:info@parus.ru" class="contact__link">info@parus.ru</a>
+              </dl>
+              <h3 class="contact_h3">«Парус Агро Групп» в соцсетях:</h3>
+              <ul class="social">
+                <li class="social__item"><a href="#" class="social__link"><i class="social-icon social-icon_facebook social__icon"></i></a></li>
+                <li class="social__item"><a href="#" class="social__link"><i class="social-icon social-icon_twitter social__icon"></i></a></li>
+                <li class="social__item"><a href="#" class="social__link"><i class="social-icon social-icon_vimeo social__icon"></i></a></li>
+              </ul>
             </div>
-            <dl class="contact__list">
-              <dt class="contact__key green-text bold-text">Адрес:</dt>
-              <dd class="contact__value">127486, Москва, бульвар Бескудниковский, 57</dd>
-              <dt class="contact__key green-text bold-text">Телефон:</dt>
-              <dd class="contact__value"><a href="tel:+7 965 255 55 66" class="contact__link">+7 965 255 55 66</a>, <a href="tel:+7 965 255 55 66" class="contact__link">+7 902 205 55 77</a></dd>
-              <dt class="contact__key green-text bold-text">E-mail:</dt>
-              <dd class="contact__value"></dd><a href="mailto:info@parus.ru" class="contact__link">info@parus.ru</a>
-            </dl>
-            <h3 class="contact_h3">«Парус Агро Групп» в соцсетях:</h3>
-            <ul class="social">
-              <li class="social__item"><a href="#" class="social__link"><i class="social-icon social-icon_facebook social__icon"></i></a></li>
-              <li class="social__item"><a href="#" class="social__link"><i class="social-icon social-icon_twitter social__icon"></i></a></li>
-              <li class="social__item"><a href="#" class="social__link"><i class="social-icon social-icon_vimeo social__icon"></i></a></li>
-            </ul>
-          </div>
-          <div class="side side_3070_right">
-            <div class="head">
-              <h2 class="h2 h2_26 head_h2">Напишите нам, мы обязательно ответим!</h2>
-              <div class="hr hr_double"></div>
+            <div class="side side_3070_right">
+              <div class="head">
+                <h2 class="h2 h2_26 head_h2">Напишите нам, мы обязательно ответим!</h2>
+                <div class="hr hr_double"></div>
+              </div>
+              <p class="text">Компания «Парус Агро Групп» придерживается принципа открытости информации. Мы с доверием относимся ко всем нашим потенециальным партнерам и с удовольствием ответим на все интересующие Вас  вопросы.</p>
+              <p class="text">Чтобы задать вопрос, заполните форму ниже. Для получения информации о условиях партнерской программы пожалуйста, передите на страницу Партнерам. Если Вы заинтересованы в работе в нашей компании, пожалуйста, перейдите на страницу Вакансии.</p>
+              <form action="/" class="contact-form">
+                <div class="contact-form__line">
+                  <div class="contact-form__control">
+                    <input type="text" placeholder="Ваше имя" class="input input_width_100">
+                  </div>
+                  <div class="contact-form__control">
+                    <input type="text" placeholder="Ваш e-mail" class="input input_width_100">
+                  </div>
+                  <div class="contact-form__control">
+                    <input type="text" placeholder="Ваш телефон" class="input input_width_100 data-inputmask">
+                  </div>
+                </div>
+                <div class="contact-form__line">
+                  <textarea rows="4" placeholder="Ваш вопрос" class="textarea"></textarea>
+                </div>
+                <div class="contact-form__line"><span>Я не робот</span></div>
+                <div class="contact-form__line">
+                  <button type="submit" class="button button_green">Отправить<i class="icon icon_next button_icon"></i></button>
+                </div>
+              </form>
             </div>
-            <p class="text">Компания «Парус Агро Групп» придерживается принципа открытости информации. Мы с доверием относимся ко всем нашим потенециальным партнерам и с удовольствием ответим на все интересующие Вас  вопросы.</p>
-            <p class="text">Чтобы задать вопрос, заполните форму ниже. Для получения информации о условиях партнерской программы пожалуйста, передите на страницу Партнерам. Если Вы заинтересованы в работе в нашей компании, пожалуйста, перейдите на страницу Вакансии.</p>
-            <form action="/" class="contact-form">
-              <div class="contact-form__line">
-                <div class="contact-form__control">
-                  <input type="text" placeholder="Ваше имя" class="input input_width_100">
-                </div>
-                <div class="contact-form__control">
-                  <input type="text" placeholder="Ваш e-mail" class="input input_width_100">
-                </div>
-                <div class="contact-form__control">
-                  <input type="text" placeholder="Ваш телефон" class="input input_width_100 data-inputmask">
-                </div>
-              </div>
-              <div class="contact-form__line">
-                <textarea rows="4" placeholder="Ваш вопрос" class="textarea"></textarea>
-              </div>
-              <div class="contact-form__line"><span>Я не робот</span></div>
-              <div class="contact-form__line">
-                <button type="submit" class="button button_green">Отправить<i class="icon icon_next button_icon"></i></button>
-              </div>
-            </form>
           </div>
         </div>
+        <!-- END CONTACT -->
       </div>
-      <!-- END CONTACT -->
     </div>
     <!-- BEGIN FOOTER -->
     <footer>
