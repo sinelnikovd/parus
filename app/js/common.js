@@ -198,11 +198,14 @@ $(document).ready(function() {
 
 	/* BEGIN HIDEMENU */
 	$(window).load(function () {
+
 		var showItemList  = [],
 				hideItemList = [];
-		$('.main-menu .main-menu__link').each(function(indx) {
-			showItemList.push($(this).outerWidth());
+		$('.main-menu').addClass('size_item');
+		$('.main-menu__item').each(function() {
+			showItemList.push($(this).width());
 		});
+		$('.main-menu').removeClass('size_item');
 		console.log(showItemList);
 
 	function hideItem() {
@@ -210,23 +213,20 @@ $(document).ready(function() {
 				showItemListSum = 0,
 				hideItemListSum = 0;
 		for(var i=0; i<showItemList.length; i++) showItemListSum += showItemList[i];
-
-		console.log(sizeList +' --- '+ showItemListSum)
-		
 		if(showItemListSum > sizeList){
 			$('.main-menu').addClass('hide-item');
 			$('.still').show();
 		}
 
 		sizeList = $('.main-menu').width();
-
+			console.log(sizeList +' --- '+ showItemListSum)
 		while(showItemListSum > sizeList){
 			$('.main-menu .main-menu__item').last().addClass('still__item').appendTo($('.still__list'));
 			hideItemList.push(showItemList.pop());
 			showItemListSum = 0;
 			for(var i=0; i<showItemList.length; i++) showItemListSum += showItemList[i];
 		}
-		
+		console.log(showItemList)
 		showItemListSum += hideItemList[hideItemList.length - 1];
 
 		while(showItemListSum < sizeList){
