@@ -213,12 +213,12 @@ $(document).ready(function() {
 
 		var showItemList  = [],
 				hideItemList = [];
-		$('.main-menu').addClass('size_item');
+		$('header').addClass('size_item');
 		$('.main-menu__item').each(function() {
 			showItemList.push($(this).width());
 		});
-		$('.main-menu').removeClass('size_item');
-		if(!$('.main-menu').hasClass('size_item')) headHeight();
+		$('header').removeClass('size_item');
+		if(!$('header').hasClass('size_item')) headHeight();
 		//console.log(showItemList);
 
 	function hideItem() {
@@ -276,7 +276,7 @@ $(document).ready(function() {
 				$('.header-body').removeClass('fixed');
 				$('.header-head').css('margin-bottom',0)
 				$('.still').hide();
-				$('.main-menu').addClass('main-menu_hamdurger').removeClass('hide-item');
+				$('.main-menu').addClass('main-menu_hamburger').removeClass('hide-item');
 				headHeight();
 				//console.log(hideItemList.length)
 				//for(var i = 0; i < hideItemList.length; i++){
@@ -285,7 +285,7 @@ $(document).ready(function() {
 					showItemList.push(hideItemList.pop());
 				}
 			}else{
-				$('.main-menu').removeClass('main-menu_hamdurger').removeClass('active-animation');
+				$('.main-menu').removeClass('main-menu_hamburger').removeClass('active-animation');
 				$('.wrapper').removeClass('active-animation');
 				$('.hamburger__text-header.active').removeClass('active');
 				$('footer').removeClass('active-animation');
@@ -297,7 +297,7 @@ $(document).ready(function() {
 
 		$('.hamburger').click(function () {
 			$(this).find('.hamburger__text-header').toggleClass('active');
-			$('.main-menu_hamdurger').toggleClass('active-animation');
+			$('.main-menu_hamburger').toggleClass('active-animation');
 			$('.wrapper').toggleClass('active-animation');
 			$('footer').toggleClass('active-animation');
 		});
@@ -428,7 +428,12 @@ $(document).ready(function() {
 	});
 
 
-
+	$('.main-menu .main-menu__item_main-sub-menu').on('click', function () {
+		if($('.main-menu').hasClass('main-menu_hamburger')){
+			$(this).find('.main-sub-menu').slideToggle();
+			return false;
+		}
+	});
 
 
 

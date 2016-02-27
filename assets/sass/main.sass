@@ -537,6 +537,9 @@ img
 	background-size: cover
 	background-position: center center
 	padding: 126px 0 132px
+	cursor: url('img/cursor_drag.png') 6 1, move
+	&:active
+		cursor: url('img/cursor_drag-active.png') 6 1, move
 .main-slider__block
 	background-image: url('img/slide_bg.png')
 	background-color: rgba(50, 147, 141, .76)
@@ -1907,6 +1910,7 @@ img
 	width: 20px
 	padding-top: 10px
 	position: relative
+	cursor: pointer
 .still__list
 	display: none
 	position: absolute
@@ -1975,27 +1979,27 @@ img
 /* BEGIN HAMBURGER */
 .hamburger
 	display: none
-	text-align: right
+	text-align: left
 	padding-top: 12px
 .hamburger__text-header
 	display: inline-block
-	padding: 8px 25px 18px 0
+	padding: 8px 0 18px 25px
 	position: relative
 	color: $c-green-2
 	cursor: pointer
 	&.active
 		.hamburger__line-1
 			width: 10px
-			+transform(rotate(45deg) translateX(5px) translateX(-2px))
+			+transform(rotate(-45deg) translateX(-5px) translateX(2px))
 		.hamburger__line-3
 			width: 10px
-			+transform(rotate(-45deg) translateX(5px) translateX(-2px))
+			+transform(rotate(45deg) translateX(-5px) translateX(2px))
 .hamburger__line
 	width: 15px
 	height: 2px
 	background-color: $c-green-2
 	position: absolute
-	right: 0
+	left: 0
 	+transition(all .5s ease-in-out)
 .hamburger__line-1
 	top: 11px
@@ -2024,28 +2028,38 @@ img
 		&:after
 			top: 15px
 			+transform(rotate(-135deg))
-.main-menu_hamdurger
+.main-menu_hamburger
 	border-top: 7px solid $c-green-2
 	position: absolute
 	width: 300px
 	background-color: #fff
-	left: 100%
+	right: 100%
 	+transform(translateX(0))
 	+transition(all .5s ease-in-out)
 	&.active-animation
-		+transform(translateX(-300px))
+		+transform(translateX(300px))
+	.main-menu__item_main-sub-menu
+		&:hover
+			&>.main-sub-menu
+				display: none
 	.main-menu__item
 		float: none
-		text-align: center
+		text-align: left
 		.main-menu__link
-			padding: 10px 0 18px
+			display: block
+			padding: 10px 0 18px 15px
+			&:before
+				left: 15px
+			&:first-child
+				&:before
+					left: 15px
 		.main-sub-menu
 			position: static
 .wrapper
 	overflow: hidden
 	+transition(all .5s ease-in-out)
 	&.active-animation
-		+transform(translateX(-300px))
+		+transform(translateX(300px))
 		position: relative
 		&:before
 			content: ''
@@ -2057,8 +2071,6 @@ img
 			background-color: rgba(0,0,0,.3)
 			z-index: 20
 /* END HAMBURGER */
-
-
 
 
 
