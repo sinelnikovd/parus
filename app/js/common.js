@@ -229,7 +229,6 @@ $(document).ready(function() {
 
 		var showItemList  = [],
 				hideItemList = [];
-		$('header').addClass('size_item');
 		$('.main-menu__item').each(function() {
 			showItemList.push($(this).width());
 		});

@@ -164,7 +164,6 @@
 .header-body__logo
 	float: left
 	width: $width-header-body__logo/$width *$p
-	padding-bottom: 8px
 .header-body__main-menu
 	float: left
 	width: $width-header-body__main-menu/$width *$p
@@ -174,9 +173,12 @@
 /* BEGIN LOGO */
 .logo__link
 	display: block
+	line-height: 58px
+	height: 58px
 .logo__img
 	max-width: 205px
 	width: 100%
+	vertical-align: middle
 /* END LOGO */
 
 
@@ -188,5 +190,5 @@ header
 	&.size_item
 		overflow: hidden
 		.main-menu
-			position: fixed
+			position: absolute
 /* END HEADER */
