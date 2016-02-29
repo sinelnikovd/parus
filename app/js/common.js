@@ -182,7 +182,6 @@ $(document).ready(function() {
 			var windowScroll = $(window).scrollTop(),
 					windowHeight = $(window).height()*0.7,
 					elemTop = $(this).offset().top;
-			console.log(elemTop + '--' + (windowHeight+windowScroll));
 			if(elemTop < (windowHeight+windowScroll)){
 				$(this).radialCanvas().removeClass('no_animate');
 			}
@@ -213,7 +212,6 @@ $(document).ready(function() {
 	});
 
 	radialDraw();
-
 
 	/* BEGIN HIDEMENU */
 	$(window).load(function () {
@@ -308,8 +306,7 @@ $(document).ready(function() {
 				$('.header-body').removeClass('fixed');
 				$('.header-head').css('margin-bottom',0)
 				$('.still').hide();
-				$('.main-menu').addClass('main-menu_hamburger').removeClass('hide-item');
-				
+				$('.main-menu').removeClass('hide-item').addClass('main-menu_hamburger');
 				headHeight();
 				//console.log(hideItemList.length)
 				//for(var i = 0; i < hideItemList.length; i++){
@@ -337,6 +334,8 @@ $(document).ready(function() {
 			$('footer').toggleClass('active-animation');
 		});
 			hideOrHamburger();
+
+		//$('.preloader').fadeOut();
 
 		$(window).resize(function () {
 
@@ -550,13 +549,6 @@ $(document).ready(function() {
 
 
 
-	/* BEGIN CANVAS-RADIAL */
-/*  var canvas = document.get
-	var canvas = document.getElementById("example"),
-					ctx     = example.getContext('2d');
-			ctx.fillRect(0, 0, example.width, example.height);*/
-	/* END CANVAS-RADIAL */
-
 
 
 
@@ -567,18 +559,3 @@ $(document).ready(function() {
 
 });
 
-	//SVG Fallback
-/*if (!Modernizr.svg) {
-	// wrap this in a closure to not expose any conflicts
-	(function() {
-		// grab all images. getElementsByTagName works with IE5.5 and up
-		var imgs = document.getElementsByTagName('img'),endsWithDotSvg = /.*\.svg$/,i = 0,l = imgs.length;
-		// quick for loop
-		for(; i < l; ++i) {
-			if(imgs[i].src.match(endsWithDotSvg)) {
-				// replace the png suffix with the svg one
-				imgs[i].src = imgs[i].src.slice(0, -3) + 'png';
-			}
-		}
-	})();
-}*/
