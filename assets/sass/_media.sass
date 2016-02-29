@@ -104,6 +104,9 @@
 	.header-body__main-menu
 		float: left
 		padding: 0
+
+	.logo__img
+		max-width: 150px
 	/* END HEADER */
 
 	/* BEGIN SUB-MENU */
@@ -303,11 +306,13 @@
 	/* BEGIN HAMBURGER */
 	.hamburger
 		display: block
+		padding-top: 0
 	/* END HAMBURGER */
 
 	/* BEGIN POPUP-MAPS */
 	.popup-maps
-		left: -340px
+		//left: -340px
+		+transform(translatex(-100%))
 	.popup-maps__slide
 		display: block
 	.popup-maps-right
@@ -332,7 +337,7 @@
 	.logo
 		text-align: center
 	.header-body__logo
-		text-align: left
+		text-align: right
 	/* END HEADER */
 
 	/* BEGIN MAIN-SLIDER */
@@ -465,7 +470,16 @@
 		padding: 0
 	/* END DIAGRAM */
 
-
+	/* BEGIN POPUP-MAPS */
+	.popup-maps
+		width: 320px
+		padding: 20px
+		&.active
+			.popup-maps__slide
+				right: 0
+	.popup-maps-right
+		padding: 20px
+	/* END POPUP-MAPS */
 
 
 /* Custom, iPhone Retina */

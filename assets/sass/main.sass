@@ -6,6 +6,7 @@
 @import "libs/sprite.sass"
 @import "libs/owl.carousel.sass"
 @import "libs/nice-select.scss"
+@import "libs/jquery.jscrollpane.sass"
 
 
 *::-webkit-input-placeholder
@@ -1633,7 +1634,9 @@ img
 	background-color: $c-green-1
 	padding: 35px
 	box-sizing: border-box
+	+transition(all .5s ease-in-out)
 	&.active
+		+transform(translatex(0))
 		.popup-maps__slide
 			&:after
 				left: 15px
@@ -1715,6 +1718,8 @@ img
 		display: block
 .popup-maps-right__content
 	position: relative
+	width: 100%
+	height: 550px
 	padding: 50px 0 0
 .popup-maps-right__h2
 	text-align: center
@@ -2071,6 +2076,16 @@ img
 			z-index: 20
 /* END HAMBURGER */
 
+
+/* BEGIN SCROLL-PEN */
+.jspVerticalBar
+	background-color: transparent
+	width: 5px
+.jspTrack
+	background-color: transparent
+.jspDrag
+	background-color: $c-green-1
+/* END SCROLL-PEN */
 
 
 

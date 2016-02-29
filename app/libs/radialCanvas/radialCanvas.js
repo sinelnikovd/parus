@@ -12,7 +12,7 @@
 				radius = (Math.min(canvas.width,canvas.height)/2)-lineWidth;
 
 
-		function draw (drawing) {
+		function draw (drawing, alwaysDraw) {
 			var offset = 1.5 * Math.PI,
 					start = (2 * Math.PI * drawing.start) / 100 + offset,
 					end = (2 * Math.PI * drawing.end) / 100 + offset;
@@ -27,17 +27,30 @@
 			ctx.arc(centerX,centerY,radius,start,end);
 			ctx.stroke();
 			ctx.restore();
+
+
+			if(alwaysDraw){
+				console.log('asdasd')
+				var start = (2 * Math.PI * alwaysDraw.start) / 100 + offset,
+						end = (2 * Math.PI * alwaysDraw.end) / 100 + offset;
+				ctx.strokeStyle = alwaysDraw.color;
+				ctx.beginPath();
+				ctx.arc(centerX,centerY,radius,start,end);
+				ctx.stroke();
+				ctx.restore();
+			}
 		}
 
-		function animation () {
+		function animation (size) {
 			var i = 0,
 					interval = setInterval(function () {
-						draw({start: 0, end: i, color: "#000"});
+						if( i <= size) draw({start: 0, end: i, color: "#0f0"}, false);
+						else draw({start: size, end: i, color: "#000"}, {start: 0, end: size, color: "#0f0"});
 						if(i == 100) clearInterval(interval);
 						i++;
 					},20);
 		}
-		animation();
+		animation($(this).data('size'));
 
 
 
