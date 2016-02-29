@@ -165,6 +165,7 @@ $(document).ready(function() {
 
 
 
+
 	var el = $('.header-body'),
 			elt = $('.header-head').outerHeight(),
 			elh = el.outerHeight();
@@ -271,12 +272,27 @@ $(document).ready(function() {
 		headHeight();
 	}
 
+		function langMove (visibleHamburger) {
+			if(visibleHamburger){
+				if($('.lang').hasClass('in-head')){
+					$('.main-menu').append("<li class='item-lang'></li>");
+					$('.main-menu .item-lang').html($('.lang.in-head').removeClass('in-head'));
+				}
+			}else{
+				if(!$('.lang').hasClass('in-head')){
+					$('.header-head__side_right').append($('.lang').addClass('in-head'));
+					$('.main-menu .item-lang').remove();
+				}
+			}
+		}
+
 		function hideOrHamburger () {
 			if($('.hamburger').is(":visible")){
 				$('.header-body').removeClass('fixed');
 				$('.header-head').css('margin-bottom',0)
 				$('.still').hide();
 				$('.main-menu').addClass('main-menu_hamburger').removeClass('hide-item');
+				
 				headHeight();
 				//console.log(hideItemList.length)
 				//for(var i = 0; i < hideItemList.length; i++){
@@ -284,11 +300,13 @@ $(document).ready(function() {
 					$('.still__list .main-menu__item').last().removeClass('still__item').appendTo($('.main-menu'));
 					showItemList.push(hideItemList.pop());
 				}
+				langMove(true);
 			}else{
 				$('.main-menu').removeClass('main-menu_hamburger').removeClass('active-animation');
 				$('.wrapper').removeClass('active-animation');
 				$('.hamburger__text-header.active').removeClass('active');
 				$('footer').removeClass('active-animation');
+				langMove(false);
 				//$('.header-body').addClass('fixed');
 				headHeight();
 				hideItem();
@@ -391,7 +409,7 @@ $(document).ready(function() {
 
 			slicesData[indx] = {'color': $(this).find('.diagram-maps__color').css('background-color')};
 		});
-		console.log(elemData)
+		//console.log(elemData)
 		var data = google.visualization.arrayToDataTable(elemData);
 
 		var options = {
@@ -413,7 +431,33 @@ $(document).ready(function() {
 		chartData[0].draw(chartData[1], chartData[2]);
 	}
 
+	google.charts.setOnLoadCallback(initColumnYellowChart);
+	function initColumnYellowChart() {
+		var data = google.visualization.arrayToDataTable([
+				["Year", "Count", { role: "style" } , { role: 'annotation' }],
+				["2012 год", 31375, "#bd9c24", "31 375 Га"],
+				["2013 год", 51687, "#d4b02f", "51 687 Га"],
+				["2014 год", 71971, "#e6c13c", "51 687 Га"],
+				["2015 год", 76596, "#f7d454", "51 687 Га"]
+			]);
 
+		var options = {
+			height: 230,
+			pieHole: 0.45,
+			legend: 'none',
+			chartArea: {left:'10%', top: '10%', width: '80%', height: '80%'},
+			pieSliceText: 'none',
+			bar: {groupWidth: '90%'},
+			legend: { position: 'none' },
+			tooltip: {trigger: 'selection'},
+		};
+
+		var chart = new google.visualization.ColumnChart($('.column_graph_yellow')[0]);
+		charts.push([chart, data, options]);
+		chart.draw(data, options);
+		
+	}
+	
 
 
 	/* END CHART */
