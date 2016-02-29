@@ -205,7 +205,7 @@ $(document).ready(function() {
 			$('.top__item').each(function () {
 				topItemMaxHeight = Math.max(topItemMaxHeight, ($(this).find('.top__title').outerHeight()+$(this).find('.top__text').outerHeight(true)));
 			});
-			console.log(topItemMaxHeight);
+			//console.log(topItemMaxHeight);
 			$('.top__item').height(topItemMaxHeight);
 		}
 
@@ -434,31 +434,80 @@ $(document).ready(function() {
 	google.charts.setOnLoadCallback(initColumnYellowChart);
 	function initColumnYellowChart() {
 		var data = google.visualization.arrayToDataTable([
-				["Year", "Count", { role: "style" } , { role: 'annotation' }],
+				["Year", "Count", { role: "style" } , { role: 'annotation', p: {html: true}}],
 				["2012 год", 31375, "#bd9c24", "31 375 Га"],
-				["2013 год", 51687, "#d4b02f", "51 687 Га"],
-				["2014 год", 71971, "#e6c13c", "51 687 Га"],
-				["2015 год", 76596, "#f7d454", "51 687 Га"]
+				["2013 год", 51687, "#d4b02f", "51 687 Га  +65 %"],
+				["2014 год", 71971, "#e6c13c", "71 971 Га  +39 %"],
+				["2015 год", 76596, "#f7d454", "76 596 Га  +6 %"]
 			]);
 
 		var options = {
-			height: 230,
+			height: 300,
 			pieHole: 0.45,
 			legend: 'none',
 			chartArea: {left:'10%', top: '10%', width: '80%', height: '80%'},
 			pieSliceText: 'none',
+			displayAnnotations: true,
+			annotations:{
+				alwaysOutside:true,
+				textStyle: {
+					fontName: 'Arial',
+					fontSize: 16,
+					bold: true,
+					color: '#333',
+				}
+			},
 			bar: {groupWidth: '90%'},
 			legend: { position: 'none' },
 			tooltip: {trigger: 'selection'},
 		};
 
-		var chart = new google.visualization.ColumnChart($('.column_graph_yellow')[0]);
-		charts.push([chart, data, options]);
-		chart.draw(data, options);
-		
+		if($('div').is('.column_graph_yellow')){
+			var chart = new google.visualization.ColumnChart($('.column_graph_yellow')[0]);
+			charts.push([chart, data, options]);
+			chart.draw(data, options);
+		}
+
 	}
 	
+	google.charts.setOnLoadCallback(initColumnGreenChart);
+	function initColumnGreenChart() {
+		var data = google.visualization.arrayToDataTable([
+				["Year", "Rent", { role: 'annotation'}, "Own", { role: 'annotation'}],
+				["2013 год", 51500, "51 500 Га", 22827, "22 827 Га"],
+				["2014 год", 52417, "52 417 Га", 36887, "36 887 Га"],
+				["Отклонение 2013/14гг.", 917, "917 Га", 14060, "14 060 Га"]
+			]);
 
+		var options = {
+			height: 300,
+			pieHole: 0.45,
+			legend: 'none',
+			chartArea: {left:'10%', top: '10%', width: '80%', height: '80%'},
+			pieSliceText: 'none',
+			displayAnnotations: true,
+			annotations:{
+				alwaysOutside:true,
+				textStyle: {
+					fontName: 'Arial',
+					fontSize: 16,
+					bold: true,
+					color: '#333',
+				}
+			},
+			colors: ['#87b94b', '#6c9141'],
+			bar: {groupWidth: '95%'},
+			legend: { position: 'none' },
+			tooltip: {trigger: 'selection'},
+		};
+
+
+		if($('div').is('.column_graph_green')){
+			var chart = new google.visualization.ColumnChart($('.column_graph_green')[0]);
+			charts.push([chart, data, options]);
+			chart.draw(data, options);
+		}
+	}
 
 	/* END CHART */
 
