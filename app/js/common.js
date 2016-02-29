@@ -177,6 +177,18 @@ $(document).ready(function() {
 		//console.log(elh)
 	}
 
+	function radialDraw () {
+		$('.radial-item__canvas.no_animate').each(function () {
+			var windowScroll = $(window).scrollTop(),
+					windowHeight = $(window).height()*0.7,
+					elemTop = $(this).offset().top;
+			console.log(elemTop + '--' + (windowHeight+windowScroll));
+			if(elemTop < (windowHeight+windowScroll)){
+				$(this).radialCanvas().removeClass('no_animate');
+			}
+		});
+	}
+
 	if($(window).scrollTop() >= el.offset().top){
 		if(!$('.hamburger').is(":visible")){
 			$('.header-body').addClass('fixed');
@@ -196,17 +208,11 @@ $(document).ready(function() {
 			$('.header-head').css('margin-bottom',0)
 		}
 
-		$('.radial-item__canvas.no_animate').each(function () {
-			var windowScroll = $(window).scrollTop(),
-					windowHeight = $(window).height()*0.7,
-					elemTop = $(this).offset().top;
-			console.log(elemTop + '--' + (windowHeight+windowScroll));
-			if(elemTop < (windowHeight+windowScroll)){
-				$(this).radialCanvas().removeClass('no_animate');
-			}
+		radialDraw();
 
-		});
 	});
+
+	radialDraw();
 
 
 	/* BEGIN HIDEMENU */
