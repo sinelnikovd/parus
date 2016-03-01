@@ -93,6 +93,7 @@ $(document).ready(function() {
 	});
 
 
+	$('.dropdown-text').dropDownText();
 
 	$('select').niceSelect();
 
@@ -550,8 +551,16 @@ $(document).ready(function() {
 
 
 
-
-
+	$('.dropdown-link').click(function () {
+		if(!$(this).hasClass('open')){
+			$(this).prev('.dropdown-text').dropDownTextOpen();
+			$(this).addClass('open');
+		}else{
+			$(this).prev('.dropdown-text').dropDownTextClose();
+			$(this).removeClass('open');
+		}
+		return false;
+	});
 
 
 

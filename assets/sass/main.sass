@@ -1373,7 +1373,8 @@ img
 	position: absolute
 	font-size: 42px
 	z-index: 2
-	top: 50px
+	top: 50%
+	+transform(translateY(-50%))
 	left: 0
 	right: 0
 	text-align: center
@@ -1426,7 +1427,7 @@ img
 	padding: 0 0 18px 10%
 	box-sizing: border-box
 	border-bottom: 1px solid #DEDEDE
-.accordion__text
+.accordion__paragraph
 	margin: 3px 0 0
 /* END ACARDION */
 
@@ -2088,6 +2089,17 @@ img
 /* END SCROLL-PEN */
 
 
+
+/* BEGIN DROPDOWNTEXT */
+.dropdown-text
+	overflow: hidden
+.dropdown-link
+	&.open
+		&:after
+			top: 8px
+			+transform(rotate(-135deg))
+
+/* END DROPDOWNTEXT */
 
 
 
