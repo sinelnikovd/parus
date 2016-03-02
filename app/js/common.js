@@ -71,16 +71,21 @@ $(document).ready(function() {
 		loop: true,
 		nav: false,
 		items: 1,
-		autoHeight: true,
+		//autoHeight: true,
 		callbacks:true,
-		responsive : true
+		responsive : true,
+
 	});
 
 	works.on( "changed.owl.carousel", function (event) {
 		//console.log()
 		$(".work-sec-2__navbar-item.active").removeClass('active');
 		$(".work-sec-2__navbar-item").eq(event.page.index).addClass('active');
-	})
+	});
+
+
+
+				
 	$('.work-sec-2__nav .navigation-slider__prev').click(function() {
 		works.trigger('prev.owl.carousel');
 	})
@@ -346,6 +351,8 @@ $(document).ready(function() {
 			headHeight();
 
 			autoHeightTopItem();
+
+
 
 			for(var i=0; i<charts.length; i++) redrawPieChart(charts[i]);
 

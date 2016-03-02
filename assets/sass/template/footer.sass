@@ -140,8 +140,6 @@
 
 
 /* BEGIN COPYRIGTH */
-.copyright
-	padding-top: 5px
 .copyright__title
 	font-size: 12px
 .copyright__description
@@ -158,18 +156,10 @@
 	text-decoration: none
 	color: #fff
 	&:hover
-		.developer__image
-			background-position: 0 0
-.developer__image
-	display: inline-block
-	width: 99px
-	height: 32px
-	vertical-align: middle
-	background-image: url('img/yasno-logo.png')
-	background-repeat: no-repeat
-	background-position: -99px 0
-
+		.developer__text-green
+			text-decoration: underline
 .developer__text
+	margin: 0
 	vertical-align: middle
 	font-size: 12px
 	text-decoration: none
@@ -179,12 +169,14 @@
 .footer-footer
 	background-color: $c-gray-7
 	color: #fff
-	padding: 18px 0 5px
+	padding: 18px 0 15px
 	box-sizing: border-box
 	+clearfix
-.footer-footer__left,
+.footer-footer__left
+	width: 70%
+	float: left
 .footer-footer__right
-	width: 50%
+	width: 30%
 	float: left
 /* END FOOTER-FOOTER */
 
